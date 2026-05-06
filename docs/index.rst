@@ -19,8 +19,7 @@ The **Drinking Water Directive Documentation** is organized into the following s
 
 .. toctree:: 
    :maxdepth: 2
-   :caption: Sc
-   
+
    ExceedancesIncidentsAndDerrogations/index
    RiskAssessmentWithinCatchmentAreas/index
    DrinkingWaterProtectionAreas/index
