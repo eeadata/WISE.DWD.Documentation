@@ -1,9 +1,11 @@
-Drinking Water Protection Areas and Safeguard Zones
+.. _drinking-water-protection-areas-and-safeguard-zones:
+
+Drinking water protection areas and safeguard zones
 *************************************************************************
 
    .. toctree:: 
       :maxdepth: 2
-      :caption: Sections:
+      :hidden:
 
    DrinkingWaterProtectionAreas.md
 

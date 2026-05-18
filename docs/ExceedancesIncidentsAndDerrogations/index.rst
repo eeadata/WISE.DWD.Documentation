@@ -1,9 +1,11 @@
-DWD exceedances, incidents and derogations
+.. _exceedances-incidents-and-derogations:
+
+Exceedances, incidents and derogations
 *************************************************************************
 
    .. toctree:: 
       :maxdepth: 2
-      :caption: Sections:
+      :hidden:
 
    DWDExceedancesIncidentsAndDerrogations.md
 

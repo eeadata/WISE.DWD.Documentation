@@ -7,12 +7,13 @@ sphinx
 myst_parser
 
 sphinxcontrib.bibtex
-
 sphinxcontrib.mermaid 
-
-sphinxcontrib-excel-table
-sphinxcontrib-xlsxtable==1.1.1
-openpyxl  # Required dependency for xlsxtable
+sphinxcontrib-sqltable
+sphinx-design
+sphinx_copybutton
+sphinx_togglebutton
+nbsphinx
 
 # Add your theme here, e.g., sphinx-rtd-theme
-sphinx_rtd_theme
+#sphinx_rtd_theme
+pydata_sphinx_theme

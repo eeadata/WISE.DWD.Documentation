@@ -1,9 +1,11 @@
-DWD risk assessments and risk management measures within catchment areas
+.. _risk-assessments-and-risk-management-measures-within-catchment-areas:
+
+Risk assessments and risk management measures within catchment areas
 *************************************************************************
 
    .. toctree:: 
       :maxdepth: 2
-      :caption: Sections:
+      :hidden:
 
    DWDRiskAssessmentWithinCatchmentAreas.md
 
