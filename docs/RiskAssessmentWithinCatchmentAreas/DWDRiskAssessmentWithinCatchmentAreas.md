@@ -115,3 +115,8 @@ The information provided every six years by the Member States under Article 18.1
 - According to Article 18.3 of the recast DWD, the EEA shall publish and update a Union-wide overview using the data provided by the Member States on a regular basis or upon request from the European Commission.
 
 # Descriptive data
+
+This section presents the descriptive data relevant for the reporting under Article 18.1 (b) in accordance with Article 8 of the recast DWD, specifically the RiskAssessmentRiskManagement dataset and the WaterSupplyLink dataset (Figure 2-1).
+
+***Figure 2-1 Class diagram for the tables RiskAssessmentRiskManagement and WaterSupplyLink.***
+![Figure 2-1](img/Figure2-1.png)
