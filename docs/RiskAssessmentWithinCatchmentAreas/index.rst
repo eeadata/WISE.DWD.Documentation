@@ -5,9 +5,4 @@ Risk Assessment Within Catchment Areas
 
 * :doc:`DWDRiskAssessmentWithinCatchmentAreas`
 
-.. toctree::
-   :maxdepth: 3
-   :hidden:
-
-   DWDRiskAssessmentWithinCatchmentAreas
 
