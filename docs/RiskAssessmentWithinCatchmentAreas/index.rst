@@ -3,7 +3,11 @@
 Risk Assessment Within Catchment Areas
 ==========================================
 
-The documentation is organized into the following unified document:
-
 * :doc:`DWDRiskAssessmentWithinCatchmentAreas`
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+
+   DWDRiskAssessmentWithinCatchmentAreas
 
