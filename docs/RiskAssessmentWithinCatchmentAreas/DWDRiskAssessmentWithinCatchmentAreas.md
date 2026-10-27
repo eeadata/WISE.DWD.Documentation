@@ -43,6 +43,7 @@ The conceptual data model for the electronic reporting under Article 18.1 (b) of
 - The primary reporting unit for the risk assessment and risk management is the catchment area. Catchment areas are defined by the Member States.
 
 The following sections provide a brief narrative description of the classes and relationships of the class diagram (Figure 1-1).
+![Figure 1-1](img/Figure1.png)
 
 ***Notes:***
 *wfd - reported under Water Framework Directive (WFD)
