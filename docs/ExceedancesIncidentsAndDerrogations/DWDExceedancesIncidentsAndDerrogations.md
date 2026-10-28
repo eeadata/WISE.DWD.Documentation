@@ -135,6 +135,34 @@ Under the DWD 98/83/EC, granted derogations in Member States were communicated a
 Under the recast DWD, information on Member States' derogations is integrated in the Article 18 reporting requirements. Article 18.1(e) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on all derogations granted in accordance with Article 15(1), including the information provided for in Article 15(2).<br>
 Each year, all derogations must be reported, not just those granted during the reference year. This reporting is in addition to the communication requirements from Member States to the Commission in accordance with Article 15 of the recast DWD.
 
+**Table: Derogation**
+***********************
+
+**Description**: The table Derogation provides a unique identifier and a general description of each derogation.<br>
+**Guidance**: Reporting is conditional.<br>
+The Derogation table must be reported for all derogations in place for the reference year. If a Derogation has been reported in the previous reference year but is still ongoing, it must be reported again<br>
+Information is required for:<br>
+* a) all derogations granted for parameters for which the parametric values are set out in part B of Annex I of the recast DWD and;<br>
+* b) all derogations granted for additional parameters not included in Annex I for which a parametric value is set out by the Member State in accordance with Article 5(3) of the recast DWD, where the protection of human health within its national territory or part of it so requires.<br>
+
+**QC TU002**: Uniqueness and multiplicity constraints - The field derogationIdentifier is unique within table.<br>
+**QC R060**: Derogations cannot overlap in time for a given water supply zone and parameter.<br>
+**QC R077**: There is no monitoring result reported for the derogationIdentifier.<br>
+**QC RF006**: If a Derogation was reported for the previous reference year with EndDate falling in a following year, it must be reported again for the current reference year.<br>
+**QC XC001**: Each derogation where trivialDerogation = 'no' in the Derogation table, must have at least one corresponding record in the DerogationRemedialAction table.
+
+**Field: derogationIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier for the derogation<br>
+**Guidance**: Reporting is required.<br>
+Provide a unique identifier code for the derogation. The identifier must also be used in subsequent reference years if the derogation is still in place. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
+**QC V003**: The value must not be missing or empty<br>
+**QC V093**: The wiseIdentifier does not have the acceptable format<br>
+**QC RF001**: DerogationIdentifier must be unique historically<br>
+**QC RF005**: This derogation ended in the previous reference period<br>
+
 ### Information on DWD Incidents
 
 ### Information on DWD Exceedances
