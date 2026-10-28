@@ -122,3 +122,19 @@ This section presents the descriptive data relevant for the reporting under Arti
 
 ***Figure 2-1 Class diagram for the tables RiskAssessmentRiskManagement and WaterSupplyLink.***
 ![Figure 2-1](img/Figure2-1.png)
+
+### Table: RiskAssessmentRiskManagement
+
+**Description**: The RiskAssessmentRiskManagement dataset provides an overview of the status of the risk assessment and risk mangement for each catchment area, for a given reference date. It is a simple questionnaire, allowing Member States to provide support documentation in ancillary documents or in national sites.<br>
+**Uniqueness**: catchmentAreaIdentifier<br>
+**Quality Checks**:
+- **R004**: If catchmentAreaRiskManagementSafeguardZones = 'yes', then the safeguard zones must have been reported under the ProtectedArea dataset.
+- **XC003**: There are identifiers reported in spatial catchmentArea dataset that are missing in this table
+- **TU001**: The field catchmentAreaIdentifier must be unique within table
+
+| Field | catchmentAreaIdentifier |
+| :--- | :--- |
+| **Guidance on completion** | European Persistent Unique Identifier of the CatchmentArea. |
+| **Field type** | WiseIdentifier |
+| **Properties** | minOccurs: 1<br> maxOccurs: 1 |
+| **Quality Checks** | V005: The value must not be missing or empty<br>V026: The value is not a valid member of the referenced list.<br>XC001: catchmentAreaIdentifier must match a CatchmentArea thematicIdIdentifier in Spatial dataset where wiseEvolutionType != 'deletion'. |
