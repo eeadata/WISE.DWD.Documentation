@@ -1,6 +1,8 @@
-# Introduction
+# GUIDANCE DOCUMENT ON REPORTING UNDER THE RECAST DRINKING WATER DIRECTIVE 2020/2184/EC
 
-## Purpose and structure of the document
+## Introduction
+
+### Purpose and structure of the document
 
 The present document provides guidance to Member States in reporting the
 information required under Article 18.1(b) of the [recast Drinking Water
@@ -13,12 +15,12 @@ The document consists of three chapters.
 - Chapter 4 describes the data content and structure that must be followed to report the DWD reference spatial data sets. It refers to the WISE GIS Guidance which describes the structure of spatial data sets.
 - Chapter 5 describes the alignment and consolidation with data already provided under different reporting dataflows and explains where the datasets may be updated, if needed, in preparation for DWD reporting. The reuse of data already reported facilitates the reporting processes both at national and at European level. Most of the spatial datasets related to DWD risk assessment reporting has already been reported under other reporting obligations.
 
-## Legal context and general approach
+### Legal context and general approach
 
 By 12 July 2027, pursuant to Article 18.1 (b) of the recast DWD, Member States have to set up data sets containing information related to RA/RM of the catchment areas for abstraction points carried out in accordance with Article 8. Member States must update these data sets every six years thereafter. Pursuant to Article 18.2 of the recast DWD, Member States must ensure that the European Commission, the European Environment Agency (EEA) and the European Centre for Disease Prevention and Control have access to the data sets.
 To harmonise the Member States' data sets and the data transfer to the European Commission, whilst considering the technical reporting possibilities within the Member States, DG Environment has organised several expert group meetings, a written consultation, a testing phase (ongoing) as well as a workshop (forthcoming) on the recast DWD reporting in relation with RA/RM. Based on these exchanges with Member States, a reporting template and a reporting mechanism were defined. The reporting template will enable Member States to report the DWD six yearly data sets on RA/RM via the EEA [Reportnet 3 platform](https://reportnet.europa.eu/).
 
-## General rules for reporting
+### General rules for reporting
 
 The following general rules apply to the reporting under Article 18.1 (b) of the recast DWD 2020/2184/EC in accordance with Article 8:
 
@@ -30,11 +32,11 @@ The following general rules apply to the reporting under Article 18.1 (b) of the
 - Spatial reference data can be structured using a Geopackage template, to facilitate the data transfer. [^1]
 - Member States shall be responsible for the annually updated data set reporting to the European Commission and for the accuracy of the reported data.
 
-## Components of the reporting
+### Components of the reporting
 
 The reporting under Article 18.1 (b) of the recast DWD 2020/2184/EC in accordance with Article 8 contains descriptive data sets (Chapter 2), supporting documents with metadata (Chapter 3), spatial data sets (Chapter 4) and data sets aligned with other data flows (i.e. these can be updated by reporters within other data flows, Chapter 5). The linkage between these data sets is described in the following chapter.
 
-### The data model
+#### The data model
 
 The conceptual data model for the electronic reporting under Article 18.1 (b) of the recast DWD 2020/2184/EC in accordance with Article 8 is based on the following assumptions:
 - Each drinking water abstraction point is located in one surface water body, or in one groundwater body. A monitoring site can be located in this water body and is the primary reporting unit for monitoring results.
@@ -51,7 +53,7 @@ dwd – reported under Drinking Water Directive (DWD)
 grey and blue box – spatial data set
 white box – descriptive data set*
 
-### Data model classes
+#### Data model classes
 
 C1 - **A CatchmentArea** may include one or more abstraction points, in the same water body, if the risk profile is homogenous. A CatchmentArea is uniquely identified by a catchmentAreaIdentifier. The location of each CatchmentArea is reported using a polygon geometry.
 C2 – For the purposes on the electronic reporting, an **WaterAbstraction** is a logical node representing a withdrawal of water. It can represent a single physical abstraction point or a group of abstraction points within one WaterBody. Each WaterAbstraction is associated with a CatchmentArea. Each abstraction is uniquely identified by a **waterAbstractionIdentifier**. *Note: the concept implies a location but <u>does not</u> require the reporting of a geometry.*
@@ -61,49 +63,49 @@ C5 – A **MonitoringSite** is a location in the WaterBody used to verify the qu
 C6 – Within each CatchmentArea, Member States may define zero or more safeguard zones. Such drinking water protection zones may protect the water abstraction, one or more geographical areas in the catchment area (e.g. recharge zones), or even the entire catchment area. Each **ProtectedArea** is uniquely identified by a **protectedAreaIdentifier**. The location of each ProtectedArea is reported using single or multipart geometries. Member States <u>may</u> restrict the publication of the location of safeguard zones for water abstractions, using a **confidentialityStatus** value.
 C7 – The synthesis of **RiskAssessmentRiskManagement** plan is provided for each CatchmentArea.
 
-### Data model relationships
+#### Data model relationships
 
 The model is centred on the CatchmentArea as the main entity for the Risk AssessmentRiskManagement plan, and the concept of WaterAbstraction as the logical link between the resource (WaterBody) and the consumer (WaterSupplyZone).
 
-#### R1 - CatchmentArea [1] ↔ [1] WaterAbstraction
+##### R1 - CatchmentArea [1] ↔ [1] WaterAbstraction
 
 - *Logic*: A Member State defines a CatchmentArea for the purpose of risk assessment. The catchment area must contain at least one abstraction point but may potentially contain various abstraction points. The identity and location of the physical abstraction points is not needed and is not requested. The set of abstraction points for which the catchment area risk assessment was performed is encapsulated in the concept of WaterAbstraction.
 - *Note*: This satisfies the requirement that a CatchmentArea can cover multiple abstractions points and that the location of the abstraction points is not requested.
 
-#### R2 - WaterBody [1] ↔ [1..n] WaterAbstraction
+##### R2 - WaterBody [1] ↔ [1..n] WaterAbstraction
 
 - *Logic*: Every WaterAbstraction must be assigned to exactly one WaterBody. A water body may have several physical abstraction points, aggregated into one or more WaterAbstraction.
 - *Note*: If the risk profile is similar for all abstraction points in the water body, they may be aggregated into a single WaterAbstraction with a single CatchmentArea risk assessment. In other circumstances, the risk assessment may be done for different subsets of abstractions points in the waterbody (e.g. the subset of abstraction points supplying a densely populated water supply zone vs less critical abstraction points).
 - *Note*: The WaterAbstraction has no geometry. Its location is logically defined by its parent WaterBody and the CatchmentArea it belongs to.
 
-#### R3 - WaterAbstraction [m] ↔ [n] WaterSupplyZone
+##### R3 - WaterAbstraction [m] ↔ [n] WaterSupplyZone
 
 - *Logic*: This is a many-to-many relationship. Water from one WaterAbstraction (logical unit) can be distributed to multiple WaterSupplyZone. One WaterSupplyZone can receive water from multiple WaterAbstraction.
 
-#### R4 - CatchmentArea [0..1] ↔ [0..n] ProtectedArea
+##### R4 - CatchmentArea [0..1] ↔ [0..n] ProtectedArea
 
 - *Logic*: To manage risks found in the CatchmentArea, safeguard zones may be defined. There may be zero (if no significant risks) or many protected areas. The ProtectedArea geometry is reported using single or multipart geometries.
 - *Technical note*: If more than one CatchmentArea exists per WaterBody, the ProtectedArea should be linked to a specific CatchmentArea. That will be denoted by relateZoneIdentifier = CatchmentAreaIdentifier.thematicIdIdentifier AND relatedZoneIdentifierScheme = CatchmentAreaIdentifier.thematicIdIdentifierScheme.
 - *Special case*: If the safeguard zone encompasses the entire catchment area, that will be denoted by the value specialisedZoneType = 'catchmentArea'.
 
-#### R5 - WaterBody [0..1] ↔ [0..n] ProtectedArea
+##### R5 - WaterBody [0..1] ↔ [0..n] ProtectedArea
 
 - *Technical note*: If only one CatchmentArea exists per WaterBody, the ProtectedArea should be linked to directly to the water body. That will be denoted by relateZoneIdentifier = WaterBody.thematicIdIdentifier AND relatedZoneIdentifierScheme = WaterBody.thematicIdIdentifierScheme.
 - *Special case*: If the safeguard zone encompasses the entire water body, that will be denoted by the value specialisedZoneType = 'waterBody'.
 
-#### R6 - WaterAbstraction [0..1] ↔ [0..n] ProtectedArea
+##### R6 - WaterAbstraction [0..1] ↔ [0..n] ProtectedArea
 
 - *Technical note*: There will be no direct link between the ProtectedArea and the WaterAbstraction. Instead, the approach defined before should be followed: 1) if only one CatchmentArea exists per WaterBody, the ProtectedArea should be linked to directly to the water body; 2) if more than one CatchmentArea exists per WaterBody, the ProtectedArea should be linked to a specific CatchmentArea.
 - *Special case*: If the safeguard zone is designed to directly protect the abstraction points (e.g. protection perimeters around groundwater abstraction points), that will be denoted by the value specialisedZoneType = 'waterAbstractionSafeguardZone'.
 - *Special case*: Member States may limit public access to spatial data sets where such access would adversely affect inter alia the public security or the protection of the environment. The publication of the location of the safeguard zones may be prevented by specifying confidentialityStatus = 'N'. (Note that the same approach is already use for monitoring sites that are co-located with the abstraction points.)
 
-#### R7 - CatchmentArea [1] ↔ [1..n] MonitoringSite
+##### R7 - CatchmentArea [1] ↔ [1..n] MonitoringSite
 
 - *Logic*: While the monitoring site physically sits in a WaterBody, for this specific reporting flow, it provides data validation for the CatchmentArea risk assessment.
 - *Technical note*: The relationship can be obtained via CatchmentArea [1] ↔ [1] WaterAbstraction [1] → [1] WaterBody [1] ← [1..n] MonitoringSite and the spatial condition ST_Within(MonitoringSite.geometry, CatchmentArea.geometry) = TRUE.
 - *Note*: <u>Optionally</u>, Member States may wish to detail the subset of monitoring sites relevant for drinking water monitoring. That information is provided in the MonitoringSite.purpose attribute.
 
-## How the European Commission and the EEA will use the information
+### How the European Commission and the EEA will use the information
 
 The information provided every six years by the Member States under Article 18.1 (b) of the recast DWD 2020/2184/EC in accordance with Article 8 will be used for the following purposes:
 
@@ -114,7 +116,7 @@ The information provided every six years by the Member States under Article 18.1
 - The EEA may use the information to supplement the data collected through other reporting streams when producing European, pan-European and regional integrated environmental data and indicator sets, assessments and thematic analyses.
 - According to Article 18.3 of the recast DWD, the EEA shall publish and update a Union-wide overview using the data provided by the Member States on a regular basis or upon request from the European Commission.
 
-# Descriptive data
+## Descriptive data
 
 This section presents the descriptive data relevant for the reporting under Article 18.1 (b) in accordance with Article 8 of the recast DWD, specifically the RiskAssessmentRiskManagement dataset and the WaterSupplyLink dataset (Figure 2-1).
 
