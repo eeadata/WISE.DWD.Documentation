@@ -408,6 +408,72 @@ The end date of the remedial action corresponds to the date until which the reme
 **Table: QualityAndMonitoring**
 ***********************************
 
+**Description**: In the QualityAndMonitoring table, information shall be reported on the parameters of non-trivial derogations and on the appropriate monitoring scheme specified in the derogation in accordance with the Article 15(2)(d) requirements of the recast DWD.<br>
+**Guidance**: Reporting is conditional.<br>
+Non-trivial derogations must be associated with one or more quality and monitoring requirement. Note that the same quality and monitoring requirements may apply to more than one derogation.<br>
+**QC TU003**: Uniqueness and multiplicity constraints - The field qualityAndMonitoringRequirementIdentifier is unique within table.<br>
+**QC R032**: The combination of the values for parameterCode, parameterThresholdValue, parameterThresholdValueUnit, samplingFrequency, samplingPeriod, and samplingLocationType must be unique.<br>
+**QC XC049**: If a qualityAndMonitoringRequirementIdentifier is reported in the QualityAndMonitoring table, the same identifier must appear in the Derogation table.
+
+**Field: qualityAndMonitoringRequirementIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique identifier for the quality and monitoring requirement.<br>
+**Guidance**: Reporting is required.<br>
+Provide a unique identifier code for the quality and monitoring requirement. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element).<br>
+The identifier must also be used in subsequent reference years if the requirement is still applicable. A register will be kept with the previously reported quality and monitoring requirements. In other words, the quality and monitoring requirements only need to be reported once and their identifier can be reused in future reporting cycles.<br>
+**QC V004**: The value must not be missing or empty.<br>
+**QC V097**: The wiseIdentifier does not have the acceptable format.
+
+**Field: parameterCode**
+
+**Data type**: Parameter code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Parameter which is part of the derogation.<br>
+**Guidance**: Reporting is required.<br>
+Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu.<br>
+**QC V035**: The value must not be missing or empty.<br>
+**QC V134**: The value is not a valid member of the referenced list.
+
+**Field: parameterThresholdValue**
+
+**Data type**: Non-negative decimal<br>
+**Cardinality**: [1]<br>
+**Description**: Maximum permissible parametric (threshold) value of the parameter, in the unit of measure reported in the parameterThresholdValueUnit field.<br>
+**Guidance**: Reporting is required.<br>
+**QC V036**: The value must not be missing or empty.<br>
+**QC V055**: The value is not a valid whole or decimal number.<br>
+**QC V098**: The value is not a valid non-negative number.
+
+**Field: parameterThresholdValueUnit**
+
+**Data type**: UnitOfMeasure code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Unit of measure for the value reported in the parameterThresholdValue field.<br>
+**Guidance**: Reporting is required.<br>
+Use the code in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu.<br>
+**QC V037**: The value must not be missing or empty.<br>
+**QC V135**: The value is not a valid member of the referenced list.<br>
+**QC XC017**: If there's a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]).
+
+Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of the recast DWD and Reportnet 3.
+| Description of<br>parameterCode | Annex I of the recast DWD |  | To use in Reportnet 3 |  |
+|---|---:|---|---:|---|
+|  | parametricValue | UnitOfMeasure | parametricValue | UnitOfMeasure |
+| CAS_14797-55-8 - Nitrate | 50 | mg/l | 50 | mg{NO3}/L |
+| CAS_14797-65-0 - Nitrite | 0,5 | mg/l | 0,5 | mg{NO2}/L |
+| CAS_14798-03-9 - Ammonium | 0,5 | mg/l | 0,5 | mg{NH4}/L |
+| CAS_14866-68-3 - Chlorates | 0,25 | mg/l | 250 | ug/L |
+| CAS_14998-27-7 - Chlorite | 0,25 | mg/l | 250 | ug/L |
+| CAS_16984-48-8 - Fluoride | 1,5 | mg/l | 1500 | ug/L |
+| CAS_7440-42-8 - Boron | 1,5 | mg/l | 1500 | ug/L |
+| CAS_7440-50-8 - Copper and its compounds | 2,0 | mg/l | 2000 | ug/L |
+| EEA_15-02-1 - Intestinal enterococci | 0 | number/100 ml | 0 | [CFU]/dL |
+| EEA_15-03-2 - Clostridium perfringens | 0 | number/100 ml | 0 | [CFU]/dL |
+| EEA_15-04-3 - Coliform bacteria | 0 | number/100 ml | 0 | [CFU]/dL |
+| EEA_15-05-4 - Legionella | <1000 | [CFU]/l | 100 | [CFU]/dL |
+
 ### Information on DWD Incidents
 
 ### Information on DWD Exceedances
