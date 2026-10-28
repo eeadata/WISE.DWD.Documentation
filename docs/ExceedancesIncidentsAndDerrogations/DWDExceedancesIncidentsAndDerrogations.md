@@ -474,9 +474,230 @@ Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of 
 | EEA_15-04-3 - Coliform bacteria | 0 | number/100 ml | 0 | [CFU]/dL |
 | EEA_15-05-4 - Legionella | <1000 | [CFU]/l | 100 | [CFU]/dL |
 
+**Field: samplingFrequency**
+
+**Data type**: Positive integer<br>
+**Cardinality**: [1]<br>
+**Description**: Number of samples per sampling period.<br>
+**Guidance**: Reporting is required.<br>
+The monitoring scheme is defined by the sampling frequency and the sampling period. The sampling frequency is an integer value, informing how often samples are collected within a sampling period of one day, week, month, or year. If sampling is conducted 4 times per year, then samplingFrequency = 4 and samplingPeriod = 'a'. If sampling is conducted twice a month, then samplingFrequency = 2 and samplingPeriod = 'mo'. If sampling is conducted once a day, then samplingFrequency = 1 and samplingPeriod = 'd'.<br>
+**QC V038**: The value must not be missing or empty.<br>
+**QC V047**: The value is not a valid whole number.<br>
+**QC V099**: The value is not a valid non-negative number.
+
+**Field: samplingPeriod**
+
+**Data type**: SamplingPeriod code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Sampling period (day, month, etc.).<br>
+**Guidance**: Reporting is required.<br>
+See guidance for the samplingFrequency field.<br>
+**QC V039**: The value must not be missing or empty.<br>
+**QC V136**: The value is not a valid member of the referenced list.
+
+**Field: samplingLocationType**
+
+**Data type**: PointOfComplianceType code list value<br>
+**Cardinality**: [1..n]<br>
+**Description**: Sampling location types where the monitoring requirements are applicable.<br>
+**Guidance**: Reporting is required.<br>
+More than one type of sampling location may be reported. Multiple options can be reported, using a semicolon-separated list.<br>
+**QC V040**: The value must not be missing or empty.<br>
+**QC V137**: The value is not a valid member of the referenced list.
+
+**Field: remarks**
+
+**Data type**: Text (1500 characters)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Additional information about the record, in English or in the national language.<br>
+**Guidance**: Reporting is optional.<br>
+**QC V083**: Text is too long (max 1500 characters).
+
 ### Information on DWD Incidents
 
+**Table: Incident**
+************************
+
+**Description**: Article 18.1(d) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on incidents relating to water intended for human consumption that have caused a potential risk to human health, regardless of whether any failure to meet the parametric values occurred, that lasted for more than ten (10) consecutive days and that affected at least 1 000 people, including the causes of those incidents and remedial actions taken in accordance with Article 14.<br>
+In the Incident table, information shall be reported that allow for unique identification and general description of the respective incident. One incident is one event: one reporting unit, one incident cause and one time period and could affect multiple parts of the supply chain (i.e category).<br>
+**Guidance**: Reporting is conditional.<br>
+The table must be reported if incidents exist for the reference year.<br>
+**QC TU004**: Uniqueness and multiplicity constraints - The field incidentIdentifier is unique within table.<br>
+**QC R046**: Incident lasts less than or equal than 10 days.<br>
+**QC R061**: Multiple incidents of the same cause overlapping in time are reported for the same water supply zone. Please, note that this is only allowed when the reported incidents are associated with different locations within the same water supply zone and overlapping in time.<br>
+**QC RF014**: This incident ended in the previous reporting.<br>
+**QC RF016**: If an Incident was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
+**QC XC007**: All incidents reported in the Incident table must have at least one associated record in the IncidentCauseAndRemedialAction table.
+
+**Field: incidentIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier for the incident.<br>
+**Guidance**: Reporting is required.<br>
+Provide a unique identifier code for the incident. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
+**QC V027**: The value must not be missing or empty.<br>
+**QC V100**: The wiseIdentifier does not have the acceptable format.
+
+**Field: reportingUnitIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier of the water supply zone.<br>
+**Guidance**: Reporting is required.<br>
+Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
+**QC V021**: The value must not be missing or empty.<br>
+**QC V112**: The value is not a valid member of the referenced list.<br>
+**QC XC045**: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
+**QC XC047**: The reported reportingUnitIdentifier, must exist in the WaterSupply table.
+
+**Field: incidentStartDate**
+
+**Data type**: Date<br>
+**Cardinality**: [1]<br>
+**Description**: Start date of the incident, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is required.<br>
+**QC V005**: The value must not be missing or empty.<br>
+**QC V058**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC V153**: All start dates must be either within or earlier than the reference period.<br>
+**QC XC041**: The incidentStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone.<br>
+**QC R068**: If the incidentEndDate has been reported, the incidentStartDate must be reported.
+
+**Field: incidentEndDate**
+
+**Data type**: Date<br>
+**Cardinality**: [1]<br>
+**Description**: End date of the incident, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is required.<br>
+If the incident is still ongoing at the end of the year, report 9999-12-31.<br>
+**QC V006**: The value must not be missing or empty.<br>
+**QC V060**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC V148**: Incident end date outside reporting period.<br>
+**QC R025**: The value must be greater than or equal than incidentStartDate.<br>
+**QC XC045**: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
+**QC XC037**: The end date of the remedial is greater than the end date of the incident.
+
+**Field: incidentCategory**
+
+**Data type**: IncidentCategory code list value<br>
+**Cardinality**: [1..n]<br>
+**Description**: Category of the incident.<br>
+**Guidance**: Reporting is required.<br>
+Use the code in the IncidentCategory code list. Multiple options can be reported, using a semicolon-separated list.<br>
+**QC V007**: The value must not be missing or empty.<br>
+**QC V131**: The value is not a valid member of the referenced list.<br>
+**QC V142**: If multiple incidentCategory values are reported, all values must be distinct.<br>
+**QC V143**: If incidentCategory = 'unknown' is incompatible with any other option.
+
+**Field: incidentAffectedPopulation**
+
+**Data type**: Non-negative integer<br>
+**Cardinality**: [1]<br>
+**Description**: Estimated number of people affected by the incident in the water supply zone. Affected population refers to the people potentially exposed to the risk, regardless of disease or not.<br>
+**Guidance**: Reporting is required.<br>
+**QC V101**: The value is not a valid non-negative number.<br>
+**QC V032**: The value must not be missing or empty.<br>
+**QC V067**: The value is not a valid whole number.<br>
+**QC V145**: The incident affected less than 1000 people.
+
+**Field: remarks**
+
+**Data type**: Text (1500 characters)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Additional information about the record, in English or in the national language.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC R043**: If the incidentCategory = 'unknown' or if one of the incidentCategory values is 'other', additional explanation should be provided in the remarks field.<br>
+**QC V084**: Text is too long (max 1500 characters).
+
+
+**Table: IncidentCauseAndRemedialAction**
+********************************************
+
+**Description**: In the IncidentCauseAndRemedialAction table, information shall be reported about the cause and remedial actions linked to an incident previously reported in Incident table. Note that each incident can be associated with more than one remedial action.<br>
+**Guidance**: Reporting is conditional.<br>
+The table must be reported if incidents exist for the reference year.<br>
+**QC TU006**: The combination of the incidentIdentifier value, incidentCause value and the incidentRemedialAction value must be unique across the IncidentCauseAndRemedialAction table records.<br>
+**QC R041**: For each incidentIdentifier value, the number of acceptable different incidentCause values is one.<br>
+**QC RF019**: If an IncidentRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.<br>
+**QC XC035**: The remedial action period must overlap, at least partially, with the associated incident period.
+
+**Field: incidentIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier of the incident, as reported in the Incident table.<br>
+**Guidance**: Reporting is required.<br>
+**QC V008**: The value must not be missing or empty.<br>
+**QC V113**: The value is not a valid member of the referenced list.
+
+**Field: incidentCause**
+
+**Data type**: IncidentExceedanceCause code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Cause of the incident.<br>
+**Guidance**: Reporting is required.<br>
+**QC V009**: The value must not be missing or empty.<br>
+**QC V117**: The value is not a valid member of the referenced list.
+
+**Field: incidentRemedialAction**
+
+**Data type**: RemedialAction code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Remedial action linked to an incident.<br>
+**Guidance**: Reporting is required.<br>
+Each incident is associated to one and only one cause, but multiple remedial actions may be reported.<br>
+**QC V010**: The value must not be missing or empty.<br>
+**QC V118**: The value is not a valid member of the referenced list.<br>
+**QC R007**: If incidentRemedialAction = 'other', reporting is required.<br>
+**QC R031**: If incidentRemedialAction = 'none', then no other record of the IncidentCauseAndRemedialAction table can have the same incidentIdentifier value.
+
+**Field: incidentRemedialActionStartDate**
+
+**Data type**: Date<br>
+**Cardinality**: [0..1]<br>
+**Description**: Start date of the remedial action, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC V052**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC R036**: If incidentRemedialAction is not 'none', then the incidentRemedialActionStartDate is required.<br>
+**QC XC051**: incidentRemedialActionStartDate and incidentRemedialActionEndDate should fall within incidentStartDate and incidentEndDate.
+
+**Field: incidentRemedialActionEndDate**
+
+**Data type**: Date<br>
+**Cardinality**: [0..1]<br>
+**Description**: End date of the remedial action, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is conditional.<br>
+The end date of the remedial action corresponds to the date until which the remedial action is planned. If the end date is known, then report the real date; if unknown, report 9999-12-31.<br>
+**QC V051**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC R026**: The value must be greater than or equal than incidentRemedialActionStartDate.<br>
+**QC R037**: If incidentRemedialAction is not 'none', then the incidentRemedialActionEndDate is required.
+
+**Field: remarks**
+
+**Data type**: Text (1500 characters)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Additional information about the record, in English or in the national language.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC V085**: Text is too long (max 1500 characters).<br>
+**QC R075**: If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field.
+
 ### Information on DWD Exceedances
+
+**Table: Exceedance**
+*************************
+
+**Description**: Article 18.1 (c) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing monitoring results, in cases of exceedances of the parametric values set out in Parts A and B of Annex I, collected in accordance with Articles 9 and 13 and information about the remedial actions taken in accordance with Article 14.<br>
+All exceedances have to be reported, not just those related to a derogation. In the Exceedance table, information shall be reported that allows for unique identification and description of any exceedance. One exceedance corresponds to one reporting unit (water supply zone), one parameter, one cause and one time period. For exceedances at different locations that overlap in time, for the same parameter, cause and water supply zone, create separate records in the exceedance table, using different exceedanceIdentifier codes for different locations (see Figure 3).<br>
+**QC TU005**: Uniqueness and multiplicity constraints - The field exceedanceIdentifier is unique within table.<br>
+**QC R045**: Multiple exceedances of the same cause overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.<br>
+**QC RF015**: Reporting of an exceedance already present from the previous reporting, must be linked to the same water supply zone, derogationIdentifier and incidentIdentifier.<br>
+**QC RF017**: If an Exceedance was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
+**QC XC010**: All exceedances reported in the Exceedance table must have at least one associated record in the ExceedanceCauseAndRemedialAction table.<br>
+**QC R076**: There is no monitoring result reported for the exceedanceIdentifier.
+
+![Figure 3](img/Figure3.png)<br>
+Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportnet3?
+
 
 ### Information on DWD Monitoring Results
 
