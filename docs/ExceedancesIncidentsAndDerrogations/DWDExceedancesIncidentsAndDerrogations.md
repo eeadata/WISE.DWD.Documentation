@@ -46,6 +46,17 @@ Figure 1: Reporting tables and main relationships between tables.
 
 ### How the European Comission and the EEA will use the information
 
+The information provided annually by the Member States under Article 18.1 (c), (d) and (e) of the recast DWD will be used for the following purposes:
+- To assess whether the implementation of the requirements of the recast DWD is sufficient in each Member State (i.e., compliance assessment).
+- To enable the European Commission to monitor and assess the implementation of the recast DWD in relation to the objectives it pursues, to inform any future evaluation of this Directive in accordance with paragraph 22 of the Interinstitutional Agreement of 13 April 2016 on Better Law-Making.
+- At EU and Member State level, for the assessment of critical pollutants that lead to exceedances on parametric values, and of the main categories of incidents.
+- According to Article 18.3 of the recast DWD, the EEA shall publish and update a Union-wide overview using the data provided by the Member States on a regular basis or upon request from the European Commission.
+
+The water supply zone is the reporting unit used in the data sets required by article 18.1 (c), (d) and (e) of the DWD, when reporting the annual data on exceedances, incidents and derogations, their causes and the remedial actions taken.
+The data assessed by the European Commission can be presented at water supply zone level, and as aggregated information at national and EU levels. The European Commission requires data at water supply zone level to properly assess the DWD implementation.
+
+In addition, the EEA may use the information to supplement the data collected through other reporting streams when producing European, pan-European and regional integrated environmental data and indicator sets, assessments and thematic analyses.
+
 ### Information Note on Progressive Reporting for Member States
 
 ## Decripive data for the recast DWD reporting
@@ -59,5 +70,11 @@ Figure 1: Reporting tables and main relationships between tables.
 ### Information on DWD Incidents
 
 ### Information on DWD Exceedances
+
+### Information on DWD Monitoring Results
+
+### Information on Water Supply
+
+## Spatial reference data for the recast DWD reporting
 
 
