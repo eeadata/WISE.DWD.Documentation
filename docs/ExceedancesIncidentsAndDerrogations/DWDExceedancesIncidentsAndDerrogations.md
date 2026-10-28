@@ -340,6 +340,74 @@ Note that multiple values are possible, i.e., a derogation can be linked to more
 **Table: DerogationRemedialAction**
 ****************************************
 
+**Description**: In the DerogationRemedialAction table, information shall be reported about the remedial actions linked to all non-trivial derogations. For trivial derogations, reporting is optional.<br>
+**Guidance**: Reporting is conditional.<br>
+Note that each derogation may be associated with more than one remedial action.<br>
+Therefore, multiple records of the DerogationRemedialAction table can have the same derogationIdentifier.<br>
+**QC TU010**: Uniqueness and multiplicity constraints - The fields derogationIdentifier and derogationRemedialAction are uniques within table.<br>
+**QC RF007**: The combination of derogationIdentifier and derogationRemedialAction must be unique historically.<br>
+**QC RF020**: If a DerogationRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.
+
+**Field: derogationIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier of the derogation, as reported in the Derogation table.<br>
+**Guidance**: Reporting is required.<br>
+**QC V034**: The value must not be missing or empty.<br>
+**QC V133**: The derogationIdentifier must exists in table Derogation if the derogation is still open in this reporting cycle.
+
+**Field: derogationRemedialAction**
+
+**Data type**: RemedialAction code list value<br>
+**Cardinality**: [1]<br>
+**Description**: Report the remedial action for the derogation.<br>
+**Guidance**: Reporting is required.<br>
+**QC V132**: The value is not a valid member of the referenced list.<br>
+**QC V156**: Checks if the field is missing or empty.<br>
+**QC R062**: The option derogationRemedialAction = 'none' is incompatible with any other option.
+
+**Field: derogationRemedialActionStartDate**
+
+**Data type**: Date<br>
+**Cardinality**: [0..1]<br>
+**Description**: Start date of the remedial action, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC V049**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC R033**: If derogationRemedialAction is not 'none', then the derogationRemedialActionStartDate is required.
+
+**Field: derogationRemedialActionEndDate**
+
+**Data type**: Date<br>
+**Cardinality**: [0..1]<br>
+**Description**: End date of the remedial action, in the format YYYY-MM-DD.<br>
+**Guidance**: Reporting is conditional.<br>
+The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31.<br>
+**QC V050**: The value is not a valid date (YYYY-MM-DD).<br>
+**QC R022**: The value must be greater than or equal than derogationRemedialActionStartDate.<br>
+**QC R034**: If derogationRemedialAction is not 'none', then the derogationRemedialActionEndDate is required.
+
+**Field: derogationRemedialActionCost**
+
+**Data type**: Non-negative integer<br>
+**Cardinality**: [0..1]<br>
+**Description**: Total cost of the remedial action, in Euro (€).<br>
+**Guidance**: Reporting is conditional.<br>
+**QC V063**: The value is not a valid whole number.<br>
+**QC V096**: The value is not a valid non-negative number.<br>
+**QC R035**: If derogationRemedialAction is not 'none', then the derogationRemedialActionCost is required.
+
+**Field: remarks**
+
+**Data type**: Text (1500 characters)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Additional information about the record, in English or in the national language.<br>
+**Guidance**: Reporting is optional.<br>
+**QC V082**: Text is too long (max 1500 characters).
+
+**Table: QualityAndMonitoring**
+***********************************
+
 ### Information on DWD Incidents
 
 ### Information on DWD Exceedances
