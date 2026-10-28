@@ -19,3 +19,9 @@ The following general principles will be applied to the recast DWD reporting:
 - The reporting shall cover, as a minimum, all individual supplies of water that provide 10 m3 per day or more as an average and serve 50 persons or more.
 - The reporting shall be carried out annually.
 
+### General rules for the reporting
+
+### Components of the reporting
+
+### How the European Comission and the EEA will use the information
+
