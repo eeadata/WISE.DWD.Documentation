@@ -103,7 +103,37 @@ It must start with the two-letter country code of the Member State, followed by 
 **QC V001**: The value must not be missing or empty<br>
 **QC V092**: The wiseIdentifier does not have the acceptable format
 
+**Field: organisationName**
+
+**Data type**: Text (250 characters)<br>
+**Cardinality**: [1]<br>
+**Description**: Official name of the competent authority, in English.<br>
+**Guidance**: Reporting is required.<br>
+**QC V031**: The value must not be missing or empty<br>
+**QC V080**: Text is too long (max 250 characters)
+
+**Field: electronicMailAddress**
+
+**Data type**: Text (50 characters)<br>
+**Cardinality**: [1]<br>
+**Description**: E-mail address of the competent authority.<br>
+**Guidance**: Reporting is required.<br>
+**QC V002**: The value must not be missing or empty<br>
+**QC V079**: Text is too long (max 50 characters)
+
+**Field: link**
+
+**Data type**: URL<br>
+**Cardinality**: [0..1]<br>
+**Description**: URL of competent authority's website.<br>
+**Guidance**: Reporting is optional.<br>
+**QC V070**: The value does not follow the expected syntax for a valid URL
+
 ### Information on DWD Derogations under Article 15(1)
+
+Under the DWD 98/83/EC, granted derogations in Member States were communicated and/or requested to the European Commission disconnected from the DWD reporting.<br>
+Under the recast DWD, information on Member States' derogations is integrated in the Article 18 reporting requirements. Article 18.1(e) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on all derogations granted in accordance with Article 15(1), including the information provided for in Article 15(2).<br>
+Each year, all derogations must be reported, not just those granted during the reference year. This reporting is in addition to the communication requirements from Member States to the Commission in accordance with Article 15 of the recast DWD.
 
 ### Information on DWD Incidents
 
