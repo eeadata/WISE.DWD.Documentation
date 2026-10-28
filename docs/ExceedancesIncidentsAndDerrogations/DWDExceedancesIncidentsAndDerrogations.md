@@ -1118,6 +1118,359 @@ If the reported value refers to a derogation, the derogationIdentifier value is 
 **Table: WaterSupply**
 ******************************
 
+**Description**: The WaterSupply table contains information about the water supply during the reporting year.<br>
+**Guidance**: Reporting is required.<br>
+The water supply data must be reported for all water supply zones affected by incidents, exceedances, or derogations.<br>
+The water supply data must be reported for all water supply zones providing an average daily volume of drinking water of 10 m3 or more and serving 50 persons or more.<br>
+**QC T002**: Mandatory table has no records.<br>
+**QC TU011**: Uniqueness and multiplicity constraints - The fields reportingUnitIdentifier and referenceYear are uniques within table.<br>
+**QC XC050**: Water Supply must be linked to at least one Exceedance, Incident or Derogation.
+
+**Field: reportingUnitIdentifier**
+
+**Data type**: wiseIdentifier<br>
+**Cardinality**: [1]<br>
+**Description**: Unique European identifier for the water supply zone.<br>
+**Guidance**: Reporting is required.<br>
+Provide the unique identifier of the water supply zone.<br>
+**QC V041**: The value must not be missing or empty.<br>
+**QC V139**: The value is not a valid member of the referenced list.<br>
+**QC XC013**: Some WSZ from watersupply table do not have an incident (message for information only, as it is not mandatory).<br>
+**QC XC014**: Some WSZ from watersupply table do not have an exceedance (message for information only, as it is not mandatory).<br>
+**QC XC015**: Some WSZ from watersupply table do not have a derogation (message for information only, as it is not mandatory).
+
+**Field: referenceYear**
+
+**Data type**: Non-negative integer<br>
+**Cardinality**: [1]<br>
+**Description**: Year of reference for the reported data, in the format YYYY.<br>
+**Guidance**: Reporting is required.<br>
+**QC V017**: The value must not be missing or empty.<br>
+**QC V048**: The value is not a valid whole number.<br>
+**QC V150**: The reference year is not correct for the planned report.
+
+**Field: populationServed**
+
+**Data type**: Non-negative integer<br>
+**Cardinality**: [1]<br>
+**Description**: Total population served by the water supply, in number of persons.<br>
+**Guidance**: Reporting is required.<br>
+**QC V029**: The value must not be missing or empty.<br>
+**QC V065**: The value is not a valid whole number.<br>
+**QC V107**: The value is not a valid non-negative number.<br>
+**QC V147**: populationServed less than 50 people served.
+
+**Field: volumeOfWaterSupplied**
+
+**Data type**: Non-negative integer<br>
+**Cardinality**: [1]<br>
+**Description**: Average daily volume of water supplied, in cubic metre per day (m3/day).<br>
+**Guidance**: Reporting is required.<br>
+**QC V030**: The value must not be missing or empty.<br>
+**QC V066**: The value is not a valid whole number.<br>
+**QC V108**: The value is not a valid non-negative number.<br>
+**QC V146**: volumeOfWaterSupply less than 10 m3 served.
+
+**Field: remarks**
+
+**Data type**: Text (1500 characters)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Additional information about the record, in English or in the national language.<br>
+**Guidance**: Reporting is optional.<br>
+**QC V089**: Text is too long (max 1500 characters).
+
 ## Spatial reference data for the recast DWD reporting
 
+Being Reporting Units, the spatial data for Water Supply Zones (WSZ) fall under the scope of the [INSPIRE AM](https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http%3A%2F%2Finspire.ec.europa.eu%2Ftheme%2Fam) Theme (Area Management, Restriction, Regulation Zones & Reporting Units), which was established with specific legislative requirements to deliver spatial data related to any environmental media. The INSPIRE AM Theme consists of various concepts explained in detail in the guidance below and is represented in a single table.<br>
+The water supply zones to report are those, at least, affected by an exceedance, incident or derogation. Once a water supply zone has been reported, it must continue to be reported in subsequent years using the support of the prefilling tool (from 2024 onwards). The prefilling tool automatically loads the data reported in the previous year into the spatial tables. If no changes are needed, reporters need to update the wiseEvolutionType from ‘creation’ to ‘noChange’. If a water supply zone needs to be removed, reporters need to update wiseEvolutionType to 'deletion'. If there is a new water supply zone or changes in any of the previously reported ones, all spatial data - not just partial updates – must be reported again. Partial deliveries are not accepted.<br>
+The generic principles and data structures defined in the following document WISE GIS Guidance on the spatial reporting are valid also for the DWD dataflows https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/
 
+For each water supply zone, data providers are requested to provide a unique identifier following the WISE identifiers syntax, and a polygon geometry of the water supply zone. If a polygon geometry is not presently available, and the water supply zone is within a given [Eurostat’s NUTS 2022 level 3 region](https://ec.europa.eu/eurostat/web/nuts/background), then the water supply zone can simply be associated with a NUTS 3 code.<br>
+Note, the spatial data sets must be provided in one of the following coordinate reference systems (CRS):
+- ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258)
+- ETRS89-LAEA (urn:ogc:def:crs:EPSG::3035)
+- WGS 84 (urn:ogc:def:crs:EPSG::4326)
+
+**Templates for the reporting of spatial data as a GeoPackage format are provided in the 2025 reporting dataflow https://reportnet.europa.eu/dataflow/1994 under the ‘Supporting documents’, one template for each CRS.**
+
+**Lifecycle and reporting consistency.**
+
+In the context of the annual reporting cycles, countries are required to submit data related to drinking water, specifically regarding **water supply zone**. To ensure the accuracy and consistency of this data over time, a series of Quality Controls have been introduced. These QCs are designed to track the lifecycle of the reported elements, ensuring that if **a water supply zone** was reported in the previous reporting year, it must be included again in the current cycle even if it is just to notify that the previously reported **water supply zone** is no longer valid.
+
+This process helps maintain continuity in the data reporting and ensures that past submissions are consistently updated and aligned with the most recent reporting standards. It also ensures that countries submit the correct data, reflecting any updates or changes made to the **water supply zone**.
+
+This mechanism supports the overall integrity of the reported information and allows for accurate comparison of data over multiple reporting periods.
+
+More detailed information on the lifecycle of spatial objects can be checked in Page 64 of the WISE Spatial Reporting Guidance.
+
+These are the fields of the spatial data:
+
+**Table: WaterSupplyZone**
+
+**QC T001**: A valid 'eu' thematic identifier exists in the register but was not reported in the spatial file.<br>
+**QC TU001**: Mandatory table has no records.<br>
+**QC TU002**: The inspireIdLocalId and inspireIdNamespace combination must be unique for each object.<br>
+**QC TU003**: The thematicIdIdentifier and thematicIdIdentifierScheme combination must be unique for each object.<br>
+**QC RF003**: The thematic identifier that is replacing this object has been superseded, deprecated or is invalid.<br>
+**QC RF013**: The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set.<br>
+**QC RF015**: If you have not reported yet in the previous reporting cycle, you cannot report here.
+
+**Field: geometry_polygon**
+
+**Data type**: geometry_polygon<br>
+**Cardinality**: [0..1]<br>
+**Description**: Polygon geometry or NULL value is expected.<br>
+**Guidance**: If the Water Supply Zone is defined as equivalent to a NUTS level 3 region then the geometry is not compulsory.<br>
+Reporting is conditional.<br>
+**QC S001**: The value does not follow the expected syntax for a valid multipolygon {%reason%}.<br>
+**QC S002**: Unsupported SRID.<br>
+**QC S003**: Geometry is not valid. Reason: {%reason%}.<br>
+**QC S005**: The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA).<br>
+**QC S006**: The geometry must not have anomalous geometric points, such as self-intersections.<br>
+**QC S007**: The geometry of the WaterSupplyZone must not overlap each other (100 meters tolerance). Overlaps: {%thematicididentifier%}.<br>
+**QC S008**: The geometry of the water supply zone is not contained in the geometry of the related NUT3.<br>
+**QC S009**: If the geometry of WSZ is null or empty, the relatedZoneIdentifier must be compulsory.
+
+**Field: inspireIdLocalId**
+
+**Guidance reference**: Page 57 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V002**: The inspireIdLocalId value must be a string with less than 255 characters.<br>
+**QC V015**: The value must not be missing or empty.
+
+**Field: inspireIdNamespace**
+
+**Guidance reference**: Page 57- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V003**: The inspireIdNamespace value must be a string with less than 255 characters.<br>
+**QC V019**: The value must not be missing or empty.
+
+**Field: inspireIdVersionId**
+
+**Guidance reference**: Page 57- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**QC V004**: The inspireIdVersionId value must be a non-empty string with less than 25 characters.<br>
+**QC R013**: The inspireIdVersionId value must be reported, if the wiseEvolutionType value describes a change in the area and/or depth of the water body.<br>
+**QC R014**: The inspireIdVersionId value must be reported, if the wiseEvolutionType value is 'change'.
+
+**Field: thematicIdIdentifier**
+
+**Guidance reference**: Page53 [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V005**: The thematicIdIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hyphen and the underscore can be used as non-consecutive separators).<br>
+**QC V024**: The value must not be missing or empty.<br>
+**QC RC05A**: The thematicIdIdentifier value must be reported, if the thematicIdIdentifierScheme value is reported.
+
+**Field: thematicIdentifierScheme**
+
+**Data type**: identifierScheme code list value<br>
+**Cardinality**: [1]<br>
+**Description**: WISE scheme under which the identifiers are stored.<br>
+**Guidance**: Identifier defining the scheme used to assign the thematicIdentifier. The WISE Identifier Schemes are used for this field.<br>
+If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReportingUnitCode’ must be reported.<br>
+**Guidance**: Reporting is required.<br>
+**QC V016**: The value must not be missing or empty.<br>
+**QC V032**: The thematicIdIdentifierScheme value is not valid.<br>
+**QC RC06A**: The thematicIdIdentifierScheme value must be reported, if the thematicIdIdentifier value is reported.
+
+**Field: beginLifespanVersion**
+
+**Guidance reference**: Page 39- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Date when the record was created. Set to reporting date, if unknown.<br>
+**QC V006**: The beginLifespanVersion value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+**QC R002**: The beginLifespanVersion value must be reported, if the inspireVersionId value is reported.<br>
+**QC R003**: The beginLifespanVersion date must not be after the endLifespanVersion.<br>
+**QC R016**: The beginLifespanVersion value must be reported, unless the wiseEvolutionType is 'creation' or 'noChange'.<br>
+**QC RC09A**: The beginLifespanVersion value must be reported, if the endLifespanVersion value is reported.
+
+**Field: endLifespanVersion**
+
+**Guidance reference**: Page 39- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**Description**: The value must be NULL in the first reporting cycle.<br>
+**QC R001**: the endLifespanVersion has to be empty, if wiseEvolutionType is 'Creation'.<br>
+**QC R015**: The endLifespanVersion value must be reported, if the wiseEvolutionType is 'deletion'.
+
+**Field: predecessorsIdentifier**
+
+**Guidance reference**: Page 39 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..n]<br>
+**Description**: The value must be NULL in the first reporting cycle.<br>
+**QC V036**: The predecessorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
+**QC R011**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation'.<br>
+**QC R022**: The predecessorsIdentifier value must be reported, if the predecessorsIdentifierScheme value is reported.<br>
+**QC R024**: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
+**QC RF012**: The object has a predecessor that does not exist in the register.<br>
+**QC RF014**: The object has a predecessor with a different zone type.<br>
+**QC XC007**: Objects with the same predecessor must have the same designationPeriodBegin value.
+
+**Field: predecessorsIdentifierScheme**
+
+**Guidance reference**: Page 39 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**Description**: The value must be NULL in the first reporting cycle.<br>
+**QC V037**: Invalid predecessorsIdentifierScheme value for this spatial object type.<br>
+**QC R011**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation'.<br>
+**QC R023**: The predecessorsIdentifierScheme value must be reported, if the predecessorsIdentifier value is reported.<br>
+**QC R024**: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).
+
+**Field: successorsIdentifier**
+
+**Guidance reference**: Page 40- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..n]<br>
+**QC V041**: The successorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
+**QC R025**: The successorsIdentifier value must be reported, if the successorsIdentifierScheme value is reported.<br>
+**QC R026**: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).
+
+**Field: successorsIdentifierScheme**
+
+**Guidance reference**: Page 40- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**QC V038**: Invalid successorsIdentifierScheme value for this spatial object type.<br>
+**QC R026**: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
+**QC R027**: The successorsIdentifierScheme value must be reported, if the successorsIdentifier value is reported.
+
+**Field: wiseEvolutionType**
+
+**Guidance reference**: Page 64 – [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**Description**: The value must be 'creation' in the first reporting cycle.<br>
+**QC V017**: The value must not be missing or empty.<br>
+**QC V027**: The value is not a valid member of the referenced list.<br>
+**QC R017**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation', 'change' or 'noChange'.<br>
+**QC R018**: The object must have one and only one predecessor, if the wiseEvolutionType value is 'changeCode' or 'splitting'.<br>
+**QC R019**: The object must have two or more predecessors, if the wiseEvolutionType value is 'aggregation' or 'changeBothAggregationAndSplitting'.<br>
+**QC R021**: wiseEvolutionType = 'deletion' is the only valid option if the element has a successor.<br>
+**QC RF002**: If an object is reported as 'deletion', it must have the same predecessors as before.<br>
+**QC RF005**: The thematic identifier must be a valid identifier in the register, if the wiseEvolutionType value is 'deletion', 'noChange' or 'change'.<br>
+**QC RF006**: The thematic identifier must not exist in the register, unless the wiseEvolutionType value is 'deletion', 'noChange' or 'change'.<br>
+**QC XC001**: A spatial object with wiseEvolutionType value equal to 'changeCode' must not have the same predecessor of another spatial object.<br>
+**QC XC002**: At least one predecessor of an object with wiseEvolutionType value equal to 'splitting' or 'changeBothAggregationAndSplitting' must be reported as predecessor of another spatial object.<br>
+**QC XC003**: If an identifier is the predecessor of 2 or more objects, then those objects must have wiseEvolution in ('splitting', 'changeBothAggregationAndSplitting').<br>
+**QC XC004**: The object has wiseEvolutionType = 'deletion' and is a predecessor to other objects reported in the data set. The identifiers of the successors must be reported consistently.<br>
+**QC XC006**: The spatial object must have wiseEvolutionType value equal to 'deletion' if it is also reported as predecessor to another spatial object.
+
+**Field: nameTextInternational**
+
+**Guidance reference**: Page 41- - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V023**: The value must not be missing or empty.<br>
+**QC V007**: The nameTextInternational value must be a string with less than 255 characters. Upper case letters (A to Z) and digits (0 to 9) are allowed (spaces and hyphens can be used as separators).
+
+**Field: nameText**
+
+**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V008**: The nameText value must be a string with less than 255 characters.<br>
+**QC V001**: The used encoding is not correct. Strange characters in nameText field.<br>
+**QC V022**: The value must not be missing or empty.
+
+**Field: nameLanguage**
+
+**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V018**: The value must not be missing or empty.<br>
+**QC V028**: The value is not a valid member of the referenced list.
+
+**Field: designationPeriodBegin**
+
+**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [1]<br>
+**QC V009**: The designationPeriodBegin value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+**QC V021**: The value must not be missing or empty.<br>
+**QC R004**: The designationPeriodBegin date must not be after the designationPeriodEnd.<br>
+**QC RF007**: If wiseEvolutionType in ('deletion','change','noChange'), the designationPeriodBegin must be equal to the designationPeriodBegin of the object in the register.<br>
+**QC RF008**: If wiseEvolutionType in ('splitting','aggregation','changeBothAggregationAndSplitting','changeExtendedArea','changeExtendedDepth','changeExtendedAreaAndDepth','changeReducedArea','changeReducedDepth','changeReducedAreaAndDepth'), the designationPeriodBegin value must be higher than the designationPeriodBegin value of the predecessor.<br>
+**QC RF010**: If wiseEvolutionType is in ('change','noChange') then, the designationPeriodBegin cannot be lower than the one stored in the registry for the same element.<br>
+**QC XC005**: The designationPeriodBegin for the successor can not be the same as the designationPeriodBegin of the object being replaced.
+
+**Field: designationPeriodEnd**
+
+**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**Description**: The value must be NULL if wiseEvolutionType = 'creation'.<br>
+**QC V010**: The designationPeriodEnd value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+**QC R020**: The designationPeriodEnd date must be reported, if the wiseEvolutionType value is 'deletion'.<br>
+**QC R045**: Multiple exceedances overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.
+
+**Field: zoneType**
+
+**Data type**: zoneType code list value.<br>
+**Cardinality**: [1]<br>
+**Description**: Zone classification. ‘waterSupplyZone’ must be reported.<br>
+**Guidance**: Reporting is required.<br>
+**QC V020**: The value must not be missing or empty.<br>
+**QC V029: The value is not a valid member of the referenced list.**
+
+**Field: specialisedZoneType**
+
+**Data type**: specialisedZoneType code list value.<br>
+**Cardinality**: [0..1]<br>
+**Description**: The value must be NULL if zoneType = 'waterSupplyZone'.<br>
+**Guidance**: The value should be empty.<br>
+**QC V026**: specialisedZoneType should be empty.
+
+**Field: legalBasisName**
+
+**Guidance reference**: Page 43 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**QC V011**: The legalBasisName value must be a string with less than 255 characters.<br>
+**QC R007**: if legalBasisLevel = 'european' then legalBasisName must have the value 'Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)'.
+
+**Field: legalBasisLink**
+
+**Guidance reference**: Page 43- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**QC V012**: The legalBasisLink value must be an URL with less than 255 characters.<br>
+**QC R009**: if legalBasisLevel = 'european' then legalBasisLink must have the value 'https://eur-lex.europa.eu/eli/dir/2020/2184/oj'.
+
+**Field: legalBasisLevel**
+
+**Guidance reference**: Page 43- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**QC V033**: The value is not a valid member of the referenced list.
+
+**Field: relatedZoneIdentifier**
+
+**Data type**: Page 44- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
+**Cardinality**: [0..1]<br>
+**Description**: Reference to a related management, regulation or restriction zone.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC R006**: The relatedZoneIdentifier value must be reported, if the relatedZoneIdentifierScheme value is reported.<br>
+**QC RF001**: The relatedZoneIdentifier must exist in the list of NUTS3.
+
+**Field: relatedZoneIdentifierScheme**
+
+**Data type**: identifierScheme code list value<br>
+**Cardinality**: [0..1]<br>
+**Description**: Identifier defining the scheme used to assign the relatedZoneIdentifier. The WISE Identifier Schemes are used for this field. Identifier of higher-level spatial object. In the current reporting, the NUTS units to which the WSZ belongs can be reported. Where the related Water Supply Zone is equivalent to a NUTS level 3 region then ‘nuts2024’ is reported.<br>
+**Guidance**: Reporting is conditional.<br>
+**QC V030**: The relatedZoneIdentifierScheme value is not valid.<br>
+**QC R008**: The relatedZoneIdentifierScheme value must be reported, if the relatedZoneIdentifier value is reported.
+
+**Field: sizeValue**
+
+**Data type**: Numeric value.<br>
+**Cardinality**: [0..1]<br>
+**Description**: Report only if the geometry value is NULL.<br>
+**Guidance**: Provide an estimate of the total area in square kilometres. Reporting is conditional.<br>
+**QC V013**: The sizeValue value must be a positive number.<br>
+**QC V025**: The value is not a valid whole or decimal number.<br>
+**QC R010**: If the geometry is NULL, the sizeValue is mandatory.
+
+**Field: sizeUom**
+
+**Data type**: sizeUom code list value<br>
+**Cardinality**: [0..1]<br>
+**Description**: Report only if the sizeValue is provided.<br>
+**Guidance**: Reporting is conditional.<br>
+**R005**: If sizeUom is reported then sizeValue must also be reported. If sizeValue is reported then sizeUOM must also be reported.<br>
+**QC V031**: The value is not a valid member of the referenced list.
+
+**Field: link**
+
+**Data type**: URL<br>
+**Cardinality**: [0..1]<br>
+**Guidance**: Reporting is optional.<br>
+**QC V014**: The link value must be an URL with less than 255 characters.
