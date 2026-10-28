@@ -35,3 +35,8 @@ The following general principles will be applied to the recast DWD reporting:
 
 ### Information on DWD Derogations under Article 15(1)
 
+### Information on DWD Incidents
+
+### Information on DWD Exceedances
+
+
