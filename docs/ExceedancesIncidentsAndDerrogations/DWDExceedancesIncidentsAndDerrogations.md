@@ -25,3 +25,13 @@ The following general principles will be applied to the recast DWD reporting:
 
 ### How the European Comission and the EEA will use the information
 
+### Information Note on Progressive Reporting for Member States
+
+## Decripive data for the recast DWD reporting
+
+### Introduction
+
+### Information on the authority responsible for reporting
+
+### Information on DWD Derogations under Article 15(1)
+
