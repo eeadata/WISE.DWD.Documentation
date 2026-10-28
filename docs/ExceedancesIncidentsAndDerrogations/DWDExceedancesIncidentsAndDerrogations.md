@@ -41,7 +41,7 @@ The descriptive data sets are described in Chapter 2 and include:
 
 The spatial data set is described in Chapter 3, which contains the WISE GIS Guidance DWD annex.
 
-![Figure 1-1](img/Figure1.png)
+![Figure 1](img/Figure1.png)
 Figure 1: Reporting tables and main relationships between tables.
 
 ### How the European Comission and the EEA will use the information
@@ -59,11 +59,49 @@ In addition, the EEA may use the information to supplement the data collected th
 
 ### Information Note on Progressive Reporting for Member States
 
+Please take the following into account when preparing and submitting reports.
+DWD reporting follows an annual reporting cycle and must be submitted in chronological order. This means that reporting must begin with the earliest reporting year (e.g. 2023), followed by subsequent years (2024, 2025, etc.). It is not possible to start reporting directly with a later year such as 2025.
+As a result, the following situation may occur: If releases for 2023, 2024, and 2025 have already been submitted and accepted, and a correction is subsequently required for the 2023 release, a new release for 2023 must be submitted. Once this updated 2023 is released, the previously accepted releases for 2024 and 2025 will automatically be rejected. This is because the updated 2023 release modifies the reference data used during the validation process. Consequently, the later releases (2024 and 2025), which were validated against the previous version of the reference data, are no longer considered valid and must be resubmitted and validated against the updated reference data.
+
+![Figure 2](img/Figure2.png)<br>
+Figure 2: Reporting process Schema
+
 ## Decripive data for the recast DWD reporting
 
 ### Introduction
 
+Chapter 2 provides instructions to assist the Member States on reporting the information about exceedances, incidents, and derogations, as required under article 18.1 (c), (d) and (e) of the recast DWD 2020/2184/EC.<br>
+The content of the descriptive data reporting template is briefly described in Table 1 below.
+
+Table 1: Tables in the descriptive data reporting template.
+| Scope | Table name | Content |
+| :--- | :--- | :--- |
+| DWD Competent Authorities | ResponsibleParty | Contact information of the reporting responsible party |
+| DWD Derogation under Article 15(1) | - Derogation<br>- DerogationRemedialAction<br>- QualityAndMonitoring | - General information on the derogations<br>- Information on the remedial actions for each derogation<br>- Information on quality and monitoring scheme requirements for the parameter of the derogation. |
+| DWD Incidents and Exceedances | - Incident<br>- IncidentCauseAndRemedialAction<br>- Exceedance<br>- ExceedanceCauseRemedialAction | - General information on the incidents<br>- Information on causes for the reported incidents and remedial actions<br>- General information on exceedances<br>- Information on causes for the reported exceedances and remedial actions |
+| DWD Water Supply and Monitoring Results | - MonitoringResult<br>- WaterSupply | - Monitoring results in case of derogations and exceedances<br>- Information on the annual water supply and population served per water supply zone. |
+
+
 ### Information on the authority responsible for reporting
+
+**Table: ResponsibleParty**
+****************************
+**Description**: The ResponsibleParty table contains the information allowing the identification and contact with the competent authority responsible for reporting under the recast DWD.<br>
+**Guidance**: Reporting is required.<br>
+**QC T001**: Mandatory table has no records<br>
+**QC TU001**: Uniqueness and multiplicity constraints - The field responsiblePartyIdentifier is unique within table.<br>
+**QC RF009**: You need to report first the data in the previous reporting cycle.
+
+**Field: responsiblePartyIdentifier**
+
+**Data type**: wiseIdentifier
+**Cardinality**: [1]
+**Description**: Unique European identifier for the competent authority
+**Guidance**: Reporting is required. Provide a unique identifier code for each competent authority in charge of the DWD reporting. The identifier must also be used in subsequent reference years.<br>
+The identifier must follow the syntax of the WISE identifiers.<br>
+It must start with the two-letter country code of the Member State, followed by one character that can be a digit or an uppercase letter, followed by a sequence of characters (0 to 38 characters long) that can be digits or uppercase letters, with no consecutive double hyphens or double underscores, but allowing for single hyphens or underscores between characters. The code can optionally end with one character that can be a digit or an uppercase letter. Example: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341 but not FR1__XYZ1234__1 or FR1--XYZ1234--1.<br>
+**QC V001**: The value must not be missing or empty<br>
+**QC V092**: The wiseIdentifier does not have the acceptable format
 
 ### Information on DWD Derogations under Article 15(1)
 
