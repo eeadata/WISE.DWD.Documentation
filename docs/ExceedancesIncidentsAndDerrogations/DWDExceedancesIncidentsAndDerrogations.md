@@ -1,6 +1,16 @@
 # GUIDANCE DOCUMENT ON REPORTING UNDER THE RECAST DRINKING WATER DIRECTIVE 2020/2184/EC (2025)
 
+| List of Acronyms | |
+|---|---|
+| DWD | Drinking Water Directive |
+| EEA | European Environment Agency |
+| EU | European Union |
+| WFD | Water Framework Directive |
+| WSZ | Water Supply Zone |
+
 ## Introduction
+
+### Purpose and structure of the document
 
 The present document provides guidance to Member States in reporting the information required under article 18.1 (c), (d) and (e) of the [recast Drinking Water Directive](https://eur-lex.europa.eu/eli/dir/2020/2184/oj) 2020/2184/EC on the quality of water intended for human consumption. If you need further assistance, please contact dwd.helpdesk@eionet.europa.eu.
 The document consists of three chapters.
@@ -75,11 +85,17 @@ The content of the descriptive data reporting template is briefly described in T
 
 Table 1: Tables in the descriptive data reporting template.
 | Scope | Table name | Content |
-| :--- | :--- | :--- |
+|---|---|---|
 | DWD Competent Authorities | ResponsibleParty | Contact information of the reporting responsible party |
-| DWD Derogation under Article 15(1) | - Derogation<br>- DerogationRemedialAction<br>- QualityAndMonitoring | - General information on the derogations<br>- Information on the remedial actions for each derogation<br>- Information on quality and monitoring scheme requirements for the parameter of the derogation. |
-| DWD Incidents and Exceedances | - Incident<br>- IncidentCauseAndRemedialAction<br>- Exceedance<br>- ExceedanceCauseRemedialAction | - General information on the incidents<br>- Information on causes for the reported incidents and remedial actions<br>- General information on exceedances<br>- Information on causes for the reported exceedances and remedial actions |
-| DWD Water Supply and Monitoring Results | - MonitoringResult<br>- WaterSupply | - Monitoring results in case of derogations and exceedances<br>- Information on the annual water supply and population served per water supply zone. |
+| DWD Derogation under Article 15(1) | Derogation | General information on the derogations |
+| DWD Derogation under Article 15(1) | DerogationRemedialAction | Information on the remedial actions for each derogation |
+| DWD Derogation under Article 15(1) | QualityAndMonitoring | Information on quality and monitoring scheme requirements for the parameter of the derogation. |
+| DWD Incidents and Exceedances | Incident | General information on the incidents |
+| DWD Incidents and Exceedances | IncidentCauseAndRemedialAction | Information on causes for the reported incidents and remedial actions |
+| DWD Incidents and Exceedances | Exceedance | General information on exceedances |
+| DWD Incidents and Exceedances | ExceedanceCauseRemedialAction | Information on causes for the reported exceedances and remedial actions |
+| DWD Water Supply and Monitoring Results | MonitoringResult | Monitoring results in case of derogations and exceedances |
+| DWD Water Supply and Monitoring Results | WaterSupply | Information on the annual water supply and |
 
 
 ### Information on the authority responsible for reporting
