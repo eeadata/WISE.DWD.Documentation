@@ -7,7 +7,7 @@ Risk Assessment Within Catchment Areas
    :hidden:
    :maxdepth: 1
 
-DWDRiskAssessmentWithinCatchmentAreas
+   DWDRiskAssessmentWithinCatchmentAreas
 
 * :doc:`DWDRiskAssessmentWithinCatchmentAreas`
 
