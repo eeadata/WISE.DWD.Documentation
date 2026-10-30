@@ -1,0 +1,2561 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data sets on exceedances, incidents, and derogations (2025) &#8212; WISE.DWD.Documentation  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/customTable.css?v=0cc09019" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=18a8d5f5"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ExceedancesIncidentsAndDerrogations/DWDExceedancesIncidentsAndDerrogations';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data sets on exceedances, incidents, and derogations (2023-2024)" href="DWDExceedancesIncidentsAndDerogations2023_2024.html" />
+    <link rel="prev" title="Exceedances, incidents and derogations" href="index.html" /> 
+<link rel="stylesheet" type="text/css" href="../_static/handsontable.full.min.css">
+<script src="../_static/handsontable.full.min.js"></script>
+
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/wise.svg" class="logo__image only-light" alt="WISE DWD Documentation"/>
+    <img src="../_static/wise.svg" class="logo__image only-dark pst-js-only" alt="WISE DWD Documentation"/>
+  
+  
+    <p class="title logo__title">Drinking Water Directive</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="ms-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Exceedances, incidents and derogations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../RiskAssessmentWithinCatchmentAreas/index.html">
+    Risk Assessment Within Catchment Areas
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DrinkingWaterProtectionAreas/index.html">
+    Drinking water protection areas and safeguard zones
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Exceedances, incidents and derogations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../RiskAssessmentWithinCatchmentAreas/index.html">
+    Risk Assessment Within Catchment Areas
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DrinkingWaterProtectionAreas/index.html">
+    Drinking water protection areas and safeguard zones
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Data sets on exceedances, incidents, and derogations (2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DWDExceedancesIncidentsAndDerogations2023_2024.html">Data sets on exceedances, incidents, and derogations (2023-2024)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Exceedances, incidents and derogations</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Data sets on exceedances, incidents, and derogations (2025)</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-sets-on-exceedances-incidents-and-derogations-2025">
+<h1>Data sets on exceedances, incidents, and derogations (2025)<a class="headerlink" href="#data-sets-on-exceedances-incidents-and-derogations-2025" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>List of Acronyms</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DWD</p></td>
+<td><p>Drinking Water Directive</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEA</p></td>
+<td><p>European Environment Agency</p></td>
+</tr>
+<tr class="row-even"><td><p>EU</p></td>
+<td><p>European Union</p></td>
+</tr>
+<tr class="row-odd"><td><p>WFD</p></td>
+<td><p>Water Framework Directive</p></td>
+</tr>
+<tr class="row-even"><td><p>WSZ</p></td>
+<td><p>Water Supply Zone</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<section id="purpose-and-structure-of-the-document">
+<h3>Purpose and structure of the document<a class="headerlink" href="#purpose-and-structure-of-the-document" title="Link to this heading">#</a></h3>
+<p>The present document provides guidance to Member States in reporting the information required under article 18.1 (c), (d) and (e) of the <a class="reference external" href="https://eur-lex.europa.eu/eli/dir/2020/2184/oj">recast Drinking Water Directive</a> 2020/2184/EC on the quality of water intended for human consumption. If you need further assistance, please contact dwd.helpdesk&#64;eionet.europa.eu.
+The document consists of three chapters.</p>
+<ul class="simple">
+<li><p>Chapter 1 gives information about the legal context, rules, components, and purpose of the reporting.</p></li>
+<li><p>Chapter 2 describes the data content and structure that must be followed to report the recast Drinking water Directive (DWD) annual data sets on exceedances, incidents, and derogations. Member States must follow the reporting templates when submitting the data in the <a class="reference external" href="https://reportnet.europa.eu/">Reportnet 3 platform</a>.</p></li>
+<li><p>Chapter 3 describes the data content and structure that must be followed to report the DWD reference spatial data sets. It refers to the WISE GIS Guidance which describes the structure of water supply zones spatial data set.</p></li>
+</ul>
+</section>
+<section id="legal-context-and-general-approach-of-the-recast-dwd-reporting">
+<h3>Legal context and general approach of the recast DWD reporting<a class="headerlink" href="#legal-context-and-general-approach-of-the-recast-dwd-reporting" title="Link to this heading">#</a></h3>
+<p>By January 2023, pursuant to Article 18.1 (c), (d) and (e) of the recast DWD, Member States have to set up data sets containing monitoring results on exceedances, information on incidents, and derogations. Member States must update these data sets annually thereafter. Pursuant to Article 18.2 of the recast DWD, Member States must ensure that the European Commission, the European Environment Agency (EEA) and the European Centre for Disease Prevention and Control have access to the data sets.
+To harmonise the Member States’ data sets and the data transfer to the European Commission, whilst considering the technical reporting possibilities within the Member States, DG Environment has organised several workshops on the recast DWD reporting. Based on the workshops held in 2021 and 2022, a reporting template and a reporting mechanism were defined. The reporting template will enable Member States to report the DWD annual data sets on exceedances, incidents, and derogations via the EEA <a class="reference external" href="https://reportnet.europa.eu/">Reportnet 3 platform</a>.<br>
+The following general principles will be applied to the recast DWD reporting:</p>
+<ul class="simple">
+<li><p>The reporting shall cover water intended for human consumption. Water intended for human consumption means:</p>
+<ul>
+<li><p>all water, intended for drinking, cooking, food preparation or other domestic purposes in both public and private premises, whether in its original state or after treatment, and regardless of its origin and whether it is supplied from a distribution network, supplied from a tanker or put into bottles or containers, including spring waters;</p></li>
+<li><p>all water used in any food business for the manufacture, processing, preservation or marketing of products or substances intended for human consumption.</p></li>
+</ul>
+</li>
+<li><p>The reporting shall cover, as a minimum, all individual supplies of water that provide 10 m3 per day or more as an average and serve 50 persons or more.</p></li>
+<li><p>The reporting shall be carried out annually.</p></li>
+</ul>
+</section>
+<section id="general-rules-for-the-reporting">
+<h3>General rules for the reporting<a class="headerlink" href="#general-rules-for-the-reporting" title="Link to this heading">#</a></h3>
+<p>The following general rules apply to the reporting under Article 18.1 (c), (d) and (e) of the recast DWD:</p>
+<ul class="simple">
+<li><p>Reporting by Member States to the European Commission shall be made in electronic format to the EEA Reportnet 3 platform.</p></li>
+<li><p>The data to be submitted shall be in accordance with the Article 18 provisions of the recast DWD. Supportive information may be supplied by the Member States in the form of document files but that is not mandatory.</p></li>
+<li><p>The data shall be structured according to the reporting format (templates) and modalities described in this document.</p></li>
+<li><p>Descriptive data can be structured using an Excel reporting template, to facilitate the data transfer.1</p></li>
+<li><p>Spatial reference data can be structured using a Geopackage template, to facilitate the data transfer.1</p></li>
+<li><p>Member States shall be responsible for the annually updated data set reporting to the European Commission and for the accuracy of the reported data.</p></li>
+</ul>
+</section>
+<section id="components-of-the-reporting">
+<h3>Components of the reporting<a class="headerlink" href="#components-of-the-reporting" title="Link to this heading">#</a></h3>
+<p>In line with the requirements under article 18.1 (c), (d) and (e) of the recast DWD 2020/2184/EC, the reporting contains descriptive data sets on competent authorities, exceedances, incidents, derogations, and monitoring results. The water supply zone is the reporting unit for the data on exceedances, incidents, derogations, and monitoring results. The water supply zones are defined by the Member States. A water supply zone is a geographically defined area within which water intended for human consumption comes from one or more sources and within which the water quality can be considered a being approximately uniform. Water supply zones should be reported using NUTS3 codes but can also be reported using a spatial data set.</p>
+<p>The descriptive data sets are described in Chapter 2 and include:</p>
+<ul class="simple">
+<li><p>General information on <strong>competent authorities</strong>, i.e., the parties responsible for the reporting.</p></li>
+<li><p><strong>Monitoring results</strong>, in the case of <strong>exceedances</strong> of the parametric values set out in Parts A and B of Annex I of the recast DWD, collected in accordance with Articles 9 and 13 and information about the <strong>remedial actions</strong> taken in accordance with Article 14. (Article 18.1.c – Exceedances, reported annually).</p></li>
+<li><p>Information on <strong>incidents</strong> relating to water intended for human consumption that have caused a potential risk to human health, regardless of whether any failure to meet the parametric values occurred, that lasted for more than 10 consecutive days and that affected at least 1 000 people, including the causes of those incidents and remedial actions taken in accordance with Article 14. (Article 18.1.d – Incidents, reported annually).</p></li>
+<li><p>Information on all <strong>derogations</strong> granted in accordance with Article 15(1), including the information provided for in Article 15(2). (Article 18.1.e – Derogations, reported annually).</p></li>
+</ul>
+<p>The spatial data set is described in Chapter 3, which contains the WISE GIS Guidance DWD annex.</p>
+<p><img alt="Figure 1" src="../_images/Figure1.png" />
+Figure 1: Reporting tables and main relationships between tables.</p>
+</section>
+<section id="how-the-european-comission-and-the-eea-will-use-the-information">
+<h3>How the European Comission and the EEA will use the information<a class="headerlink" href="#how-the-european-comission-and-the-eea-will-use-the-information" title="Link to this heading">#</a></h3>
+<p>The information provided annually by the Member States under Article 18.1 (c), (d) and (e) of the recast DWD will be used for the following purposes:</p>
+<ul class="simple">
+<li><p>To assess whether the implementation of the requirements of the recast DWD is sufficient in each Member State (i.e., compliance assessment).</p></li>
+<li><p>To enable the European Commission to monitor and assess the implementation of the recast DWD in relation to the objectives it pursues, to inform any future evaluation of this Directive in accordance with paragraph 22 of the Interinstitutional Agreement of 13 April 2016 on Better Law-Making.</p></li>
+<li><p>At EU and Member State level, for the assessment of critical pollutants that lead to exceedances on parametric values, and of the main categories of incidents.</p></li>
+<li><p>According to Article 18.3 of the recast DWD, the EEA shall publish and update a Union-wide overview using the data provided by the Member States on a regular basis or upon request from the European Commission.</p></li>
+</ul>
+<p>The water supply zone is the reporting unit used in the data sets required by article 18.1 (c), (d) and (e) of the DWD, when reporting the annual data on exceedances, incidents and derogations, their causes and the remedial actions taken.
+The data assessed by the European Commission can be presented at water supply zone level, and as aggregated information at national and EU levels. The European Commission requires data at water supply zone level to properly assess the DWD implementation.</p>
+<p>In addition, the EEA may use the information to supplement the data collected through other reporting streams when producing European, pan-European and regional integrated environmental data and indicator sets, assessments and thematic analyses.</p>
+</section>
+<section id="information-note-on-progressive-reporting-for-member-states">
+<h3>Information Note on Progressive Reporting for Member States<a class="headerlink" href="#information-note-on-progressive-reporting-for-member-states" title="Link to this heading">#</a></h3>
+<p>Please take the following into account when preparing and submitting reports.
+DWD reporting follows an annual reporting cycle and must be submitted in chronological order. This means that reporting must begin with the earliest reporting year (e.g. 2023), followed by subsequent years (2024, 2025, etc.). It is not possible to start reporting directly with a later year such as 2025.
+As a result, the following situation may occur: If releases for 2023, 2024, and 2025 have already been submitted and accepted, and a correction is subsequently required for the 2023 release, a new release for 2023 must be submitted. Once this updated 2023 is released, the previously accepted releases for 2024 and 2025 will automatically be rejected. This is because the updated 2023 release modifies the reference data used during the validation process. Consequently, the later releases (2024 and 2025), which were validated against the previous version of the reference data, are no longer considered valid and must be resubmitted and validated against the updated reference data.</p>
+<p><img alt="Figure 2" src="../_images/Figure2.png" /><br>
+Figure 2: Reporting process Schema</p>
+</section>
+</section>
+<section id="decripive-data-for-the-recast-dwd-reporting">
+<h2>Decripive data for the recast DWD reporting<a class="headerlink" href="#decripive-data-for-the-recast-dwd-reporting" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Chapter 2 provides instructions to assist the Member States on reporting the information about exceedances, incidents, and derogations, as required under article 18.1 (c), (d) and (e) of the recast DWD 2020/2184/EC.<br>
+The content of the descriptive data reporting template is briefly described in Table 1 below.</p>
+<p>Table 1: Tables in the descriptive data reporting template.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scope</p></th>
+<th class="head"><p>Table name</p></th>
+<th class="head"><p>Content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DWD Competent Authorities</p></td>
+<td><p>ResponsibleParty</p></td>
+<td><p>Contact information of the reporting responsible party</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWD Derogation under Article 15(1)</p></td>
+<td><p>Derogation</p></td>
+<td><p>General information on the derogations</p></td>
+</tr>
+<tr class="row-even"><td><p>DWD Derogation under Article 15(1)</p></td>
+<td><p>DerogationRemedialAction</p></td>
+<td><p>Information on the remedial actions for each derogation</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWD Derogation under Article 15(1)</p></td>
+<td><p>QualityAndMonitoring</p></td>
+<td><p>Information on quality and monitoring scheme requirements for the parameter of the derogation.</p></td>
+</tr>
+<tr class="row-even"><td><p>DWD Incidents and Exceedances</p></td>
+<td><p>Incident</p></td>
+<td><p>General information on the incidents</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWD Incidents and Exceedances</p></td>
+<td><p>IncidentCauseAndRemedialAction</p></td>
+<td><p>Information on causes for the reported incidents and remedial actions</p></td>
+</tr>
+<tr class="row-even"><td><p>DWD Incidents and Exceedances</p></td>
+<td><p>Exceedance</p></td>
+<td><p>General information on exceedances</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWD Incidents and Exceedances</p></td>
+<td><p>ExceedanceCauseRemedialAction</p></td>
+<td><p>Information on causes for the reported exceedances and remedial actions</p></td>
+</tr>
+<tr class="row-even"><td><p>DWD Water Supply and Monitoring Results</p></td>
+<td><p>MonitoringResult</p></td>
+<td><p>Monitoring results in case of derogations and exceedances</p></td>
+</tr>
+<tr class="row-odd"><td><p>DWD Water Supply and Monitoring Results</p></td>
+<td><p>WaterSupply</p></td>
+<td><p>Information on the annual water supply and</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="information-on-the-authority-responsible-for-reporting">
+<h3>Information on the authority responsible for reporting<a class="headerlink" href="#information-on-the-authority-responsible-for-reporting" title="Link to this heading">#</a></h3>
+<p><strong>Table: ResponsibleParty</strong></p>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>The ResponsibleParty table contains the information allowing the identification and contact with the competent authority responsible for reporting under the recast DWD.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC T001</p></td>
+<td><p>Mandatory table has no records</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC TU001</p></td>
+<td><p>Uniqueness and multiplicity constraints - The field responsiblePartyIdentifier is unique within table.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC RF009</p></td>
+<td><p>You need to report first the data in the previous reporting cycle.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: responsiblePartyIdentifier</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>wiseIdentifier</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Unique European identifier for the competent authority</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required. Provide a unique identifier code for each competent authority in charge of the DWD reporting. The identifier must also be used in subsequent reference years.<br>The identifier must follow the syntax of the WISE identifiers.<br>It must start with the two-letter country code of the Member State, followed by one character that can be a digit or an uppercase letter, followed by a sequence of characters (0 to 38 characters long) that can be digits or uppercase letters, with no consecutive double hyphens or double underscores, but allowing for single hyphens or underscores between characters. The code can optionally end with one character that can be a digit or an uppercase letter. Example: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341 but not FR1__XYZ1234__1 or FR1–XYZ1234–1.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V001</p></td>
+<td><p>The value must not be missing or empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V092</p></td>
+<td><p>The wiseIdentifier does not have the acceptable format</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: organisationName</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Text (250 characters)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Official name of the competent authority, in English.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V031</p></td>
+<td><p>The value must not be missing or empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V080</p></td>
+<td><p>Text is too long (max 250 characters)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: electronicMailAddress</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Text (50 characters)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>E-mail address of the competent authority.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V002</p></td>
+<td><p>The value must not be missing or empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V079</p></td>
+<td><p>Text is too long (max 50 characters)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: link</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>URL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>URL of competent authority’s website.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is optional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V070</p></td>
+<td><p>The value does not follow the expected syntax for a valid URL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="information-on-dwd-derogations-under-article-15-1">
+<h3>Information on DWD Derogations under Article 15(1)<a class="headerlink" href="#information-on-dwd-derogations-under-article-15-1" title="Link to this heading">#</a></h3>
+<p>Under the DWD 98/83/EC, granted derogations in Member States were communicated and/or requested to the European Commission disconnected from the DWD reporting.<br>
+Under the recast DWD, information on Member States’ derogations is integrated in the Article 18 reporting requirements. Article 18.1(e) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on all derogations granted in accordance with Article 15(1), including the information provided for in Article 15(2).<br>
+Each year, all derogations must be reported, not just those granted during the reference year. This reporting is in addition to the communication requirements from Member States to the Commission in accordance with Article 15 of the recast DWD.</p>
+<p><strong>Table: Derogation</strong></p>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>The table Derogation provides a unique identifier and a general description of each derogation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+<tr class="row-even"><td><p>Guidance</p></td>
+<td><p>The Derogation table must be reported for all derogations in place for the reference year. If a Derogation has been reported in the previous reference year but is still ongoing, it must be reported again.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Information is required for: a) all derogations granted for parameters for which the parametric values are set out in Part B of Annex I of the recast DWD; and b) all derogations granted for additional parameters not included in Annex I for which a parametric value is set out by the Member State in accordance with Article 5(3) of the recast DWD, where the protection of human health within its national territory or part of it so requires.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC TU002</p></td>
+<td><p>Uniqueness and multiplicity constraints - The field derogationIdentifier is unique within table.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R060</p></td>
+<td><p>Derogations cannot overlap in time for a given water supply zone and parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R077</p></td>
+<td><p>There is no monitoring result reported for the derogationIdentifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC RF006</p></td>
+<td><p>If a Derogation was reported for the previous reference year with EndDate falling in a following year, it must be reported again for the current reference year.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC XC001</p></td>
+<td><p>Each derogation where trivialDerogation = ‘no’ in the Derogation table, must have at least one corresponding record in the DerogationRemedialAction table.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: derogationIdentifier</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>wiseIdentifier</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Unique European identifier for the derogation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+<tr class="row-even"><td><p>Guidance</p></td>
+<td><p>Provide a unique identifier code for the derogation. The identifier must also be used in subsequent reference years if the derogation is still in place. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V003</p></td>
+<td><p>The value must not be missing or empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V093</p></td>
+<td><p>The wiseIdentifier does not have the acceptable format</p></td>
+</tr>
+<tr class="row-even"><td><p>QC RF001</p></td>
+<td><p>DerogationIdentifier must be unique historically</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC RF005</p></td>
+<td><p>This derogation ended in the previous reference period</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: trivialDerogation</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>SpecialValue code list value (‘yes’, ‘no’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Was the derogation granted for a trivial exceedance and the problem remedy within 30 days?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+<tr class="row-even"><td><p>Guidance</p></td>
+<td><p>According to Art. 15(3) of the recast DWD, this field means: if the responsible authorities consider the non-compliance with the parametric value to be trivial, and if action taken in accordance with Article 14(2) is sufficient to remedy the problem within 30 days.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V042</p></td>
+<td><p>The value must not be missing or empty</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V071</p></td>
+<td><p>The value is not a valid boolean value</p></td>
+</tr>
+<tr class="row-even"><td><p>QC V158</p></td>
+<td><p>The value must match one of the predefined list entries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R047</p></td>
+<td><p>Trivial derogation lasts longer than 30 days</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R071</p></td>
+<td><p>Non-trivial derogations cannot have endDate = 9999-12-31</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: trivialDerogationJustification</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Text (1500 characters)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>If trivialDerogation = ‘yes’, provide a justification why the derogation was considered trivial.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V090</p></td>
+<td><p>Text is too long ( max 1500 characters)</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R016</p></td>
+<td><p>The value must not be missing or empty, if the derogation is trivial</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: derogationStartDate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Date</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Start date of the derogation in the format YYYY-MM-DD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V045</p></td>
+<td><p>The value is not a valid date (YYYY-MM-DD)</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V152</p></td>
+<td><p>All start dates must be either within or earlier than the reference period.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R012</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R064</p></td>
+<td><p>If derogationEndDate has been reported, derogationStartDate must be reported.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC XC039</p></td>
+<td><p>The derogationStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: derogationEndDate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Date</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>End date of the derogation in the format YYYY-MM-DD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V046</p></td>
+<td><p>The value is not a valid date (YYYY-MM-DD)</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R010</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R021</p></td>
+<td><p>The value must be higher or equal than derogationStartDate</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R065</p></td>
+<td><p>If derogationStartDate is reported then derogationEndDate must be reported and within 30 days</p></td>
+</tr>
+<tr class="row-even"><td><p>QC RF002</p></td>
+<td><p>derogationEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: volumeOfWaterSupplied</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Non-negative integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Average daily volume of water supplied affected by the derogation, in cubic metres per day (m3/day).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V062</p></td>
+<td><p>The value is not a valid whole number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V094</p></td>
+<td><p>The value is not a valid non-negative number.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R018</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field_ foodProductionAffected</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Non-negative integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Estimated total number of people affected by the derogation in the water supply zone.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V061</p></td>
+<td><p>The value is not a valid whole number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V095</p></td>
+<td><p>The value is not a valid non-negative number.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R009</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: foodProductionAffected</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>SpecialValue code list value (‘yes’, ‘no’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Are any food-production undertakings being supplied with drinking water affected by the derogation?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V072</p></td>
+<td><p>The value is not a valid boolean value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R014</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: derogationUnderRecastDWD</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>SpecialValue code list value (‘yes’, ‘no’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Is the derogation granted according to the recast DWD?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V073</p></td>
+<td><p>The value is not a valid boolean value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC V155</p></td>
+<td><p>The value must not be missing or empty.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC V160</p></td>
+<td><p>The value must match one of the predefined list entries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R013</p></td>
+<td><p>If trivialDerogation = ‘yes’, then derogationUnderRecastDWD must be ‘yes’.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: derogationGrounds</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>DerogationGround code list value</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Grounds of the derogation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional. “other” should be used in case of multiple grounds for the derogation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V125</p></td>
+<td><p>The value is not a valid member of the referenced list.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R011</p></td>
+<td><p>The value must not be missing or empty, if the derogation is non-trivial.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: previousDerogationIdentifier</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>wiseIdentifier</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Unique European identifier for the previous derogation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+<tr class="row-even"><td><p>Guidance</p></td>
+<td><p>If a previous derogation exists for the same monitoring parameters and the same water supply zone, report the derogationIdentifier of the previous derogation. Note that in the 1st reporting under the recast DWD, the previous derogation identifiers will not exist in the Reportnet3 system: if that is the case, an identifier must be created by the data provider. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). In subsequent reporting cycles, the identifiers of the previously reported derogations will be available in the Reportnet3 system.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V141</p></td>
+<td><p>The wiseIdentifier does not have the acceptable format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R040</p></td>
+<td><p>If previousDerogationIdentifier exists, then the derogation parameter(s) must be the same.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R066</p></td>
+<td><p>If a previous derogation is explicitly reported, it must have the same water supply zone, parameter and startDate as the reference derogation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R069</p></td>
+<td><p>Derogation cannot overlap in time for a given water supply zone and parameter with its predecessor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: previousDerogationConclusions</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Text (1500 characters)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Conclusions from the review of the previous derogation. This field should summarise the review carried out towards the end of the previous derogation to determine whether sufficient progress has been made.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC R001</p></td>
+<td><p>The value must not be missing or empty, if a previous derogation exists.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: previousDerogationStartDate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Date</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Start date of the previous derogation, in the format YYYY-MM-DD.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V057</p></td>
+<td><p>The value is not a valid date (YYYY-MM-DD).</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R005</p></td>
+<td><p>The value must not be missing or empty, if a previous derogation exists.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: previousDerogationEndDate</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>Date</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cardinality</p></td>
+<td><p>[0..1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>End date of the previous derogation, in the format YYYY-MM-DD.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guidance</p></td>
+<td><p>Reporting is conditional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>QC V059</p></td>
+<td><p>The value is not a valid date (YYYY-MM-DD).</p></td>
+</tr>
+<tr class="row-odd"><td><p>QC R002</p></td>
+<td><p>The value must not be missing or empty, if a previous derogation exists.</p></td>
+</tr>
+<tr class="row-even"><td><p>QC R027</p></td>
+<td><p>The value must be higher than previousDerogationStartDate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: previousDerogationGrounds</strong></p>
+<p><strong>Data type</strong>: DerogationGround code list value<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Legal grounds of the previous derogation.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V128</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R004</strong>: The value must not be missing or empty, if a previous derogation exists.</p>
+<p><strong>Field: reportingUnitIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Provide the unique European identifier for the water supply zone. Note that in the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+The water supply zone must exist in the spatial reference data set WaterSupplyZone.<br>
+<strong>QC V020</strong>: The value must not be missing or empty.<br>
+<strong>QC V111</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC048</strong>: The reported reportingUnitIdentifier, must exist in the WaterSupply table.</p>
+<p><strong>Field: qualityAndMonitoringRequirementIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [0..n]<br>
+<strong>Description</strong>: Unique European identifier(s) for the quality and the monitoring requirement, as reported in the QualityAndMonitoring table. The field value links the derogation to each of the applicable monitoring scheme, parameter and respective maximum permissible value.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Note that multiple values are possible, i.e., a derogation can be linked to more than one monitoring scheme. Multiple values are reported using a semicolon-separated list.<br>
+<strong>QC V129</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R015</strong>: The value must not be missing or empty, if the derogation is non-trivial.<br>
+<strong>QC XC006</strong>: Each derogation may have more than one associated record in the QualityAndMonitoring table if and only if the associated records have different parameterCode values.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V081</strong>: Text is too long (max 1500 characters).<br>
+<strong>QC R028</strong>: If derogationGrounds = ‘other’, reporting is required.</p>
+<p><strong>Table: DerogationRemedialAction</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: In the DerogationRemedialAction table, information shall be reported about the remedial actions linked to all non-trivial derogations. For trivial derogations, reporting is optional.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Note that each derogation may be associated with more than one remedial action.<br>
+Therefore, multiple records of the DerogationRemedialAction table can have the same derogationIdentifier.<br>
+<strong>QC TU010</strong>: Uniqueness and multiplicity constraints - The fields derogationIdentifier and derogationRemedialAction are uniques within table.<br>
+<strong>QC RF007</strong>: The combination of derogationIdentifier and derogationRemedialAction must be unique historically.<br>
+<strong>QC RF020</strong>: If a DerogationRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.</p>
+<p><strong>Field: derogationIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier of the derogation, as reported in the Derogation table.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V034</strong>: The value must not be missing or empty.<br>
+<strong>QC V133</strong>: The derogationIdentifier must exists in table Derogation if the derogation is still open in this reporting cycle.</p>
+<p><strong>Field: derogationRemedialAction</strong></p>
+<p><strong>Data type</strong>: RemedialAction code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Report the remedial action for the derogation.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V132</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC V156</strong>: Checks if the field is missing or empty.<br>
+<strong>QC R062</strong>: The option derogationRemedialAction = ‘none’ is incompatible with any other option.</p>
+<p><strong>Field: derogationRemedialActionStartDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Start date of the remedial action, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V049</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R033</strong>: If derogationRemedialAction is not ‘none’, then the derogationRemedialActionStartDate is required.</p>
+<p><strong>Field: derogationRemedialActionEndDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: End date of the remedial action, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31.<br>
+<strong>QC V050</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R022</strong>: The value must be greater than or equal than derogationRemedialActionStartDate.<br>
+<strong>QC R034</strong>: If derogationRemedialAction is not ‘none’, then the derogationRemedialActionEndDate is required.</p>
+<p><strong>Field: derogationRemedialActionCost</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Total cost of the remedial action, in Euro (€).<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V063</strong>: The value is not a valid whole number.<br>
+<strong>QC V096</strong>: The value is not a valid non-negative number.<br>
+<strong>QC R035</strong>: If derogationRemedialAction is not ‘none’, then the derogationRemedialActionCost is required.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is optional.<br>
+<strong>QC V082</strong>: Text is too long (max 1500 characters).</p>
+<p><strong>Table: QualityAndMonitoring</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: In the QualityAndMonitoring table, information shall be reported on the parameters of non-trivial derogations and on the appropriate monitoring scheme specified in the derogation in accordance with the Article 15(2)(d) requirements of the recast DWD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Non-trivial derogations must be associated with one or more quality and monitoring requirement. Note that the same quality and monitoring requirements may apply to more than one derogation.<br>
+<strong>QC TU003</strong>: Uniqueness and multiplicity constraints - The field qualityAndMonitoringRequirementIdentifier is unique within table.<br>
+<strong>QC R032</strong>: The combination of the values for parameterCode, parameterThresholdValue, parameterThresholdValueUnit, samplingFrequency, samplingPeriod, and samplingLocationType must be unique.<br>
+<strong>QC XC049</strong>: If a qualityAndMonitoringRequirementIdentifier is reported in the QualityAndMonitoring table, the same identifier must appear in the Derogation table.</p>
+<p><strong>Field: qualityAndMonitoringRequirementIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique identifier for the quality and monitoring requirement.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide a unique identifier code for the quality and monitoring requirement. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element).<br>
+The identifier must also be used in subsequent reference years if the requirement is still applicable. A register will be kept with the previously reported quality and monitoring requirements. In other words, the quality and monitoring requirements only need to be reported once and their identifier can be reused in future reporting cycles.<br>
+<strong>QC V004</strong>: The value must not be missing or empty.<br>
+<strong>QC V097</strong>: The wiseIdentifier does not have the acceptable format.</p>
+<p><strong>Field: parameterCode</strong></p>
+<p><strong>Data type</strong>: Parameter code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Parameter which is part of the derogation.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk&#64;eionet.europa.eu.<br>
+<strong>QC V035</strong>: The value must not be missing or empty.<br>
+<strong>QC V134</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: parameterThresholdValue</strong></p>
+<p><strong>Data type</strong>: Non-negative decimal<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Maximum permissible parametric (threshold) value of the parameter, in the unit of measure reported in the parameterThresholdValueUnit field.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V036</strong>: The value must not be missing or empty.<br>
+<strong>QC V055</strong>: The value is not a valid whole or decimal number.<br>
+<strong>QC V098</strong>: The value is not a valid non-negative number.</p>
+<p><strong>Field: parameterThresholdValueUnit</strong></p>
+<p><strong>Data type</strong>: UnitOfMeasure code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unit of measure for the value reported in the parameterThresholdValue field.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Use the code in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk&#64;eionet.europa.eu.<br>
+<strong>QC V037</strong>: The value must not be missing or empty.<br>
+<strong>QC V135</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC017</strong>: If there’s a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]).</p>
+<p>Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of the recast DWD and Reportnet 3.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description of<br>parameterCode</p></th>
+<th class="head text-right"><p>Annex I of the recast DWD</p></th>
+<th class="head"><p></p></th>
+<th class="head text-right"><p>To use in Reportnet 3</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td class="text-right"><p>parametricValue</p></td>
+<td><p>UnitOfMeasure</p></td>
+<td class="text-right"><p>parametricValue</p></td>
+<td><p>UnitOfMeasure</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAS_14797-55-8 - Nitrate</p></td>
+<td class="text-right"><p>50</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>50</p></td>
+<td><p>mg{NO3}/L</p></td>
+</tr>
+<tr class="row-even"><td><p>CAS_14797-65-0 - Nitrite</p></td>
+<td class="text-right"><p>0,5</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>0,5</p></td>
+<td><p>mg{NO2}/L</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAS_14798-03-9 - Ammonium</p></td>
+<td class="text-right"><p>0,5</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>0,5</p></td>
+<td><p>mg{NH4}/L</p></td>
+</tr>
+<tr class="row-even"><td><p>CAS_14866-68-3 - Chlorates</p></td>
+<td class="text-right"><p>0,25</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>250</p></td>
+<td><p>ug/L</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAS_14998-27-7 - Chlorite</p></td>
+<td class="text-right"><p>0,25</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>250</p></td>
+<td><p>ug/L</p></td>
+</tr>
+<tr class="row-even"><td><p>CAS_16984-48-8 - Fluoride</p></td>
+<td class="text-right"><p>1,5</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>1500</p></td>
+<td><p>ug/L</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAS_7440-42-8 - Boron</p></td>
+<td class="text-right"><p>1,5</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>1500</p></td>
+<td><p>ug/L</p></td>
+</tr>
+<tr class="row-even"><td><p>CAS_7440-50-8 - Copper and its compounds</p></td>
+<td class="text-right"><p>2,0</p></td>
+<td><p>mg/l</p></td>
+<td class="text-right"><p>2000</p></td>
+<td><p>ug/L</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEA_15-02-1 - Intestinal enterococci</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>number/100 ml</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>[CFU]/dL</p></td>
+</tr>
+<tr class="row-even"><td><p>EEA_15-03-2 - Clostridium perfringens</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>number/100 ml</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>[CFU]/dL</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEA_15-04-3 - Coliform bacteria</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>number/100 ml</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>[CFU]/dL</p></td>
+</tr>
+<tr class="row-even"><td><p>EEA_15-05-4 - Legionella</p></td>
+<td class="text-right"><p>&lt;1000</p></td>
+<td><p>[CFU]/l</p></td>
+<td class="text-right"><p>100</p></td>
+<td><p>[CFU]/dL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Field: samplingFrequency</strong></p>
+<p><strong>Data type</strong>: Positive integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Number of samples per sampling period.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+The monitoring scheme is defined by the sampling frequency and the sampling period. The sampling frequency is an integer value, informing how often samples are collected within a sampling period of one day, week, month, or year. If sampling is conducted 4 times per year, then samplingFrequency = 4 and samplingPeriod = ‘a’. If sampling is conducted twice a month, then samplingFrequency = 2 and samplingPeriod = ‘mo’. If sampling is conducted once a day, then samplingFrequency = 1 and samplingPeriod = ‘d’.<br>
+<strong>QC V038</strong>: The value must not be missing or empty.<br>
+<strong>QC V047</strong>: The value is not a valid whole number.<br>
+<strong>QC V099</strong>: The value is not a valid non-negative number.</p>
+<p><strong>Field: samplingPeriod</strong></p>
+<p><strong>Data type</strong>: SamplingPeriod code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Sampling period (day, month, etc.).<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+See guidance for the samplingFrequency field.<br>
+<strong>QC V039</strong>: The value must not be missing or empty.<br>
+<strong>QC V136</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: samplingLocationType</strong></p>
+<p><strong>Data type</strong>: PointOfComplianceType code list value<br>
+<strong>Cardinality</strong>: [1..n]<br>
+<strong>Description</strong>: Sampling location types where the monitoring requirements are applicable.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+More than one type of sampling location may be reported. Multiple options can be reported, using a semicolon-separated list.<br>
+<strong>QC V040</strong>: The value must not be missing or empty.<br>
+<strong>QC V137</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is optional.<br>
+<strong>QC V083</strong>: Text is too long (max 1500 characters).</p>
+</section>
+<section id="information-on-dwd-incidents">
+<h3>Information on DWD Incidents<a class="headerlink" href="#information-on-dwd-incidents" title="Link to this heading">#</a></h3>
+<p><strong>Table: Incident</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: Article 18.1(d) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on incidents relating to water intended for human consumption that have caused a potential risk to human health, regardless of whether any failure to meet the parametric values occurred, that lasted for more than ten (10) consecutive days and that affected at least 1 000 people, including the causes of those incidents and remedial actions taken in accordance with Article 14.<br>
+In the Incident table, information shall be reported that allow for unique identification and general description of the respective incident. One incident is one event: one reporting unit, one incident cause and one time period and could affect multiple parts of the supply chain (i.e category).<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The table must be reported if incidents exist for the reference year.<br>
+<strong>QC TU004</strong>: Uniqueness and multiplicity constraints - The field incidentIdentifier is unique within table.<br>
+<strong>QC R046</strong>: Incident lasts less than or equal than 10 days.<br>
+<strong>QC R061</strong>: Multiple incidents of the same cause overlapping in time are reported for the same water supply zone. Please, note that this is only allowed when the reported incidents are associated with different locations within the same water supply zone and overlapping in time.<br>
+<strong>QC RF014</strong>: This incident ended in the previous reporting.<br>
+<strong>QC RF016</strong>: If an Incident was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
+<strong>QC XC007</strong>: All incidents reported in the Incident table must have at least one associated record in the IncidentCauseAndRemedialAction table.</p>
+<p><strong>Field: incidentIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier for the incident.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide a unique identifier code for the incident. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
+<strong>QC V027</strong>: The value must not be missing or empty.<br>
+<strong>QC V100</strong>: The wiseIdentifier does not have the acceptable format.</p>
+<p><strong>Field: reportingUnitIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier of the water supply zone.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
+<strong>QC V021</strong>: The value must not be missing or empty.<br>
+<strong>QC V112</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC045</strong>: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
+<strong>QC XC047</strong>: The reported reportingUnitIdentifier, must exist in the WaterSupply table.</p>
+<p><strong>Field: incidentStartDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Start date of the incident, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V005</strong>: The value must not be missing or empty.<br>
+<strong>QC V058</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC V153</strong>: All start dates must be either within or earlier than the reference period.<br>
+<strong>QC XC041</strong>: The incidentStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone.<br>
+<strong>QC R068</strong>: If the incidentEndDate has been reported, the incidentStartDate must be reported.</p>
+<p><strong>Field: incidentEndDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: End date of the incident, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+If the incident is still ongoing at the end of the year, report 9999-12-31.<br>
+<strong>QC V006</strong>: The value must not be missing or empty.<br>
+<strong>QC V060</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC V148</strong>: Incident end date outside reporting period.<br>
+<strong>QC R025</strong>: The value must be greater than or equal than incidentStartDate.<br>
+<strong>QC XC045</strong>: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
+<strong>QC XC037</strong>: The end date of the remedial is greater than the end date of the incident.</p>
+<p><strong>Field: incidentCategory</strong></p>
+<p><strong>Data type</strong>: IncidentCategory code list value<br>
+<strong>Cardinality</strong>: [1..n]<br>
+<strong>Description</strong>: Category of the incident.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Use the code in the IncidentCategory code list. Multiple options can be reported, using a semicolon-separated list.<br>
+<strong>QC V007</strong>: The value must not be missing or empty.<br>
+<strong>QC V131</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC V142</strong>: If multiple incidentCategory values are reported, all values must be distinct.<br>
+<strong>QC V143</strong>: If incidentCategory = ‘unknown’ is incompatible with any other option.</p>
+<p><strong>Field: incidentAffectedPopulation</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Estimated number of people affected by the incident in the water supply zone. Affected population refers to the people potentially exposed to the risk, regardless of disease or not.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V101</strong>: The value is not a valid non-negative number.<br>
+<strong>QC V032</strong>: The value must not be missing or empty.<br>
+<strong>QC V067</strong>: The value is not a valid whole number.<br>
+<strong>QC V145</strong>: The incident affected less than 1000 people.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC R043</strong>: If the incidentCategory = ‘unknown’ or if one of the incidentCategory values is ‘other’, additional explanation should be provided in the remarks field.<br>
+<strong>QC V084</strong>: Text is too long (max 1500 characters).</p>
+<p><strong>Table: IncidentCauseAndRemedialAction</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: In the IncidentCauseAndRemedialAction table, information shall be reported about the cause and remedial actions linked to an incident previously reported in Incident table. Note that each incident can be associated with more than one remedial action.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The table must be reported if incidents exist for the reference year.<br>
+<strong>QC TU006</strong>: The combination of the incidentIdentifier value, incidentCause value and the incidentRemedialAction value must be unique across the IncidentCauseAndRemedialAction table records.<br>
+<strong>QC R041</strong>: For each incidentIdentifier value, the number of acceptable different incidentCause values is one.<br>
+<strong>QC RF019</strong>: If an IncidentRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.<br>
+<strong>QC XC035</strong>: The remedial action period must overlap, at least partially, with the associated incident period.</p>
+<p><strong>Field: incidentIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier of the incident, as reported in the Incident table.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V008</strong>: The value must not be missing or empty.<br>
+<strong>QC V113</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: incidentCause</strong></p>
+<p><strong>Data type</strong>: IncidentExceedanceCause code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Cause of the incident.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V009</strong>: The value must not be missing or empty.<br>
+<strong>QC V117</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: incidentRemedialAction</strong></p>
+<p><strong>Data type</strong>: RemedialAction code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Remedial action linked to an incident.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Each incident is associated to one and only one cause, but multiple remedial actions may be reported.<br>
+<strong>QC V010</strong>: The value must not be missing or empty.<br>
+<strong>QC V118</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R007</strong>: If incidentRemedialAction = ‘other’, reporting is required.<br>
+<strong>QC R031</strong>: If incidentRemedialAction = ‘none’, then no other record of the IncidentCauseAndRemedialAction table can have the same incidentIdentifier value.</p>
+<p><strong>Field: incidentRemedialActionStartDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Start date of the remedial action, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V052</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R036</strong>: If incidentRemedialAction is not ‘none’, then the incidentRemedialActionStartDate is required.<br>
+<strong>QC XC051</strong>: incidentRemedialActionStartDate and incidentRemedialActionEndDate should fall within incidentStartDate and incidentEndDate.</p>
+<p><strong>Field: incidentRemedialActionEndDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: End date of the remedial action, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The end date of the remedial action corresponds to the date until which the remedial action is planned. If the end date is known, then report the real date; if unknown, report 9999-12-31.<br>
+<strong>QC V051</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R026</strong>: The value must be greater than or equal than incidentRemedialActionStartDate.<br>
+<strong>QC R037</strong>: If incidentRemedialAction is not ‘none’, then the incidentRemedialActionEndDate is required.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V085</strong>: Text is too long (max 1500 characters).<br>
+<strong>QC R075</strong>: If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field.</p>
+</section>
+<section id="information-on-dwd-exceedances">
+<h3>Information on DWD Exceedances<a class="headerlink" href="#information-on-dwd-exceedances" title="Link to this heading">#</a></h3>
+<p><strong>Table: Exceedance</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: Article 18.1 (c) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing monitoring results, in cases of exceedances of the parametric values set out in Parts A and B of Annex I, collected in accordance with Articles 9 and 13 and information about the remedial actions taken in accordance with Article 14.<br>
+All exceedances have to be reported, not just those related to a derogation. In the Exceedance table, information shall be reported that allows for unique identification and description of any exceedance. One exceedance corresponds to one reporting unit (water supply zone), one parameter, one cause and one time period. For exceedances at different locations that overlap in time, for the same parameter, cause and water supply zone, create separate records in the exceedance table, using different exceedanceIdentifier codes for different locations (see Figure 3).<br>
+<strong>QC TU005</strong>: Uniqueness and multiplicity constraints - The field exceedanceIdentifier is unique within table.<br>
+<strong>QC R045</strong>: Multiple exceedances of the same cause overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.<br>
+<strong>QC RF015</strong>: Reporting of an exceedance already present from the previous reporting, must be linked to the same water supply zone, derogationIdentifier and incidentIdentifier.<br>
+<strong>QC RF017</strong>: If an Exceedance was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
+<strong>QC XC010</strong>: All exceedances reported in the Exceedance table must have at least one associated record in the ExceedanceCauseAndRemedialAction table.<br>
+<strong>QC R076</strong>: There is no monitoring result reported for the exceedanceIdentifier.</p>
+<p><img alt="Figure 3" src="../_images/Figure3.png" /><br>
+Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportnet3?</p>
+<p><strong>Field: exceedanceIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier for the exceedance.<br>
+<strong>Guidance</strong>: Reporting is required. Provide a unique identifier code for the exceedance. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
+<strong>QC V025</strong>: The value must not be missing or empty.<br>
+<strong>QC V102</strong>: The wiseIdentifier does not have the acceptable format.<br>
+<strong>QC RF010</strong>: ExceedanceIdentifier must be unique historically.<br>
+<strong>QC RF013</strong>: This exceedance ended in the previous reporting.</p>
+<p><strong>Field: reportingUnitIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier of the water supply zone.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
+<strong>QC V022</strong>: The value must not be missing or empty.<br>
+<strong>QC V114</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC RF004</strong>: The exceedanceEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
+<strong>QC XC046</strong>: The reported reportingUnitIdentifier, must exist in WaterSupply table.</p>
+<p><strong>Field: trivialExceedance</strong></p>
+<p><strong>Data type</strong>: SpecialValue code list value (‘yes’, ‘no’)<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Was the exceedance considered trivial by the competent authority?<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V043</strong>: The value must not be missing or empty.<br>
+<strong>QC V074</strong>: The value is not a valid boolean value.<br>
+<strong>QC V161</strong>: The value must match one of the predefined list entries.</p>
+<p><strong>Field: trivialExceedanceJustification</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: If trivialExceedance = ‘yes’, provide a justification why the exceedance was considered trivial.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V091</strong>: Text is too long (max 1500 characters).<br>
+<strong>QC R017</strong>: The value must not be missing or empty, if the exceedance is trivial.</p>
+<p><strong>Field: parameterCode</strong></p>
+<p><strong>Data type</strong>: Parameter code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Parameter whose parametric value has been exceeded.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk&#64;eionet.europa.eu. For reporting an exceedance of the condition <strong>[nitrate]/50 + [nitrite]/3 ≤ 1</strong>, create two separate records in the Exceedance table, using two different exceedanceIdentifier codes (one for nitrate and one for nitrite). Use the ‚remarks‘ field of the MonitoringResult table to indicate the correct pairing of the two records, as explained below in the MonitoringResult table (Box 1).<br>
+<strong>QC V018</strong>: The value must not be missing or empty.<br>
+<strong>QC V110</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: exceedanceStartDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Start date of the exceedance, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V011</strong>: The value must not be missing or empty.<br>
+<strong>QC V076</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC V154</strong>: All start dates must be either within or earlier than the reference period.<br>
+<strong>QC XC038</strong>: The exceedanceStartDate, must be greater or equal to the incidentStartDate.<br>
+<strong>QC XC040</strong>: The exceedanceStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone.<br>
+<strong>QC XC033</strong>: The exceedance period must overlap, at least partially, with the associated derogation period.</p>
+<p><strong>Field: exceedanceEndDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: End date of the exceedance, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+If the exceedance is still ongoing at the end of the year, report 9999-12-31.<br>
+<strong>QC V012</strong>: The value must not be missing or empty.<br>
+<strong>QC V077</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R023</strong>: The value must be greater than or equal than exceedanceStartDate.<br>
+<strong>QC V149</strong>: Exceedance end date outside reporting period.<br>
+<strong>QC XC036</strong>: The end date of the remedial is greater than the end date of the exceedance.</p>
+<p><strong>Field: exceedanceAffectedPopulation</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Estimated number of people affected by the exceedance in the water supply zone.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V028</strong>: The value must not be missing or empty.<br>
+<strong>QC V064</strong>: The value is not a valid whole number.<br>
+<strong>QC V103</strong>: The value is not a valid non-negative number.<br>
+<strong>QC XC024</strong>: The exceedanceAffectedPopulation value must be smaller or equal to the populationServed value of the water supply zone.</p>
+<p><strong>Field: pointOfComplianceType</strong></p>
+<p><strong>Data type</strong>: PointOfComplianceType code list value<br>
+<strong>Cardinality</strong>: [1..n]<br>
+<strong>Description</strong>: Point of compliance type i.e., the type of the point where the parametric values set out in the Annex I, part A and B of the recast DWD must be complied with and where an exceedance was encountered.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+More than one type of point of compliance may be reported. Multiple options can be reported, using a semicolon-separated list.<br>
+<strong>QC V026</strong>: The value must not be missing or empty.<br>
+<strong>QC V138</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC V144</strong>: If multiple pointOfComplianceType values are reported, they must all be distinct.</p>
+<p><strong>Field: numberOfSamplesPerYear</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Number of samples per year taken for monitoring the parameter in exceedance.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Report the total number of samples taken in the corresponding one-year reporting period for the monitoring of the parameter in the water supply zone.<br>
+If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in the remarks field.<br>
+<strong>QC V033</strong>: The value must not be missing or empty.<br>
+<strong>QC V068</strong>: The value is not a valid whole number.<br>
+<strong>QC V104</strong>: The value is not a valid non-negative number.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in this remarks field.<br>
+<strong>QC V086</strong>: Text is too long (max 1500 characters).</p>
+<p><strong>Field: incidentIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Unique European identifier of the incident, as reported in the Incident table.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Report if and only if there is an Incident causing the Exceedance. If there is more than one incident related to an exceedance, report the main incident.<br>
+<strong>QC V123</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC004</strong>: The reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from Incident.<br>
+<strong>QC XC025</strong>: The exceedance period must partly overlap with the incident period.</p>
+<p><strong>Field: derogationIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Unique European identifier of the derogation, as reported in the Derogation table.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Report if and only if there is a Derogation associated with the Exceedance (i.e., for the same water supply zone, parameter, and time frame).<br>
+<strong>QC V124</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC012</strong>: The exceedance parameter must be equal to a derogation parameter.<br>
+<strong>QC XC016</strong>: The exceedance reportingUnitIdentifier must be equal to the derogation reportingUnitIdentifier.<br>
+<strong>QC XC026</strong>: The exceedance period must be consistent with the derogation period (overlap, at least partly/be within).</p>
+<p><strong>Table: ExceedanceCauseRemedialAction</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: In ExceedanceCauseRemedialAction table, information about the cause and existing remedial actions for each exceedance in the Exceedance table. Note that each exceedance can be associated with more than one remedial action.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The table must be reported if exceedances exist for the reference year.<br>
+<strong>QC TU007</strong>: The combination of the exceedanceIdentifier value, exceedanceCause value and the exceedanceRemedialAction value must be unique across the ExceedanceCauseRemedialAction table records.<br>
+<strong>QC RF018</strong>: If an ExceedanceRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.<br>
+<strong>QC XC034</strong>: The remedial action period must overlap, at least partially, with the associated exceedance period.</p>
+<p><strong>Field: exceedanceIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier of the exceedance, as reported in the Exceedance table.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V013</strong>: The value must not be missing or empty.<br>
+<strong>QC V115</strong>: The exceedanceIdentifier must exists in table exceedance if the exceedance is still open in this reporting cycle.<br>
+<strong>QC R063</strong>: For each exceedanceIdentifier value, the number of acceptable different exceedanceCause values is one.</p>
+<p><strong>Field: exceedanceCause</strong></p>
+<p><strong>Data type</strong>: IncidentExceedanceCause code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Cause of the exceedance.<br>
+<strong>Guidance</strong>: Reporting is required. Provide the original main cause. If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field. If there are several independent causes, the Exceedance table should be completed again (using a new exceedanceIdentifier).<br>
+<strong>QC V014</strong>: The value must not be missing or empty.<br>
+<strong>QC V119</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: exceedanceRemedialAction</strong></p>
+<p><strong>Data type</strong>: RemedialAction code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Remedial action linked to an exceedance.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Each exceedance is associated to one and only one cause, but multiple remedial actions may be reported.<br>
+<strong>QC V015</strong>: The value must not be missing or empty.<br>
+<strong>QC V130</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R030</strong>: If exceedanceRemedialAction = ‘none’, then no other record of the IncidentCauseAndRemedialAction table can have the same exceedanceIdentifier value.</p>
+<p><strong>Field: exceedanceRemedialActionStartDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Start date of the remedial action, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V053</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R038</strong>: If exceedanceRemedialAction is not ‘none’, then the exceedanceRemedialActionStartDate is required.</p>
+<p><strong>Field: exceedanceRemedialActionEndDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: End date of the remedial action, in the format YYYY-MM-DD.<br>
+The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V054</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC R024</strong>: The value must be greater than or equal than exceedanceRemedialActionStartDate.<br>
+<strong>QC R039</strong>: If exceedanceRemedialAction is not ‘none’, then the exceedanceRemedialActionEndDate is required.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V087</strong>: Text is too long (max 1500 characters).<br>
+<strong>QC R042</strong>: If exceedanceRemedialAction = ‘other’, reporting is required.<br>
+<strong>QC R074</strong>: If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field.</p>
+</section>
+<section id="information-on-dwd-monitoring-results">
+<h3>Information on DWD Monitoring Results<a class="headerlink" href="#information-on-dwd-monitoring-results" title="Link to this heading">#</a></h3>
+<p><strong>Table: MonitoringResult</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: The MonitoringResult table contains information about the monitoring data for each parameter.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+The MonitoringResult table is required to report the monitoring data for each parameter in exceedance and under non-trivial derogation. In case of a non-trivial derogation previous monitoring results needs to be reported.<br>
+Parameters not in exceedance or not under a derogation must not be reported. For trivial derogations, reporting is optional.<br>
+The table must be completed with:</p>
+<ul class="simple">
+<li><p>All monitoring results relevant to an exceedance (only exceeding values).</p></li>
+<li><p>Previous monitoring results used for granting a non-trivial derogation. ‘Previous monitoring results’ should be interpreted as the monitoring results, <u>in exceedance or not</u>, for the three previous years before the date the derogation was granted.</p></li>
+</ul>
+<p><strong>QC R056</strong>: Justification has been provided for some missing values.<br>
+<strong>QC R072</strong>: If ‘EEA_15-01-0 - Escherichia coli’ is reported, please enter the method of analysis used in the “remarks” field, either ‘EN ISO 9308-1’ or ‘EN ISO 9308-2’.<br>
+<strong>QC XC042</strong>: Validation of paired Nitrate and Nitrite observed values per sample, WSZ, and date. It checks that for the same sample, WSZ and date, nitrate and nitrite observed values, if reported, are paired.<br>
+<strong>QC R073</strong>: Remarks must be provided when Nitrate or Nitrite observed values are below or equal to their respective parametric values. For reported observed values for nitrate or nitrite, it checks that, if the resultObservedValue&lt;= parametricValue, the ‘remarks’ field is filled in.<br>
+<strong>QC XC043</strong>: Mismatch in reciprocal references between Nitrate and Nitrite observed values for same date, sample and WSZ. It checks that if a nitrate observed value X is paired (in the relevant ‘remarks’ field) with a nitrite observed value Y, this nitrite observed value Y is paired (in the relevant ‘remarks’ field) with the nitrate observed value X.<br>
+<strong>QC R078</strong>: At least an exceedanceIdentifier or a derogationIdentifier must be reported.<br>
+<strong>QC XC044</strong>: The related Exceedance_ID used in the ‘Remarks’ field must exist as an exceedance identifier in the MonitoringResult table within the same sample, and reporting unit. It checks that any reported related Exceedance_ID, used in the ‘Remarks’ field to pair a nitrate observed value with a nitrite observed value, exists in the MonitoringResult table as exceedanceIdentifier.<br>
+<strong>QC TU012</strong>: Checks if phenomenonTimeSamplingDate, parameterCode, exceedanceIdentifier, reportingUnitIdentifier and derogationIdentifier are uniques within table.<br>
+<strong>QC R079</strong>: The resultObservedValue for nitrate or nitrite is equal to or below (&lt;=) the parametric value. If this record refers to an exceedance of the condition ([nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;exceedanceIdentifier’ is required in the remarks field.</p>
+<p><strong>Field: reportingUnitIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier for the Water Supply Zone (WSZ).<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide the unique identifier of the water supply zone (WSZ).<br>
+<strong>QC V023</strong>: The value must not be missing or empty.<br>
+<strong>QC V116</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: phenomenonTimeSamplingDate</strong></p>
+<p><strong>Data type</strong>: Date<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Date of the sampling, in the format YYYY-MM-DD.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V024</strong>: The value must not be missing or empty.<br>
+<strong>QC V078</strong>: The value is not a valid date (YYYY-MM-DD).<br>
+<strong>QC XC011</strong>: If the exceedanceIdentifier value is reported, the phenomenonTimeSamplingDate must be between exceedanceStartDate value and exceedanceEndDate value.<br>
+<strong>QC R048</strong>: The reported phenomenonTimeSamplingDate value is outside the expected range (1900-2025).</p>
+<p><strong>Field: parameterCode</strong></p>
+<p><strong>Data type</strong>: Parameter code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Parameter which is sampled.<br>
+<strong>Guidance</strong>: Reporting is required. Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk&#64;eionet.europa.eu. How to report monitoring results for exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1 is described in Box 1 below.<br>
+<strong>QC V019</strong>: The value must not be missing or empty.<br>
+<strong>QC V120</strong>: The value is not a valid member of the referenced list.</p>
+<blockquote>
+<div><p>💡 <strong>Box 1: How to report exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1 (established in the notes related to nitrate and nitrite in Annex I, Part B, to the recast Drinking Water Directive)</strong><br>
+<br>
+The procedure is as follows:<br>
+<br>
+□ For each exceedance of the condition, create two separate records in the Exceedance table using two different exceedanceIdentifier codes (one for nitrate and one for nitrite).<br>
+<br>
+□ In the MonitoringResult table, for each exceedance, enter two separate records (one for nitrate and one for nitrite). Use the ‘remarks’ field in the MonitoringResult table to indicate the correct pairing of the observed values as explained below. The pattern to use in the ‘remarks’ field is a sequence of characters SampleNUMBER;EXCEEDANCEID.<br>
+<br>
+In the MonitoringResult table, for each exceedance, the SampleNUMBER defines uniquely the paired nitrate and nitrite values that, together, determine the exceedance of the condition. If, on the same date, more pairs of nitrate-nitrite observed values are reported for the same exceedance of the condition, please use ‘Sample1’, ‘Sample2’, …, ‘SampleN’ to allow for the correct identification of the value pairs of nitrate and nitrite. If only one pair of nitrate-nitrite value is available on a certain date, then SampleNUMBER will be ‘Sample1’ for the two concerned records (one for nitrate and one for nitrite) in the MonitoringResult table.<br>
+<br>
+The EXCEEDANCEID is used to identify the correct association between nitrate and nitrite records reported in the MonitoringResult table.<br>
+<br>
+Let’s consider two different exceedanceIdentifier codes XXX and YYY (XXX for nitrate and YYY for nitrite) in the Exceedance table that define together an exceedance of condition <strong>[nitrate]/50 + [nitrite]/3 ≤ 1</strong>.<br>
+<br>
+For <strong>nitrate</strong> records in the MonitoringResult table associated with exceedanceIdentifier XXX, the exceedanceIdentifier YYY will be used in the remarks field (exceedance for nitrite in the Exceedance table that, together with the nitrate exceedance XXX, define the exceedance of condition <strong>[nitrate]/50 + [nitrite]/3 ≤ 1</strong>).<br>
+<br>
+For <strong>nitrite</strong> records in the MonitoringResult table associated with exceedanceIdentifier YYY, the exceedanceIdentifier XXX will be used in the remarks field (exceedance for <strong>nitrate</strong> in the Exceedance table that, together with the nitrite exceedance YYY, define the exceedance of condition <strong>[nitrate]/50 + [nitrite]/3 ≤ 1</strong>).<br>
+<br>
+The above rules will allow us to calculate the value of the formula <strong>[nitrate]/50 + [nitrite]/3</strong> for paired nitrate-nitrite observed values and check whether the condition is exceeded or not.<br>
+<br>
+<strong>Example</strong><br>
+<br>
+Four different exceedanceIdentifier codes XXX, YYY, ZZZ, TTT (XXX and ZZZ for nitrate, YYY and TTT for nitrite) in the <strong>Exceedance table</strong> define together two different exceedances of condition <strong>[nitrate]/50 + [nitrite]/3 ≤ 1, respectively exceedance1 (XXX,YYY) and exceedance2 (ZZZ, TTT)</strong>.<br>
+<br>
+For exceedance1, one pair of observed values of nitrate-nitrite, to be reported in the MonitoringResult table, is available on phenomenonTimeSamplingDate A and one pair on phenomenonTimeSamplingDate B.<br>
+<br>
+For exceedance2, two pairs of observed values of nitrate-nitrite, to be reported in the MonitoringResult table, are available on phenomenonTimeSamplingDate A and two pairs on phenomenonTimeSamplingDate C.<br>
+<br>
+How should the ‘remarks’ field in the <strong>Monitoring result</strong> table be filled in?<br>
+<br>
+<strong>1. Exceedance1, values on phenomenonTimeSamplingDate A</strong><br>
+For record containing the nitrate observed value, the ‘remarks’ field will be: Sample1;YYY<br>
+For record containing the nitrite observed value, the ‘remarks’ field will be: Sample1;XXX<br>
+<br>
+<strong>2. Exceedance1, values on phenomenonTimeSamplingDate B</strong><br>
+For record containing the nitrate observed value, the ‘remarks’ field will be: Sample1;YYY<br>
+For record containing the nitrite observed value, the ‘remarks’ field will be: Sample1;XXX<br>
+<strong>There is no ambiguity in the pairing of nitrate-nitrite values since there’s only one pair on the same sampling date.</strong><br>
+<br>
+<strong>3. Exceedance2, values on phenomenonTimeSamplingDate A</strong><br>
+For one record containing the nitrate observed value, the ‘remarks’ field will be: Sample1;TTT<br>
+For the record containing the nitrite observed value that, together with the nitrate value in the previous line, define one exceedance of the condition, the ‘remarks’ field will be: Sample1;ZZZ<br>
+For the remaining record containing the nitrate observed value, the ‘remarks’ field will be: Sample2;TTT<br>
+For the remaining record containing the nitrite observed value, the ‘remarks’ field will be: Sample2;ZZZ<br>
+<strong>In this case, using the sampleNUMBER enables to identify the pairs of nitrate-nitrite values that define the two different values of the same exceedance on the same sampling date. Furthermore</strong>, the EXCEEDANCEID codes used enable to distinguish between exceedance1 and exceedance2.<br>
+<br>
+<strong>4. Exceedance2, values on phenomenonTimeSamplingDate C</strong><br>
+The remarks field will be filled in the same way as in point 3. Even though the remarks are the same, the ambiguity is solved because the observed values refer to a different sampling date.</p>
+</div></blockquote>
+<p><strong>Field: resultUom</strong></p>
+<p><strong>Data type</strong>: UnitOfMeasure code list value<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Unit of measure for the values of the sampled parameter.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+Use the values in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk&#64;eionet.europa.eu.<br>
+<strong>QC V121</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R054</strong>: The resultUom is missing without a proper justification in the resultObservationStatus field.<br>
+<strong>QC R055</strong>: The resultUom is reported although a justification for missing result values is provided.<br>
+<strong>QC XC019</strong>: If there’s a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]).</p>
+<p><strong>Field: procedureLOQValue</strong></p>
+<p><strong>Data type</strong>: Non-negative decimal<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Limit of quantification value, in the unit of measure reported in the resultUom field. The LoQ is defined as the smallest concentration that can be distinguished from the analytical blank at a chosen level of statistical confidence (usually 95%).<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V056</strong>: The value is not a valid whole or decimal number.<br>
+<strong>QC V105</strong>: The value is not a valid non-negative number.<br>
+<strong>QC R049</strong>: The procedureLOQValue is reported although a justification for missing result values is provided.<br>
+<strong>QC XC020</strong>: The procedureLOQValue is mandatory for the reported determinand, but it is missing without a proper justification.<br>
+<strong>QC XC021</strong>: The procedureLOQValue is mandatory because the BelowLOQ flag is true, but it is missing without a proper justification.<br>
+<strong>QC XC022</strong>: The procedureLOQValue is reported for a determinand where it is inapplicable.</p>
+<p><strong>Field: resultObservedValue</strong></p>
+<p><strong>Data type</strong>: Non-negative decimal<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: The measured value (e.g., concentration of a given substance), in the unit of measure reported in the resultUom field.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V069</strong>: The value is not a valid whole or decimal number.<br>
+<strong>QC V106</strong>: The value is not a valid non-negative number.<br>
+<strong>QC R050</strong>: The resultObservedValue is missing without a proper justification.<br>
+<strong>QC R051</strong>: The resultObservedValue is missing without a proper justification.<br>
+<strong>QC R057</strong>: Although the resultQualityObservedValueBelowLOQ = ‘no’, the reported resultObservedValue is lower than procedureLOQValue.<br>
+<strong>QC R058</strong>: Although the resultQualityObservedValueBelowLOQ = ‘yes’, the reported resultObservedValue is above or equal than procedureLOQValue.<br>
+<strong>QC XC018</strong>: Monitoring results linked to an exceedanceIdentifier must have a resultObservedValue above (&gt;) the parametric value.<br>
+There are two exceptions to QC XC018:<br></p>
+<ol class="arabic simple">
+<li><p>This rule does not apply to records for the parameters nitrate and nitrite that are related to exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1.<br></p></li>
+<li><p>This rule does not apply if an exceedance that is active in the reference year overlaps with the three-year period preceding the start date of a derogation for the same parameter and Water Supply Zone (WSZ). In such cases, both the exceedanceIdentifier and the derogationIdentifier must be reported together, even if the resultObservedValue is equal to or below (&lt;=) the parametric value.</p></li>
+</ol>
+<p><strong>Field: resultQualityObservedValueBelowLOQ</strong></p>
+<p><strong>Data type</strong>: SpecialValue code list value (‘yes’, ‘no’)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Was the measured value below the LOQ?<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V075</strong>: The value is not a valid member of the codelist.<br>
+<strong>QC R019</strong>: Report resultQualityObservedValueBelowLOQ = ‘no’, if the resultObservedValue is above or equal to the limit of quantification (LoQ).<br>
+<strong>QC R020</strong>: Report resultQualityObservedValueBelowLOQ = ‘yes’, if the resultObservedValue is below the limit of quantification (LoQ).<br>
+<strong>QC R052</strong>: The resultQualityObservedValueBelowLOQ is missing without a proper justification in the resultObservationStatus field.<br>
+<strong>QC R053</strong>: The resultQualityObservedValueBelowLOQ is reported although a justification for missing result values is provided.<br>
+<strong>QC R059</strong>: Set resultQualityObservedValueBelowLOQ = ‘no’ if the LoQ value is not required and is not reported.<br>
+<strong>QC XC023</strong>: The resultQualityObservedValueBelowLOQ is True for a determinand where it is inapplicable.</p>
+<p><strong>Field: resultObservationStatus</strong></p>
+<p><strong>Data type</strong>: ObservationStatus code list value<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Status of the reported value.<br>
+<strong>Guidance</strong>: Reporting is optional.<br>
+<strong>QC V122</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+If resultObservedValue&lt;=parametricValue (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;EXCEEDANCEID’ is required in this remarks field.<br>
+<strong>QC V088</strong>: Text is too long (max 1500 characters).<br>
+<strong>QC V163</strong>: The ‘Remarks’ field format must match expected Sample and related exceedance ID pattern. The ‘Remarks’ field must follow a regex of SampleNUMBER;EXCEEDANCEID (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1).</p>
+<p><strong>Field: exceedanceIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Unique European identifier of the exceedance, as reported in the Exceedance table.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+If the reported value refers to an exceedance, the exceedanceIdentifier value is required. Please note the exceptions in QC XC018: in these exceptional cases, an exceedanceIdentifier must be reported even if the resultObservedValue is equal to or below (&lt;=) the parametric value.<br>
+<strong>QC V126</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC002</strong>: If the exceedanceIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Exceedance table.<br>
+<strong>QC XC009</strong>: If the exceedanceIdentifier value is reported, the parameterCode must be equal to the parameterCode from the Exceedance table.<br>
+<strong>QC XC027</strong>: The exceedanceIdentifier must be reported if, for the same reportingUnitIdentifier and parameterCode, it exists in the Exceedance table and if phenomenonTimeSamplingDate is between exceedanceStartDate and exceedanceEndDate.</p>
+<p><strong>Field: derogationIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Unique European identifier of the derogation, as reported in the Derogation table.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+If the reported value refers to a derogation, the derogationIdentifier value is required.<br>
+<strong>QC V127</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC003</strong>: If the derogationIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Derogation table.<br>
+<strong>QC XC008</strong>: If the derogationIdentifier value is reported, the parameterCode must be equal to a parameterCode from the Derogation table.<br>
+<strong>QC XC028</strong>: The derogationIdentifier must be reported if a Derogation exists for the same reportingUnitIdentifier, parameterCode, and where phenomenonTimeSamplingDate is between derogationStartDate and derogationEndDate.<br>
+<strong>QC XC029</strong>: If the derogationIdentifier value is reported, the phenomenonTimeSamplingDate must be during the derogation period or within the 3 years prior to the derogationStartDate value.</p>
+</section>
+<section id="information-on-water-supply">
+<h3>Information on Water Supply<a class="headerlink" href="#information-on-water-supply" title="Link to this heading">#</a></h3>
+<p><strong>Table: WaterSupply</strong></p>
+<hr class="docutils" />
+<p><strong>Description</strong>: The WaterSupply table contains information about the water supply during the reporting year.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+The water supply data must be reported for all water supply zones affected by incidents, exceedances, or derogations.<br>
+The water supply data must be reported for all water supply zones providing an average daily volume of drinking water of 10 m3 or more and serving 50 persons or more.<br>
+<strong>QC T002</strong>: Mandatory table has no records.<br>
+<strong>QC TU011</strong>: Uniqueness and multiplicity constraints - The fields reportingUnitIdentifier and referenceYear are uniques within table.<br>
+<strong>QC XC050</strong>: Water Supply must be linked to at least one Exceedance, Incident or Derogation.</p>
+<p><strong>Field: reportingUnitIdentifier</strong></p>
+<p><strong>Data type</strong>: wiseIdentifier<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Unique European identifier for the water supply zone.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+Provide the unique identifier of the water supply zone.<br>
+<strong>QC V041</strong>: The value must not be missing or empty.<br>
+<strong>QC V139</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC XC013</strong>: Some WSZ from watersupply table do not have an incident (message for information only, as it is not mandatory).<br>
+<strong>QC XC014</strong>: Some WSZ from watersupply table do not have an exceedance (message for information only, as it is not mandatory).<br>
+<strong>QC XC015</strong>: Some WSZ from watersupply table do not have a derogation (message for information only, as it is not mandatory).</p>
+<p><strong>Field: referenceYear</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Year of reference for the reported data, in the format YYYY.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V017</strong>: The value must not be missing or empty.<br>
+<strong>QC V048</strong>: The value is not a valid whole number.<br>
+<strong>QC V150</strong>: The reference year is not correct for the planned report.</p>
+<p><strong>Field: populationServed</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Total population served by the water supply, in number of persons.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V029</strong>: The value must not be missing or empty.<br>
+<strong>QC V065</strong>: The value is not a valid whole number.<br>
+<strong>QC V107</strong>: The value is not a valid non-negative number.<br>
+<strong>QC V147</strong>: populationServed less than 50 people served.</p>
+<p><strong>Field: volumeOfWaterSupplied</strong></p>
+<p><strong>Data type</strong>: Non-negative integer<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Average daily volume of water supplied, in cubic metre per day (m3/day).<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V030</strong>: The value must not be missing or empty.<br>
+<strong>QC V066</strong>: The value is not a valid whole number.<br>
+<strong>QC V108</strong>: The value is not a valid non-negative number.<br>
+<strong>QC V146</strong>: volumeOfWaterSupply less than 10 m3 served.</p>
+<p><strong>Field: remarks</strong></p>
+<p><strong>Data type</strong>: Text (1500 characters)<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Additional information about the record, in English or in the national language.<br>
+<strong>Guidance</strong>: Reporting is optional.<br>
+<strong>QC V089</strong>: Text is too long (max 1500 characters).</p>
+</section>
+</section>
+<section id="spatial-reference-data-for-the-recast-dwd-reporting">
+<h2>Spatial reference data for the recast DWD reporting<a class="headerlink" href="#spatial-reference-data-for-the-recast-dwd-reporting" title="Link to this heading">#</a></h2>
+<p>Being Reporting Units, the spatial data for Water Supply Zones (WSZ) fall under the scope of the <a class="reference external" href="https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http%3A%2F%2Finspire.ec.europa.eu%2Ftheme%2Fam">INSPIRE AM</a> Theme (Area Management, Restriction, Regulation Zones &amp; Reporting Units), which was established with specific legislative requirements to deliver spatial data related to any environmental media. The INSPIRE AM Theme consists of various concepts explained in detail in the guidance below and is represented in a single table.<br>
+The water supply zones to report are those, at least, affected by an exceedance, incident or derogation. Once a water supply zone has been reported, it must continue to be reported in subsequent years using the support of the prefilling tool (from 2024 onwards). The prefilling tool automatically loads the data reported in the previous year into the spatial tables. If no changes are needed, reporters need to update the wiseEvolutionType from ‘creation’ to ‘noChange’. If a water supply zone needs to be removed, reporters need to update wiseEvolutionType to ‘deletion’. If there is a new water supply zone or changes in any of the previously reported ones, all spatial data - not just partial updates – must be reported again. Partial deliveries are not accepted.<br>
+The generic principles and data structures defined in the following document WISE GIS Guidance on the spatial reporting are valid also for the DWD dataflows https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/</p>
+<p>For each water supply zone, data providers are requested to provide a unique identifier following the WISE identifiers syntax, and a polygon geometry of the water supply zone. If a polygon geometry is not presently available, and the water supply zone is within a given <a class="reference external" href="https://ec.europa.eu/eurostat/web/nuts/background">Eurostat’s NUTS 2022 level 3 region</a>, then the water supply zone can simply be associated with a NUTS 3 code.<br>
+Note, the spatial data sets must be provided in one of the following coordinate reference systems (CRS):</p>
+<ul class="simple">
+<li><p>ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258)</p></li>
+<li><p>ETRS89-LAEA (urn:ogc:def:crs:EPSG::3035)</p></li>
+<li><p>WGS 84 (urn:ogc:def:crs:EPSG::4326)</p></li>
+</ul>
+<p><strong>Templates for the reporting of spatial data as a GeoPackage format are provided in the 2025 reporting dataflow https://reportnet.europa.eu/dataflow/1994 under the ‘Supporting documents’, one template for each CRS.</strong></p>
+<p><strong>Lifecycle and reporting consistency.</strong></p>
+<p>In the context of the annual reporting cycles, countries are required to submit data related to drinking water, specifically regarding <strong>water supply zone</strong>. To ensure the accuracy and consistency of this data over time, a series of Quality Controls have been introduced. These QCs are designed to track the lifecycle of the reported elements, ensuring that if <strong>a water supply zone</strong> was reported in the previous reporting year, it must be included again in the current cycle even if it is just to notify that the previously reported <strong>water supply zone</strong> is no longer valid.</p>
+<p>This process helps maintain continuity in the data reporting and ensures that past submissions are consistently updated and aligned with the most recent reporting standards. It also ensures that countries submit the correct data, reflecting any updates or changes made to the <strong>water supply zone</strong>.</p>
+<p>This mechanism supports the overall integrity of the reported information and allows for accurate comparison of data over multiple reporting periods.</p>
+<p>More detailed information on the lifecycle of spatial objects can be checked in Page 64 of the WISE Spatial Reporting Guidance.</p>
+<p>These are the fields of the spatial data:</p>
+<p><strong>Table: WaterSupplyZone</strong></p>
+<p><strong>QC T001</strong>: A valid ‘eu’ thematic identifier exists in the register but was not reported in the spatial file.<br>
+<strong>QC TU001</strong>: Mandatory table has no records.<br>
+<strong>QC TU002</strong>: The inspireIdLocalId and inspireIdNamespace combination must be unique for each object.<br>
+<strong>QC TU003</strong>: The thematicIdIdentifier and thematicIdIdentifierScheme combination must be unique for each object.<br>
+<strong>QC RF003</strong>: The thematic identifier that is replacing this object has been superseded, deprecated or is invalid.<br>
+<strong>QC RF013</strong>: The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set.<br>
+<strong>QC RF015</strong>: If you have not reported yet in the previous reporting cycle, you cannot report here.</p>
+<p><strong>Field: geometry_polygon</strong></p>
+<p><strong>Data type</strong>: geometry_polygon<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Polygon geometry or NULL value is expected.<br>
+<strong>Guidance</strong>: If the Water Supply Zone is defined as equivalent to a NUTS level 3 region then the geometry is not compulsory.<br>
+Reporting is conditional.<br>
+<strong>QC S001</strong>: The value does not follow the expected syntax for a valid multipolygon {%reason%}.<br>
+<strong>QC S002</strong>: Unsupported SRID.<br>
+<strong>QC S003</strong>: Geometry is not valid. Reason: {%reason%}.<br>
+<strong>QC S005</strong>: The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA).<br>
+<strong>QC S006</strong>: The geometry must not have anomalous geometric points, such as self-intersections.<br>
+<strong>QC S007</strong>: The geometry of the WaterSupplyZone must not overlap each other (100 meters tolerance). Overlaps: {%thematicididentifier%}.<br>
+<strong>QC S008</strong>: The geometry of the water supply zone is not contained in the geometry of the related NUT3.<br>
+<strong>QC S009</strong>: If the geometry of WSZ is null or empty, the relatedZoneIdentifier must be compulsory.</p>
+<p><strong>Field: inspireIdLocalId</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V002</strong>: The inspireIdLocalId value must be a string with less than 255 characters.<br>
+<strong>QC V015</strong>: The value must not be missing or empty.</p>
+<p><strong>Field: inspireIdNamespace</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V003</strong>: The inspireIdNamespace value must be a string with less than 255 characters.<br>
+<strong>QC V019</strong>: The value must not be missing or empty.</p>
+<p><strong>Field: inspireIdVersionId</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>QC V004</strong>: The inspireIdVersionId value must be a non-empty string with less than 25 characters.<br>
+<strong>QC R013</strong>: The inspireIdVersionId value must be reported, if the wiseEvolutionType value describes a change in the area and/or depth of the water body.<br>
+<strong>QC R014</strong>: The inspireIdVersionId value must be reported, if the wiseEvolutionType value is ‘change’.</p>
+<p><strong>Field: thematicIdIdentifier</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V005</strong>: The thematicIdIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hyphen and the underscore can be used as non-consecutive separators).<br>
+<strong>QC V024</strong>: The value must not be missing or empty.<br>
+<strong>QC RC05A</strong>: The thematicIdIdentifier value must be reported, if the thematicIdIdentifierScheme value is reported.</p>
+<p><strong>Field: thematicIdentifierScheme</strong></p>
+<p><strong>Data type</strong>: identifierScheme code list value<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: WISE scheme under which the identifiers are stored.<br>
+<strong>Guidance</strong>: Identifier defining the scheme used to assign the thematicIdentifier. The WISE Identifier Schemes are used for this field.<br>
+If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReportingUnitCode’ must be reported.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V016</strong>: The value must not be missing or empty.<br>
+<strong>QC V032</strong>: The thematicIdIdentifierScheme value is not valid.<br>
+<strong>QC RC06A</strong>: The thematicIdIdentifierScheme value must be reported, if the thematicIdIdentifier value is reported.</p>
+<p><strong>Field: beginLifespanVersion</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Date when the record was created. Set to reporting date, if unknown.<br>
+<strong>QC V006</strong>: The beginLifespanVersion value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+<strong>QC R002</strong>: The beginLifespanVersion value must be reported, if the inspireVersionId value is reported.<br>
+<strong>QC R003</strong>: The beginLifespanVersion date must not be after the endLifespanVersion.<br>
+<strong>QC R016</strong>: The beginLifespanVersion value must be reported, unless the wiseEvolutionType is ‘creation’ or ‘noChange’.<br>
+<strong>QC RC09A</strong>: The beginLifespanVersion value must be reported, if the endLifespanVersion value is reported.</p>
+<p><strong>Field: endLifespanVersion</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: The value must be NULL in the first reporting cycle.<br>
+<strong>QC R001</strong>: the endLifespanVersion has to be empty, if wiseEvolutionType is ‘Creation’.<br>
+<strong>QC R015</strong>: The endLifespanVersion value must be reported, if the wiseEvolutionType is ‘deletion’.</p>
+<p><strong>Field: predecessorsIdentifier</strong></p>
+<p><strong>Cardinality</strong>: [0..n]<br>
+<strong>Description</strong>: The value must be NULL in the first reporting cycle.<br>
+<strong>QC V036</strong>: The predecessorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
+<strong>QC R011</strong>: The object must have zero predecessors, if the wiseEvolutionType value is ‘creation’.<br>
+<strong>QC R022</strong>: The predecessorsIdentifier value must be reported, if the predecessorsIdentifierScheme value is reported.<br>
+<strong>QC R024</strong>: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
+<strong>QC RF012</strong>: The object has a predecessor that does not exist in the register.<br>
+<strong>QC RF014</strong>: The object has a predecessor with a different zone type.<br>
+<strong>QC XC007</strong>: Objects with the same predecessor must have the same designationPeriodBegin value.</p>
+<p><strong>Field: predecessorsIdentifierScheme</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: The value must be NULL in the first reporting cycle.<br>
+<strong>QC V037</strong>: Invalid predecessorsIdentifierScheme value for this spatial object type.<br>
+<strong>QC R011</strong>: The object must have zero predecessors, if the wiseEvolutionType value is ‘creation’.<br>
+<strong>QC R023</strong>: The predecessorsIdentifierScheme value must be reported, if the predecessorsIdentifier value is reported.<br>
+<strong>QC R024</strong>: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).</p>
+<p><strong>Field: successorsIdentifier</strong></p>
+<p><strong>Cardinality</strong>: [0..n]<br>
+<strong>QC V041</strong>: The successorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
+<strong>QC R025</strong>: The successorsIdentifier value must be reported, if the successorsIdentifierScheme value is reported.<br>
+<strong>QC R026</strong>: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).</p>
+<p><strong>Field: successorsIdentifierScheme</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>QC V038</strong>: Invalid successorsIdentifierScheme value for this spatial object type.<br>
+<strong>QC R026</strong>: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
+<strong>QC R027</strong>: The successorsIdentifierScheme value must be reported, if the successorsIdentifier value is reported.</p>
+<p><strong>Field: wiseEvolutionType</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: The value must be ‘creation’ in the first reporting cycle.<br>
+<strong>QC V017</strong>: The value must not be missing or empty.<br>
+<strong>QC V027</strong>: The value is not a valid member of the referenced list.<br>
+<strong>QC R017</strong>: The object must have zero predecessors, if the wiseEvolutionType value is ‘creation’, ‘change’ or ‘noChange’.<br>
+<strong>QC R018</strong>: The object must have one and only one predecessor, if the wiseEvolutionType value is ‘changeCode’ or ‘splitting’.<br>
+<strong>QC R019</strong>: The object must have two or more predecessors, if the wiseEvolutionType value is ‘aggregation’ or ‘changeBothAggregationAndSplitting’.<br>
+<strong>QC R021</strong>: wiseEvolutionType = ‘deletion’ is the only valid option if the element has a successor.<br>
+<strong>QC RF002</strong>: If an object is reported as ‘deletion’, it must have the same predecessors as before.<br>
+<strong>QC RF005</strong>: The thematic identifier must be a valid identifier in the register, if the wiseEvolutionType value is ‘deletion’, ‘noChange’ or ‘change’.<br>
+<strong>QC RF006</strong>: The thematic identifier must not exist in the register, unless the wiseEvolutionType value is ‘deletion’, ‘noChange’ or ‘change’.<br>
+<strong>QC XC001</strong>: A spatial object with wiseEvolutionType value equal to ‘changeCode’ must not have the same predecessor of another spatial object.<br>
+<strong>QC XC002</strong>: At least one predecessor of an object with wiseEvolutionType value equal to ‘splitting’ or ‘changeBothAggregationAndSplitting’ must be reported as predecessor of another spatial object.<br>
+<strong>QC XC003</strong>: If an identifier is the predecessor of 2 or more objects, then those objects must have wiseEvolution in (‘splitting’, ‘changeBothAggregationAndSplitting’).<br>
+<strong>QC XC004</strong>: The object has wiseEvolutionType = ‘deletion’ and is a predecessor to other objects reported in the data set. The identifiers of the successors must be reported consistently.<br>
+<strong>QC XC006</strong>: The spatial object must have wiseEvolutionType value equal to ‘deletion’ if it is also reported as predecessor to another spatial object.</p>
+<p><strong>Field: nameTextInternational</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V023</strong>: The value must not be missing or empty.<br>
+<strong>QC V007</strong>: The nameTextInternational value must be a string with less than 255 characters. Upper case letters (A to Z) and digits (0 to 9) are allowed (spaces and hyphens can be used as separators).</p>
+<p><strong>Field: nameText</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V008</strong>: The nameText value must be a string with less than 255 characters.<br>
+<strong>QC V001</strong>: The used encoding is not correct. Strange characters in nameText field.<br>
+<strong>QC V022</strong>: The value must not be missing or empty.</p>
+<p><strong>Field: nameLanguage</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V018</strong>: The value must not be missing or empty.<br>
+<strong>QC V028</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: designationPeriodBegin</strong></p>
+<p><strong>Cardinality</strong>: [1]<br>
+<strong>QC V009</strong>: The designationPeriodBegin value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+<strong>QC V021</strong>: The value must not be missing or empty.<br>
+<strong>QC R004</strong>: The designationPeriodBegin date must not be after the designationPeriodEnd.<br>
+<strong>QC RF007</strong>: If wiseEvolutionType in (‘deletion’,’change’,’noChange’), the designationPeriodBegin must be equal to the designationPeriodBegin of the object in the register.<br>
+<strong>QC RF008</strong>: If wiseEvolutionType in (‘splitting’,’aggregation’,’changeBothAggregationAndSplitting’,’changeExtendedArea’,’changeExtendedDepth’,’changeExtendedAreaAndDepth’,’changeReducedArea’,’changeReducedDepth’,’changeReducedAreaAndDepth’), the designationPeriodBegin value must be higher than the designationPeriodBegin value of the predecessor.<br>
+<strong>QC RF010</strong>: If wiseEvolutionType is in (‘change’,’noChange’) then, the designationPeriodBegin cannot be lower than the one stored in the registry for the same element.<br>
+<strong>QC XC005</strong>: The designationPeriodBegin for the successor can not be the same as the designationPeriodBegin of the object being replaced.</p>
+<p><strong>Field: designationPeriodEnd</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: The value must be NULL if wiseEvolutionType = ‘creation’.<br>
+<strong>QC V010</strong>: The designationPeriodEnd value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
+<strong>QC R020</strong>: The designationPeriodEnd date must be reported, if the wiseEvolutionType value is ‘deletion’.<br>
+<strong>QC R045</strong>: Multiple exceedances overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.</p>
+<p><strong>Field: zoneType</strong></p>
+<p><strong>Data type</strong>: zoneType code list value.<br>
+<strong>Cardinality</strong>: [1]<br>
+<strong>Description</strong>: Zone classification. ‘waterSupplyZone’ must be reported.<br>
+<strong>Guidance</strong>: Reporting is required.<br>
+<strong>QC V020</strong>: The value must not be missing or empty.<br>
+<strong>QC V029: The value is not a valid member of the referenced list.</strong></p>
+<p><strong>Field: specialisedZoneType</strong></p>
+<p><strong>Data type</strong>: specialisedZoneType code list value.<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: The value must be NULL if zoneType = ‘waterSupplyZone’.<br>
+<strong>Guidance</strong>: The value should be empty.<br>
+<strong>QC V026</strong>: specialisedZoneType should be empty.</p>
+<p><strong>Field: legalBasisName</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>QC V011</strong>: The legalBasisName value must be a string with less than 255 characters.<br>
+<strong>QC R007</strong>: if legalBasisLevel = ‘european’ then legalBasisName must have the value ‘Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)’.</p>
+<p><strong>Field: legalBasisLink</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>QC V012</strong>: The legalBasisLink value must be an URL with less than 255 characters.<br>
+<strong>QC R009</strong>: if legalBasisLevel = ‘european’ then legalBasisLink must have the value ‘https://eur-lex.europa.eu/eli/dir/2020/2184/oj’.</p>
+<p><strong>Field: legalBasisLevel</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>QC V033</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: relatedZoneIdentifier</strong></p>
+<p><strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Reference to a related management, regulation or restriction zone.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC R006</strong>: The relatedZoneIdentifier value must be reported, if the relatedZoneIdentifierScheme value is reported.<br>
+<strong>QC RF001</strong>: The relatedZoneIdentifier must exist in the list of NUTS3.</p>
+<p><strong>Field: relatedZoneIdentifierScheme</strong></p>
+<p><strong>Data type</strong>: identifierScheme code list value<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Identifier defining the scheme used to assign the relatedZoneIdentifier. The WISE Identifier Schemes are used for this field. Identifier of higher-level spatial object. In the current reporting, the NUTS units to which the WSZ belongs can be reported. Where the related Water Supply Zone is equivalent to a NUTS level 3 region then ‘nuts2024’ is reported.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>QC V030</strong>: The relatedZoneIdentifierScheme value is not valid.<br>
+<strong>QC R008</strong>: The relatedZoneIdentifierScheme value must be reported, if the relatedZoneIdentifier value is reported.</p>
+<p><strong>Field: sizeValue</strong></p>
+<p><strong>Data type</strong>: Numeric value.<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Report only if the geometry value is NULL.<br>
+<strong>Guidance</strong>: Provide an estimate of the total area in square kilometres. Reporting is conditional.<br>
+<strong>QC V013</strong>: The sizeValue value must be a positive number.<br>
+<strong>QC V025</strong>: The value is not a valid whole or decimal number.<br>
+<strong>QC R010</strong>: If the geometry is NULL, the sizeValue is mandatory.</p>
+<p><strong>Field: sizeUom</strong></p>
+<p><strong>Data type</strong>: sizeUom code list value<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Description</strong>: Report only if the sizeValue is provided.<br>
+<strong>Guidance</strong>: Reporting is conditional.<br>
+<strong>R005</strong>: If sizeUom is reported then sizeValue must also be reported. If sizeValue is reported then sizeUOM must also be reported.<br>
+<strong>QC V031</strong>: The value is not a valid member of the referenced list.</p>
+<p><strong>Field: link</strong></p>
+<p><strong>Data type</strong>: URL<br>
+<strong>Cardinality</strong>: [0..1]<br>
+<strong>Guidance</strong>: Reporting is optional.<br>
+<strong>QC V014</strong>: The link value must be an URL with less than 255 characters.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exceedances, incidents and derogations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DWDExceedancesIncidentsAndDerogations2023_2024.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data sets on exceedances, incidents, and derogations (2023-2024)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-and-structure-of-the-document">Purpose and structure of the document</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-context-and-general-approach-of-the-recast-dwd-reporting">Legal context and general approach of the recast DWD reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-rules-for-the-reporting">General rules for the reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-reporting">Components of the reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-european-comission-and-the-eea-will-use-the-information">How the European Comission and the EEA will use the information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-note-on-progressive-reporting-for-member-states">Information Note on Progressive Reporting for Member States</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decripive-data-for-the-recast-dwd-reporting">Decripive data for the recast DWD reporting</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-the-authority-responsible-for-reporting">Information on the authority responsible for reporting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-dwd-derogations-under-article-15-1">Information on DWD Derogations under Article 15(1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-dwd-incidents">Information on DWD Incidents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-dwd-exceedances">Information on DWD Exceedances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-dwd-monitoring-results">Information on DWD Monitoring Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-on-water-supply">Information on Water Supply</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-reference-data-for-the-recast-dwd-reporting">Spatial reference data for the recast DWD reporting</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/eeadata/WISE.WFD.Documentation/edit/main/docs/ExceedancesIncidentsAndDerrogations/DWDExceedancesIncidentsAndDerrogations.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/ExceedancesIncidentsAndDerrogations/DWDExceedancesIncidentsAndDerrogations.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
