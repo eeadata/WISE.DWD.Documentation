@@ -139,8 +139,8 @@ Table 1: Tables in the descriptive data reporting template.
 
 | Code | Description |
 |------|-------------|
-| V031 | The value must not be missing or empty |
-| V080 | Text is too long (max 250 characters) |
+| QC V031 | The value must not be missing or empty |
+| QC V080 | Text is too long (max 250 characters) |
 
 **Field: electronicMailAddress**
 
@@ -153,8 +153,8 @@ Table 1: Tables in the descriptive data reporting template.
 
 | Code | Description |
 |------|-------------|
-| V002 | The value must not be missing or empty |
-| V079 | Text is too long (max 50 characters) |
+| QC V002 | The value must not be missing or empty |
+| QC V079 | Text is too long (max 50 characters) |
 
 **Field: link**
 
@@ -167,7 +167,7 @@ Table 1: Tables in the descriptive data reporting template.
 
 | Code | Description |
 |------|-------------|
-| V070 | The value does not follow the expected syntax for a valid URL |
+| QC V070 | The value does not follow the expected syntax for a valid URL |
 
 ### Information on DWD Derogations under Article 15(1)
 
@@ -178,164 +178,238 @@ Each year, all derogations must be reported, not just those granted during the r
 **Table: Derogation**
 ***********************
 
-**Description**: The table Derogation provides a unique identifier and a general description of each derogation.<br>
-**Guidance**: Reporting is conditional.<br>
-The Derogation table must be reported for all derogations in place for the reference year. If a Derogation has been reported in the previous reference year but is still ongoing, it must be reported again<br>
-Information is required for:<br>
-* a) all derogations granted for parameters for which the parametric values are set out in part B of Annex I of the recast DWD and;<br>
-* b) all derogations granted for additional parameters not included in Annex I for which a parametric value is set out by the Member State in accordance with Article 5(3) of the recast DWD, where the protection of human health within its national territory or part of it so requires.<br>
+| Property | Value |
+|----------|--------|
+| Description | The table Derogation provides a unique identifier and a general description of each derogation. |
+| Guidance | Reporting is conditional. |
+| Guidance | The Derogation table must be reported for all derogations in place for the reference year. If a Derogation has been reported in the previous reference year but is still ongoing, it must be reported again. |
+| Guidance | Information is required for: a) all derogations granted for parameters for which the parametric values are set out in Part B of Annex I of the recast DWD; and b) all derogations granted for additional parameters not included in Annex I for which a parametric value is set out by the Member State in accordance with Article 5(3) of the recast DWD, where the protection of human health within its national territory or part of it so requires. |
 
-**QC TU002**: Uniqueness and multiplicity constraints - The field derogationIdentifier is unique within table.<br>
-**QC R060**: Derogations cannot overlap in time for a given water supply zone and parameter.<br>
-**QC R077**: There is no monitoring result reported for the derogationIdentifier.<br>
-**QC RF006**: If a Derogation was reported for the previous reference year with EndDate falling in a following year, it must be reported again for the current reference year.<br>
-**QC XC001**: Each derogation where trivialDerogation = 'no' in the Derogation table, must have at least one corresponding record in the DerogationRemedialAction table.
+| Code | Description |
+|------|-------------|
+| QC TU002 | Uniqueness and multiplicity constraints - The field derogationIdentifier is unique within table. |
+| QC R060 | Derogations cannot overlap in time for a given water supply zone and parameter. |
+| QC R077 | There is no monitoring result reported for the derogationIdentifier. |
+| QC RF006 | If a Derogation was reported for the previous reference year with EndDate falling in a following year, it must be reported again for the current reference year. |
+| QC XC001 | Each derogation where trivialDerogation = 'no' in the Derogation table, must have at least one corresponding record in the DerogationRemedialAction table. |
+
 
 **Field: derogationIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier for the derogation<br>
-**Guidance**: Reporting is required.<br>
-Provide a unique identifier code for the derogation. The identifier must also be used in subsequent reference years if the derogation is still in place. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
-**QC V003**: The value must not be missing or empty<br>
-**QC V093**: The wiseIdentifier does not have the acceptable format<br>
-**QC RF001**: DerogationIdentifier must be unique historically<br>
-**QC RF005**: This derogation ended in the previous reference period<br>
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the derogation |
+| Guidance | Reporting is required. |
+| Guidance | Provide a unique identifier code for the derogation. The identifier must also be used in subsequent reference years if the derogation is still in place. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). |
+
+| Code | Description |
+|------|-------------|
+| QC V003 | The value must not be missing or empty |
+| QC V093 | The wiseIdentifier does not have the acceptable format |
+| QC RF001 | DerogationIdentifier must be unique historically |
+| QC RF005 | This derogation ended in the previous reference period |
 
 **Field: trivialDerogation**
 
-**Data type**: SpecialValue code list value ('yes', 'no')<br>
-**Cardinality**: [1]<br>
-**Description**: Was the derogation granted for a trivial exceedance and the problem remedy within 30 days?<br>
-**Guidance**: Reporting is required.<br>
-According to Art. 15(3) of the recast DWD, this field means: if the responsible authorities consider the non-compliance with the parametric value to be trivial, and if action taken in accordance with Article 14(2) is sufficient to remedy the problem within 30 days.<br>
-**QC V042**: The value must not be missing or empty<br>
-**QC V071**: The value is not a valid boolean value<br>
-**QC V158**: The value must match one of the predefined list entries.<br>
-**QC R047**: Trivial derogation lasts longer than 30 days<br>
-**QC R071**: Non-trivial derogations cannot have endDate = 9999-12-31
+| Property | Value |
+|----------|--------|
+| Data type | SpecialValue code list value ('yes', 'no') |
+| Cardinality | [1] |
+| Description | Was the derogation granted for a trivial exceedance and the problem remedy within 30 days? |
+| Guidance | Reporting is required. |
+| Guidance | According to Art. 15(3) of the recast DWD, this field means: if the responsible authorities consider the non-compliance with the parametric value to be trivial, and if action taken in accordance with Article 14(2) is sufficient to remedy the problem within 30 days. |
+
+| Code | Description |
+|------|-------------|
+| QC V042 | The value must not be missing or empty |
+| QC V071 | The value is not a valid boolean value |
+| QC V158 | The value must match one of the predefined list entries. |
+| QC R047 | Trivial derogation lasts longer than 30 days |
+| QC R071 | Non-trivial derogations cannot have endDate = 9999-12-31 |
 
 **Field: trivialDerogationJustification**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: If trivialDerogation = 'yes', provide a justification why the derogation was considered trivial.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V090**: Text is too long ( max 1500 characters)<br>
-**QC R016**: The value must not be missing or empty, if the derogation is trivial
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | If trivialDerogation = 'yes', provide a justification why the derogation was considered trivial. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V090 | Text is too long ( max 1500 characters) |
+| QC R016 | The value must not be missing or empty, if the derogation is trivial |
 
 **Field: derogationStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: Start date of the derogation in the format YYYY-MM-DD<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V045**: The value is not a valid date (YYYY-MM-DD)<br>
-**QC V152**: All start dates must be either within or earlier than the reference period.<br>
-**QC R012**: The value must not be missing or empty, if the derogation is non-trivial<br>
-**QC R064**: If derogationEndDate has been reported, derogationStartDate must be reported.<br>
-**QC XC039:** The derogationStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | Start date of the derogation in the format YYYY-MM-DD |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V045 | The value is not a valid date (YYYY-MM-DD) |
+| QC V152 | All start dates must be either within or earlier than the reference period. |
+| QC R012 | The value must not be missing or empty, if the derogation is non-trivial |
+| QC R064 | If derogationEndDate has been reported, derogationStartDate must be reported. |
+| QC XC039 | The derogationStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone |
 
 **Field: derogationEndDate**
 
-**Data type:** Date<br>
-**Cardinality:** [0..1]<br>
-**Description:** End date of the derogation in the format YYYY-MM-DD<br>
-**Guidance:** Reporting is conditional.<br>
-**QC V046:** The value is not a valid date (YYYY-MM-DD)<br>
-**QC R010:** The value must not be missing or empty, if the derogation is non-trivial<br>
-**QC R021:** The value must be higher or equal than derogationStartDate<br>
-**QC R065:** If derogationStartDate is reported then derogationEndDate must be reported and within 30 days<br>
-**QC RF002:** derogationEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | End date of the derogation in the format YYYY-MM-DD |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V046 | The value is not a valid date (YYYY-MM-DD) |
+| QC R010 | The value must not be missing or empty, if the derogation is non-trivial |
+| QC R021 | The value must be higher or equal than derogationStartDate |
+| QC R065 | If derogationStartDate is reported then derogationEndDate must be reported and within 30 days |
+| QC RF002 | derogationEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone. |
 
 **Field: volumeOfWaterSupplied**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [0..1]<br>
-**Description**: Average daily volume of water supplied affected by the derogation, in cubic metres per day (m3/day).<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V062**: The value is not a valid whole number.<br>
-**QC V094**: The value is not a valid non-negative number.<br>
-**QC R018**: The value must not be missing or empty, if the derogation is non-trivial.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [0..1] |
+| Description | Average daily volume of water supplied affected by the derogation, in cubic metres per day (m3/day). |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V062 | The value is not a valid whole number. |
+| QC V094 | The value is not a valid non-negative number. |
+| QC R018 | The value must not be missing or empty, if the derogation is non-trivial. |
 
 **Field_ foodProductionAffected**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [0..1]<br>
-**Description**: Estimated total number of people affected by the derogation in the water supply zone.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V061**: The value is not a valid whole number.<br>
-**QC V095**: The value is not a valid non-negative number.<br>
-**QC R009**: The value must not be missing or empty, if the derogation is non-trivial.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [0..1] |
+| Description | Estimated total number of people affected by the derogation in the water supply zone. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V061 | The value is not a valid whole number. |
+| QC V095 | The value is not a valid non-negative number. |
+| QC R009 | The value must not be missing or empty, if the derogation is non-trivial. |
 
 **Field: foodProductionAffected**
 
-**Data type**: SpecialValue code list value ('yes', 'no')<br>
-**Cardinality**: [0..1]<br>
-**Description**: Are any food-production undertakings being supplied with drinking water affected by the derogation?<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V072**: The value is not a valid boolean value.<br>
-**QC R014**: The value must not be missing or empty, if the derogation is non-trivial.
+| Property | Value |
+|----------|--------|
+| Data type | SpecialValue code list value ('yes', 'no') |
+| Cardinality | [0..1] |
+| Description | Are any food-production undertakings being supplied with drinking water affected by the derogation? |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V072 | The value is not a valid boolean value. |
+| QC R014 | The value must not be missing or empty, if the derogation is non-trivial. |
+
 
 **Field: derogationUnderRecastDWD**
 
-**Data type**: SpecialValue code list value ('yes', 'no')<br>
-**Cardinality**: [1]<br>
-**Description**: Is the derogation granted according to the recast DWD?<br>
-**Guidance**: Reporting is required.<br>
-**QC V073**: The value is not a valid boolean value.<br>
-**QC V155**: The value must not be missing or empty.<br>
-**QC V160**: The value must match one of the predefined list entries.<br>
-**QC R013**: If trivialDerogation = 'yes', then derogationUnderRecastDWD must be 'yes'.
+| Property | Value |
+|----------|--------|
+| Data type | SpecialValue code list value ('yes', 'no') |
+| Cardinality | [1] |
+| Description | Is the derogation granted according to the recast DWD? |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V073 | The value is not a valid boolean value. |
+| QC V155 | The value must not be missing or empty. |
+| QC V160 | The value must match one of the predefined list entries. |
+| QC R013 | If trivialDerogation = 'yes', then derogationUnderRecastDWD must be 'yes'. |
 
 **Field: derogationGrounds**
 
-**Data type**: DerogationGround code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Grounds of the derogation.<br>
-**Guidance**: Reporting is conditional. “other” should be used in case of multiple grounds for the derogation.<br>
-**QC V125**: The value is not a valid member of the referenced list.<br>
-**QC R011**: The value must not be missing or empty, if the derogation is non-trivial.
+| Property | Value |
+|----------|--------|
+| Data type | DerogationGround code list value |
+| Cardinality | [0..1] |
+| Description | Grounds of the derogation. |
+| Guidance | Reporting is conditional. “other” should be used in case of multiple grounds for the derogation. |
+
+| Code | Description |
+|------|-------------|
+| QC V125 | The value is not a valid member of the referenced list. |
+| QC R011 | The value must not be missing or empty, if the derogation is non-trivial. |
 
 **Field: previousDerogationIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unique European identifier for the previous derogation.<br>
-**Guidance**: Reporting is conditional.<br>
-If a previous derogation exists for the same monitoring parameters and the same water supply zone, report the derogationIdentifier of the previous derogation. Note that in the 1st reporting under the recast DWD, the previous derogation identifiers will not exist in the Reportnet3 system: if that is the case, an identifier must be created by the data provider. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). In subsequent reporting cycles, the identifiers of the previously reported derogations will be available in the Reportnet3 system.<br>
-**QC V141**: The wiseIdentifier does not have the acceptable format.<br>
-**QC R040**: If previousDerogationIdentifier exists, then the derogation parameter(s) must be the same.<br>
-**QC R066**: If a previous derogation is explicitly reported, it must have the same water supply zone, parameter and startDate as the reference derogation.<br>
-**QC R069**: Derogation cannot overlap in time for a given water supply zone and parameter with its predecessor.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..1] |
+| Description | Unique European identifier for the previous derogation. |
+| Guidance | Reporting is conditional. |
+| Guidance | If a previous derogation exists for the same monitoring parameters and the same water supply zone, report the derogationIdentifier of the previous derogation. Note that in the 1st reporting under the recast DWD, the previous derogation identifiers will not exist in the Reportnet3 system: if that is the case, an identifier must be created by the data provider. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). In subsequent reporting cycles, the identifiers of the previously reported derogations will be available in the Reportnet3 system. |
+
+| Code | Description |
+|------|-------------|
+| QC V141 | The wiseIdentifier does not have the acceptable format. |
+| QC R040 | If previousDerogationIdentifier exists, then the derogation parameter(s) must be the same. |
+| QC R066 | If a previous derogation is explicitly reported, it must have the same water supply zone, parameter and startDate as the reference derogation. |
+| QC R069 | Derogation cannot overlap in time for a given water supply zone and parameter with its predecessor. |
 
 **Field: previousDerogationConclusions**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Conclusions from the review of the previous derogation. This field should summarise the review carried out towards the end of the previous derogation to determine whether sufficient progress has been made.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC R001**: The value must not be missing or empty, if a previous derogation exists.
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Conclusions from the review of the previous derogation. This field should summarise the review carried out towards the end of the previous derogation to determine whether sufficient progress has been made. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC R001 | The value must not be missing or empty, if a previous derogation exists. |
 
 **Field: previousDerogationStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: Start date of the previous derogation, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V057**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R005**: The value must not be missing or empty, if a previous derogation exists.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | Start date of the previous derogation, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V057 | The value is not a valid date (YYYY-MM-DD). |
+| QC R005 | The value must not be missing or empty, if a previous derogation exists. |
 
 **Field: previousDerogationEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: End date of the previous derogation, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V059**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R002**: The value must not be missing or empty, if a previous derogation exists.<br>
-**QC R027**: The value must be higher than previousDerogationStartDate.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | End date of the previous derogation, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V059 | The value is not a valid date (YYYY-MM-DD). |
+| QC R002 | The value must not be missing or empty, if a previous derogation exists. |
+| QC R027 | The value must be higher than previousDerogationStartDate. |
 
 **Field: previousDerogationGrounds**
 
