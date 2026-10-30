@@ -7,6 +7,10 @@ Drinking water protection areas and safeguard zones
    :hidden:
    :maxdepth: 1
 
+   DrinkingWaterProtectionAreas
+
+* :doc:`DrinkingWaterProtectionAreas`
+
 Reporting Guidance Document
 ===========================
 
