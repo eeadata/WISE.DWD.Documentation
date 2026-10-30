@@ -1430,7 +1430,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: relatedZoneIdentifier**
 
-**Data type**: Page 44- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **Description**: Reference to a related management, regulation or restriction zone.<br>
 **Guidance**: Reporting is conditional.<br>
