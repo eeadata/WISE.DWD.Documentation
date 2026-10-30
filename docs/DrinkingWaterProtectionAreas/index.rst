@@ -3,6 +3,10 @@
 Drinking water protection areas and safeguard zones
 *************************************************************************
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
 Reporting Guidance Document
 ===========================
 
