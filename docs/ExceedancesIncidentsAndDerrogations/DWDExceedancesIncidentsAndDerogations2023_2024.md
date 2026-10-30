@@ -1,4 +1,4 @@
-# Data sets on exceedances, incidents, and derogations (2025) (2023-2024)
+# Data sets on exceedances, incidents, and derogations (2023-2024)
 
 ## Introduction
 
