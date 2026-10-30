@@ -101,49 +101,73 @@ Table 1: Tables in the descriptive data reporting template.
 ### Information on the authority responsible for reporting
 
 **Table: ResponsibleParty**
-****************************
-**Description**: The ResponsibleParty table contains the information allowing the identification and contact with the competent authority responsible for reporting under the recast DWD.<br>
-**Guidance**: Reporting is required.<br>
-**QC T001**: Mandatory table has no records<br>
-**QC TU001**: Uniqueness and multiplicity constraints - The field responsiblePartyIdentifier is unique within table.<br>
-**QC RF009**: You need to report first the data in the previous reporting cycle.
+***********************************
+
+| Property | Value |
+|----------|--------|
+| Description | The ResponsibleParty table contains the information allowing the identification and contact with the competent authority responsible for reporting under the recast DWD. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC T001 | Mandatory table has no records |
+| QC TU001 | Uniqueness and multiplicity constraints - The field responsiblePartyIdentifier is unique within table. |
+| QC RF009 | You need to report first the data in the previous reporting cycle. |
 
 **Field: responsiblePartyIdentifier**
 
-**Data type**: wiseIdentifier
-**Cardinality**: [1]
-**Description**: Unique European identifier for the competent authority
-**Guidance**: Reporting is required. Provide a unique identifier code for each competent authority in charge of the DWD reporting. The identifier must also be used in subsequent reference years.<br>
-The identifier must follow the syntax of the WISE identifiers.<br>
-It must start with the two-letter country code of the Member State, followed by one character that can be a digit or an uppercase letter, followed by a sequence of characters (0 to 38 characters long) that can be digits or uppercase letters, with no consecutive double hyphens or double underscores, but allowing for single hyphens or underscores between characters. The code can optionally end with one character that can be a digit or an uppercase letter. Example: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341 but not FR1__XYZ1234__1 or FR1--XYZ1234--1.<br>
-**QC V001**: The value must not be missing or empty<br>
-**QC V092**: The wiseIdentifier does not have the acceptable format
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the competent authority |
+| Guidance | Reporting is required. Provide a unique identifier code for each competent authority in charge of the DWD reporting. The identifier must also be used in subsequent reference years.<br>The identifier must follow the syntax of the WISE identifiers.<br>It must start with the two-letter country code of the Member State, followed by one character that can be a digit or an uppercase letter, followed by a sequence of characters (0 to 38 characters long) that can be digits or uppercase letters, with no consecutive double hyphens or double underscores, but allowing for single hyphens or underscores between characters. The code can optionally end with one character that can be a digit or an uppercase letter. Example: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341 but not FR1__XYZ1234__1 or FR1--XYZ1234--1. |
+
+| Code | Description |
+|------|-------------|
+| QC V001 | The value must not be missing or empty |
+| QC V092 | The wiseIdentifier does not have the acceptable format |
 
 **Field: organisationName**
 
-**Data type**: Text (250 characters)<br>
-**Cardinality**: [1]<br>
-**Description**: Official name of the competent authority, in English.<br>
-**Guidance**: Reporting is required.<br>
-**QC V031**: The value must not be missing or empty<br>
-**QC V080**: Text is too long (max 250 characters)
+| Property | Value |
+|----------|--------|
+| Data type | Text (250 characters) |
+| Cardinality | [1] |
+| Description | Official name of the competent authority, in English. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| V031 | The value must not be missing or empty |
+| V080 | Text is too long (max 250 characters) |
 
 **Field: electronicMailAddress**
 
-**Data type**: Text (50 characters)<br>
-**Cardinality**: [1]<br>
-**Description**: E-mail address of the competent authority.<br>
-**Guidance**: Reporting is required.<br>
-**QC V002**: The value must not be missing or empty<br>
-**QC V079**: Text is too long (max 50 characters)
+| Property | Value |
+|----------|--------|
+| Data type | Text (50 characters) |
+| Cardinality | [1] |
+| Description | E-mail address of the competent authority. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| V002 | The value must not be missing or empty |
+| V079 | Text is too long (max 50 characters) |
 
 **Field: link**
 
-**Data type**: URL<br>
-**Cardinality**: [0..1]<br>
-**Description**: URL of competent authority's website.<br>
-**Guidance**: Reporting is optional.<br>
-**QC V070**: The value does not follow the expected syntax for a valid URL
+| Property | Value |
+|----------|--------|
+| Data type | URL |
+| Cardinality | [0..1] |
+| Description | URL of competent authority's website. |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| V070 | The value does not follow the expected syntax for a valid URL |
 
 ### Information on DWD Derogations under Article 15(1)
 
