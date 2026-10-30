@@ -1,4 +1,4 @@
-# GUIDANCE DOCUMENT ON REPORTING UNDER THE RECAST DRINKING WATER DIRECTIVE 2020/2184/EC (2025)
+# Data sets on exceedances, incidents, and derogations (2025)
 
 | List of Acronyms | |
 |---|---|
