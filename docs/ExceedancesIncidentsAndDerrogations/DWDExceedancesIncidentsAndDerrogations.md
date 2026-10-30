@@ -1249,21 +1249,18 @@ Reporting is conditional.<br>
 
 **Field: inspireIdLocalId**
 
-**Guidance reference**: Page 57 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V002**: The inspireIdLocalId value must be a string with less than 255 characters.<br>
 **QC V015**: The value must not be missing or empty.
 
 **Field: inspireIdNamespace**
 
-**Guidance reference**: Page 57- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V003**: The inspireIdNamespace value must be a string with less than 255 characters.<br>
 **QC V019**: The value must not be missing or empty.
 
 **Field: inspireIdVersionId**
 
-**Guidance reference**: Page 57- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **QC V004**: The inspireIdVersionId value must be a non-empty string with less than 25 characters.<br>
 **QC R013**: The inspireIdVersionId value must be reported, if the wiseEvolutionType value describes a change in the area and/or depth of the water body.<br>
@@ -1271,7 +1268,6 @@ Reporting is conditional.<br>
 
 **Field: thematicIdIdentifier**
 
-**Guidance reference**: Page53 [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V005**: The thematicIdIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hyphen and the underscore can be used as non-consecutive separators).<br>
 **QC V024**: The value must not be missing or empty.<br>
@@ -1291,7 +1287,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: beginLifespanVersion**
 
-**Guidance reference**: Page 39- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **Description**: Date when the record was created. Set to reporting date, if unknown.<br>
 **QC V006**: The beginLifespanVersion value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
@@ -1302,7 +1297,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: endLifespanVersion**
 
-**Guidance reference**: Page 39- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **Description**: The value must be NULL in the first reporting cycle.<br>
 **QC R001**: the endLifespanVersion has to be empty, if wiseEvolutionType is 'Creation'.<br>
@@ -1310,7 +1304,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: predecessorsIdentifier**
 
-**Guidance reference**: Page 39 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..n]<br>
 **Description**: The value must be NULL in the first reporting cycle.<br>
 **QC V036**: The predecessorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
@@ -1323,7 +1316,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: predecessorsIdentifierScheme**
 
-**Guidance reference**: Page 39 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **Description**: The value must be NULL in the first reporting cycle.<br>
 **QC V037**: Invalid predecessorsIdentifierScheme value for this spatial object type.<br>
@@ -1333,7 +1325,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: successorsIdentifier**
 
-**Guidance reference**: Page 40- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..n]<br>
 **QC V041**: The successorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
 **QC R025**: The successorsIdentifier value must be reported, if the successorsIdentifierScheme value is reported.<br>
@@ -1341,7 +1332,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: successorsIdentifierScheme**
 
-**Guidance reference**: Page 40- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **QC V038**: Invalid successorsIdentifierScheme value for this spatial object type.<br>
 **QC R026**: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
@@ -1349,7 +1339,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: wiseEvolutionType**
 
-**Guidance reference**: Page 64 – [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **Description**: The value must be 'creation' in the first reporting cycle.<br>
 **QC V017**: The value must not be missing or empty.<br>
@@ -1369,14 +1358,12 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: nameTextInternational**
 
-**Guidance reference**: Page 41- - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V023**: The value must not be missing or empty.<br>
 **QC V007**: The nameTextInternational value must be a string with less than 255 characters. Upper case letters (A to Z) and digits (0 to 9) are allowed (spaces and hyphens can be used as separators).
 
 **Field: nameText**
 
-**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V008**: The nameText value must be a string with less than 255 characters.<br>
 **QC V001**: The used encoding is not correct. Strange characters in nameText field.<br>
@@ -1384,14 +1371,12 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: nameLanguage**
 
-**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V018**: The value must not be missing or empty.<br>
 **QC V028**: The value is not a valid member of the referenced list.
 
 **Field: designationPeriodBegin**
 
-**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [1]<br>
 **QC V009**: The designationPeriodBegin value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
 **QC V021**: The value must not be missing or empty.<br>
@@ -1403,7 +1388,6 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: designationPeriodEnd**
 
-**Guidance reference**: Page 41- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **Description**: The value must be NULL if wiseEvolutionType = 'creation'.<br>
 **QC V010**: The designationPeriodEnd value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
@@ -1429,21 +1413,18 @@ If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReport
 
 **Field: legalBasisName**
 
-**Guidance reference**: Page 43 - [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **QC V011**: The legalBasisName value must be a string with less than 255 characters.<br>
 **QC R007**: if legalBasisLevel = 'european' then legalBasisName must have the value 'Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)'.
 
 **Field: legalBasisLink**
 
-**Guidance reference**: Page 43- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **QC V012**: The legalBasisLink value must be an URL with less than 255 characters.<br>
 **QC R009**: if legalBasisLevel = 'european' then legalBasisLink must have the value 'https://eur-lex.europa.eu/eli/dir/2020/2184/oj'.
 
 **Field: legalBasisLevel**
 
-**Guidance reference**: Page 43- [WISE GIS Guidance](https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/WISE_GIS_Guidance.pdf)<br>
 **Cardinality**: [0..1]<br>
 **QC V033**: The value is not a valid member of the referenced list.
 
