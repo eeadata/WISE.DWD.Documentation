@@ -413,163 +413,243 @@ Each year, all derogations must be reported, not just those granted during the r
 
 **Field: previousDerogationGrounds**
 
-**Data type**: DerogationGround code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Legal grounds of the previous derogation.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V128**: The value is not a valid member of the referenced list.<br>
-**QC R004**: The value must not be missing or empty, if a previous derogation exists.
+| Property | Value |
+|----------|--------|
+| Data type | DerogationGround code list value |
+| Cardinality | [0..1] |
+| Description | Legal grounds of the previous derogation. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V128 | The value is not a valid member of the referenced list. |
+| QC R004 | The value must not be missing or empty, if a previous derogation exists. |
 
 **Field: reportingUnitIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Provide the unique European identifier for the water supply zone. Note that in the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
-**Guidance**: Reporting is required.<br>
-The water supply zone must exist in the spatial reference data set WaterSupplyZone.<br>
-**QC V020**: The value must not be missing or empty.<br>
-**QC V111**: The value is not a valid member of the referenced list.<br>
-**QC XC048**: The reported reportingUnitIdentifier, must exist in the WaterSupply table.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Provide the unique European identifier for the water supply zone. Note that in the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field. |
+| Guidance | Reporting is required. |
+| Guidance | The water supply zone must exist in the spatial reference data set WaterSupplyZone. |
+
+| Code | Description |
+|------|-------------|
+| QC V020 | The value must not be missing or empty. |
+| QC V111 | The value is not a valid member of the referenced list. |
+| QC XC048 | The reported reportingUnitIdentifier, must exist in the WaterSupply table. |
 
 **Field: qualityAndMonitoringRequirementIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..n]<br>
-**Description**: Unique European identifier(s) for the quality and the monitoring requirement, as reported in the QualityAndMonitoring table. The field value links the derogation to each of the applicable monitoring scheme, parameter and respective maximum permissible value.<br>
-**Guidance**: Reporting is conditional.<br>
-Note that multiple values are possible, i.e., a derogation can be linked to more than one monitoring scheme. Multiple values are reported using a semicolon-separated list.<br>
-**QC V129**: The value is not a valid member of the referenced list.<br>
-**QC R015**: The value must not be missing or empty, if the derogation is non-trivial.<br>
-**QC XC006**: Each derogation may have more than one associated record in the QualityAndMonitoring table if and only if the associated records have different parameterCode values.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..n] |
+| Description | Unique European identifier(s) for the quality and the monitoring requirement, as reported in the QualityAndMonitoring table. The field value links the derogation to each of the applicable monitoring scheme, parameter and respective maximum permissible value. |
+| Guidance | Reporting is conditional. |
+| Guidance | Note that multiple values are possible, i.e., a derogation can be linked to more than one monitoring scheme. Multiple values are reported using a semicolon-separated list. |
+
+| Code | Description |
+|------|-------------|
+| QC V129 | The value is not a valid member of the referenced list. |
+| QC R015 | The value must not be missing or empty, if the derogation is non-trivial. |
+| QC XC006 | Each derogation may have more than one associated record in the QualityAndMonitoring table if and only if the associated records have different parameterCode values. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V081**: Text is too long (max 1500 characters).<br>
-**QC R028**: If derogationGrounds = 'other', reporting is required.
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V081 | Text is too long (max 1500 characters). |
+| QC R028 | If derogationGrounds = 'other', reporting is required. |
 
 **Table: DerogationRemedialAction**
 ****************************************
 
-**Description**: In the DerogationRemedialAction table, information shall be reported about the remedial actions linked to all non-trivial derogations. For trivial derogations, reporting is optional.<br>
-**Guidance**: Reporting is conditional.<br>
-Note that each derogation may be associated with more than one remedial action.<br>
-Therefore, multiple records of the DerogationRemedialAction table can have the same derogationIdentifier.<br>
-**QC TU010**: Uniqueness and multiplicity constraints - The fields derogationIdentifier and derogationRemedialAction are uniques within table.<br>
-**QC RF007**: The combination of derogationIdentifier and derogationRemedialAction must be unique historically.<br>
-**QC RF020**: If a DerogationRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.
+| Property | Value |
+|----------|--------|
+| Description | In the DerogationRemedialAction table, information shall be reported about the remedial actions linked to all non-trivial derogations. For trivial derogations, reporting is optional. |
+| Guidance | Reporting is conditional. |
+| Guidance | Note that each derogation may be associated with more than one remedial action. |
+| Guidance | Therefore, multiple records of the DerogationRemedialAction table can have the same derogationIdentifier. |
+
+| Code | Description |
+|------|-------------|
+| QC TU010 | Uniqueness and multiplicity constraints - The fields derogationIdentifier and derogationRemedialAction are uniques within table. |
+| QC RF007 | The combination of derogationIdentifier and derogationRemedialAction must be unique historically. |
+| QC RF020 | If a DerogationRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year. |
 
 **Field: derogationIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier of the derogation, as reported in the Derogation table.<br>
-**Guidance**: Reporting is required.<br>
-**QC V034**: The value must not be missing or empty.<br>
-**QC V133**: The derogationIdentifier must exists in table Derogation if the derogation is still open in this reporting cycle.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier of the derogation, as reported in the Derogation table. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V034 | The value must not be missing or empty. |
+| QC V133 | The derogationIdentifier must exists in table Derogation if the derogation is still open in this reporting cycle. |
 
 **Field: derogationRemedialAction**
 
-**Data type**: RemedialAction code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Report the remedial action for the derogation.<br>
-**Guidance**: Reporting is required.<br>
-**QC V132**: The value is not a valid member of the referenced list.<br>
-**QC V156**: Checks if the field is missing or empty.<br>
-**QC R062**: The option derogationRemedialAction = 'none' is incompatible with any other option.
+| Property | Value |
+|----------|--------|
+| Data type | RemedialAction code list value |
+| Cardinality | [1] |
+| Description | Report the remedial action for the derogation. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V132 | The value is not a valid member of the referenced list. |
+| QC V156 | Checks if the field is missing or empty. |
+| QC R062 | The option derogationRemedialAction = 'none' is incompatible with any other option. |
 
 **Field: derogationRemedialActionStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: Start date of the remedial action, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V049**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R033**: If derogationRemedialAction is not 'none', then the derogationRemedialActionStartDate is required.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | Start date of the remedial action, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V049 | The value is not a valid date (YYYY-MM-DD). |
+| QC R033 | If derogationRemedialAction is not 'none', then the derogationRemedialActionStartDate is required. |
 
 **Field: derogationRemedialActionEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: End date of the remedial action, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31.<br>
-**QC V050**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R022**: The value must be greater than or equal than derogationRemedialActionStartDate.<br>
-**QC R034**: If derogationRemedialAction is not 'none', then the derogationRemedialActionEndDate is required.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | End date of the remedial action, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+| Guidance | The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31. |
+
+| Code | Description |
+|------|-------------|
+| QC V050 | The value is not a valid date (YYYY-MM-DD). |
+| QC R022 | The value must be greater than or equal than derogationRemedialActionStartDate. |
+| QC R034 | If derogationRemedialAction is not 'none', then the derogationRemedialActionEndDate is required. |
 
 **Field: derogationRemedialActionCost**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [0..1]<br>
-**Description**: Total cost of the remedial action, in Euro (€).<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V063**: The value is not a valid whole number.<br>
-**QC V096**: The value is not a valid non-negative number.<br>
-**QC R035**: If derogationRemedialAction is not 'none', then the derogationRemedialActionCost is required.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [0..1] |
+| Description | Total cost of the remedial action, in Euro (€). |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V063 | The value is not a valid whole number. |
+| QC V096 | The value is not a valid non-negative number. |
+| QC R035 | If derogationRemedialAction is not 'none', then the derogationRemedialActionCost is required. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is optional.<br>
-**QC V082**: Text is too long (max 1500 characters).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| QC V082 | Text is too long (max 1500 characters). |
 
 **Table: QualityAndMonitoring**
 ***********************************
 
-**Description**: In the QualityAndMonitoring table, information shall be reported on the parameters of non-trivial derogations and on the appropriate monitoring scheme specified in the derogation in accordance with the Article 15(2)(d) requirements of the recast DWD.<br>
-**Guidance**: Reporting is conditional.<br>
-Non-trivial derogations must be associated with one or more quality and monitoring requirement. Note that the same quality and monitoring requirements may apply to more than one derogation.<br>
-**QC TU003**: Uniqueness and multiplicity constraints - The field qualityAndMonitoringRequirementIdentifier is unique within table.<br>
-**QC R032**: The combination of the values for parameterCode, parameterThresholdValue, parameterThresholdValueUnit, samplingFrequency, samplingPeriod, and samplingLocationType must be unique.<br>
-**QC XC049**: If a qualityAndMonitoringRequirementIdentifier is reported in the QualityAndMonitoring table, the same identifier must appear in the Derogation table.
+| Property | Value |
+|----------|--------|
+| Description | In the QualityAndMonitoring table, information shall be reported on the parameters of non-trivial derogations and on the appropriate monitoring scheme specified in the derogation in accordance with the Article 15(2)(d) requirements of the recast DWD. |
+| Guidance | Reporting is conditional. |
+| Guidance | Non-trivial derogations must be associated with one or more quality and monitoring requirement. Note that the same quality and monitoring requirements may apply to more than one derogation. |
+
+| Code | Description |
+|------|-------------|
+| QC TU003 | Uniqueness and multiplicity constraints - The field qualityAndMonitoringRequirementIdentifier is unique within table. |
+| QC R032 | The combination of the values for parameterCode, parameterThresholdValue, parameterThresholdValueUnit, samplingFrequency, samplingPeriod, and samplingLocationType must be unique. |
+| QC XC049 | If a qualityAndMonitoringRequirementIdentifier is reported in the QualityAndMonitoring table, the same identifier must appear in the Derogation table. |
 
 **Field: qualityAndMonitoringRequirementIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique identifier for the quality and monitoring requirement.<br>
-**Guidance**: Reporting is required.<br>
-Provide a unique identifier code for the quality and monitoring requirement. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element).<br>
-The identifier must also be used in subsequent reference years if the requirement is still applicable. A register will be kept with the previously reported quality and monitoring requirements. In other words, the quality and monitoring requirements only need to be reported once and their identifier can be reused in future reporting cycles.<br>
-**QC V004**: The value must not be missing or empty.<br>
-**QC V097**: The wiseIdentifier does not have the acceptable format.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique identifier for the quality and monitoring requirement. |
+| Guidance | Reporting is required. |
+| Guidance | Provide a unique identifier code for the quality and monitoring requirement. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element). |
+| Guidance | The identifier must also be used in subsequent reference years if the requirement is still applicable. A register will be kept with the previously reported quality and monitoring requirements. In other words, the quality and monitoring requirements only need to be reported once and their identifier can be reused in future reporting cycles. |
+
+| Code | Description |
+|------|-------------|
+| QC V004 | The value must not be missing or empty. |
+| QC V097 | The wiseIdentifier does not have the acceptable format. |
 
 **Field: parameterCode**
 
-**Data type**: Parameter code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Parameter which is part of the derogation.<br>
-**Guidance**: Reporting is required.<br>
-Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu.<br>
-**QC V035**: The value must not be missing or empty.<br>
-**QC V134**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | Parameter code list value |
+| Cardinality | [1] |
+| Description | Parameter which is part of the derogation. |
+| Guidance | Reporting is required. |
+| Guidance | Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. |
+
+| Code | Description |
+|------|-------------|
+| QC V035 | The value must not be missing or empty. |
+| QC V134 | The value is not a valid member of the referenced list. |
 
 **Field: parameterThresholdValue**
 
-**Data type**: Non-negative decimal<br>
-**Cardinality**: [1]<br>
-**Description**: Maximum permissible parametric (threshold) value of the parameter, in the unit of measure reported in the parameterThresholdValueUnit field.<br>
-**Guidance**: Reporting is required.<br>
-**QC V036**: The value must not be missing or empty.<br>
-**QC V055**: The value is not a valid whole or decimal number.<br>
-**QC V098**: The value is not a valid non-negative number.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative decimal |
+| Cardinality | [1] |
+| Description | Maximum permissible parametric (threshold) value of the parameter, in the unit of measure reported in the parameterThresholdValueUnit field. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V036 | The value must not be missing or empty. |
+| QC V055 | The value is not a valid whole or decimal number. |
+| QC V098 | The value is not a valid non-negative number. |
 
 **Field: parameterThresholdValueUnit**
 
-**Data type**: UnitOfMeasure code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Unit of measure for the value reported in the parameterThresholdValue field.<br>
-**Guidance**: Reporting is required.<br>
-Use the code in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu.<br>
-**QC V037**: The value must not be missing or empty.<br>
-**QC V135**: The value is not a valid member of the referenced list.<br>
-**QC XC017**: If there's a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]).
+| Property | Value |
+|----------|--------|
+| Data type | UnitOfMeasure code list value |
+| Cardinality | [1] |
+| Description | Unit of measure for the value reported in the parameterThresholdValue field. |
+| Guidance | Reporting is required. |
+| Guidance | Use the code in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. |
+
+| Code | Description |
+|------|-------------|
+| QC V037 | The value must not be missing or empty. |
+| QC V135 | The value is not a valid member of the referenced list. |
+| QC XC017 | If there's a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]). |
 
 Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of the recast DWD and Reportnet 3.
 | Description of<br>parameterCode | Annex I of the recast DWD |  | To use in Reportnet 3 |  |
@@ -590,190 +670,275 @@ Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of 
 
 **Field: samplingFrequency**
 
-**Data type**: Positive integer<br>
-**Cardinality**: [1]<br>
-**Description**: Number of samples per sampling period.<br>
-**Guidance**: Reporting is required.<br>
-The monitoring scheme is defined by the sampling frequency and the sampling period. The sampling frequency is an integer value, informing how often samples are collected within a sampling period of one day, week, month, or year. If sampling is conducted 4 times per year, then samplingFrequency = 4 and samplingPeriod = 'a'. If sampling is conducted twice a month, then samplingFrequency = 2 and samplingPeriod = 'mo'. If sampling is conducted once a day, then samplingFrequency = 1 and samplingPeriod = 'd'.<br>
-**QC V038**: The value must not be missing or empty.<br>
-**QC V047**: The value is not a valid whole number.<br>
-**QC V099**: The value is not a valid non-negative number.
+| Property | Value |
+|----------|--------|
+| Data type | Positive integer |
+| Cardinality | [1] |
+| Description | Number of samples per sampling period. |
+| Guidance | Reporting is required. |
+| Guidance | The monitoring scheme is defined by the sampling frequency and the sampling period. The sampling frequency is an integer value, informing how often samples are collected within a sampling period of one day, week, month, or year. If sampling is conducted 4 times per year, then samplingFrequency = 4 and samplingPeriod = 'a'. If sampling is conducted twice a month, then samplingFrequency = 2 and samplingPeriod = 'mo'. If sampling is conducted once a day, then samplingFrequency = 1 and samplingPeriod = 'd'. |
+
+| Code | Description |
+|------|-------------|
+| QC V038 | The value must not be missing or empty. |
+| QC V047 | The value is not a valid whole number. |
+| QC V099 | The value is not a valid non-negative number. |
 
 **Field: samplingPeriod**
 
-**Data type**: SamplingPeriod code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Sampling period (day, month, etc.).<br>
-**Guidance**: Reporting is required.<br>
-See guidance for the samplingFrequency field.<br>
-**QC V039**: The value must not be missing or empty.<br>
-**QC V136**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | SamplingPeriod code list value |
+| Cardinality | [1] |
+| Description | Sampling period (day, month, etc.). |
+| Guidance | Reporting is required. |
+| Guidance | See guidance for the samplingFrequency field. |
+
+| Code | Description |
+|------|-------------|
+| QC V039 | The value must not be missing or empty. |
+| QC V136 | The value is not a valid member of the referenced list. |
 
 **Field: samplingLocationType**
 
-**Data type**: PointOfComplianceType code list value<br>
-**Cardinality**: [1..n]<br>
-**Description**: Sampling location types where the monitoring requirements are applicable.<br>
-**Guidance**: Reporting is required.<br>
-More than one type of sampling location may be reported. Multiple options can be reported, using a semicolon-separated list.<br>
-**QC V040**: The value must not be missing or empty.<br>
-**QC V137**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | PointOfComplianceType code list value |
+| Cardinality | [1..n] |
+| Description | Sampling location types where the monitoring requirements are applicable. |
+| Guidance | Reporting is required. |
+| Guidance | More than one type of sampling location may be reported. Multiple options can be reported, using a semicolon-separated list. |
+
+| Code | Description |
+|------|-------------|
+| QC V040 | The value must not be missing or empty. |
+| QC V137 | The value is not a valid member of the referenced list. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is optional.<br>
-**QC V083**: Text is too long (max 1500 characters).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| QC V083 | Text is too long (max 1500 characters). |
 
 ### Information on DWD Incidents
 
 **Table: Incident**
 ************************
 
-**Description**: Article 18.1(d) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on incidents relating to water intended for human consumption that have caused a potential risk to human health, regardless of whether any failure to meet the parametric values occurred, that lasted for more than ten (10) consecutive days and that affected at least 1 000 people, including the causes of those incidents and remedial actions taken in accordance with Article 14.<br>
-In the Incident table, information shall be reported that allow for unique identification and general description of the respective incident. One incident is one event: one reporting unit, one incident cause and one time period and could affect multiple parts of the supply chain (i.e category).<br>
-**Guidance**: Reporting is conditional.<br>
-The table must be reported if incidents exist for the reference year.<br>
-**QC TU004**: Uniqueness and multiplicity constraints - The field incidentIdentifier is unique within table.<br>
-**QC R046**: Incident lasts less than or equal than 10 days.<br>
-**QC R061**: Multiple incidents of the same cause overlapping in time are reported for the same water supply zone. Please, note that this is only allowed when the reported incidents are associated with different locations within the same water supply zone and overlapping in time.<br>
-**QC RF014**: This incident ended in the previous reporting.<br>
-**QC RF016**: If an Incident was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
-**QC XC007**: All incidents reported in the Incident table must have at least one associated record in the IncidentCauseAndRemedialAction table.
+| Property | Value |
+|----------|--------|
+| Description | Article 18.1(d) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing information on incidents relating to water intended for human consumption that have caused a potential risk to human health, regardless of whether any failure to meet the parametric values occurred, that lasted for more than ten (10) consecutive days and that affected at least 1 000 people, including the causes of those incidents and remedial actions taken in accordance with Article 14. |
+| Description | In the Incident table, information shall be reported that allow for unique identification and general description of the respective incident. One incident is one event: one reporting unit, one incident cause and one time period and could affect multiple parts of the supply chain (i.e category). |
+| Guidance | Reporting is conditional. |
+| Guidance | The table must be reported if incidents exist for the reference year. |
+
+| Code | Description |
+|------|-------------|
+| QC TU004 | Uniqueness and multiplicity constraints - The field incidentIdentifier is unique within table. |
+| QC R046 | Incident lasts less than or equal than 10 days. |
+| QC R061 | Multiple incidents of the same cause overlapping in time are reported for the same water supply zone. Please, note that this is only allowed when the reported incidents are associated with different locations within the same water supply zone and overlapping in time. |
+| QC RF014 | This incident ended in the previous reporting. |
+| QC RF016 | If an Incident was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year. |
+| QC XC007 | All incidents reported in the Incident table must have at least one associated record in the IncidentCauseAndRemedialAction table. |
 
 **Field: incidentIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier for the incident.<br>
-**Guidance**: Reporting is required.<br>
-Provide a unique identifier code for the incident. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
-**QC V027**: The value must not be missing or empty.<br>
-**QC V100**: The wiseIdentifier does not have the acceptable format.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the incident. |
+| Guidance | Reporting is required. |
+| Guidance | Provide a unique identifier code for the incident. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). |
+
+| Code | Description |
+|------|-------------|
+| QC V027 | The value must not be missing or empty. |
+| QC V100 | The wiseIdentifier does not have the acceptable format. |
 
 **Field: reportingUnitIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier of the water supply zone.<br>
-**Guidance**: Reporting is required.<br>
-Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
-**QC V021**: The value must not be missing or empty.<br>
-**QC V112**: The value is not a valid member of the referenced list.<br>
-**QC XC045**: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
-**QC XC047**: The reported reportingUnitIdentifier, must exist in the WaterSupply table.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier of the water supply zone. |
+| Guidance | Reporting is required. |
+| Guidance | Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field. |
+
+| Code | Description |
+|------|-------------|
+| QC V021 | The value must not be missing or empty. |
+| QC V112 | The value is not a valid member of the referenced list. |
+| QC XC045 | The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone. |
+| QC XC047 | The reported reportingUnitIdentifier, must exist in the WaterSupply table. |
 
 **Field: incidentStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [1]<br>
-**Description**: Start date of the incident, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is required.<br>
-**QC V005**: The value must not be missing or empty.<br>
-**QC V058**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC V153**: All start dates must be either within or earlier than the reference period.<br>
-**QC XC041**: The incidentStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone.<br>
-**QC R068**: If the incidentEndDate has been reported, the incidentStartDate must be reported.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [1] |
+| Description | Start date of the incident, in the format YYYY-MM-DD. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V005 | The value must not be missing or empty. |
+| QC V058 | The value is not a valid date (YYYY-MM-DD). |
+| QC V153 | All start dates must be either within or earlier than the reference period. |
+| QC XC041 | The incidentStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone. |
+| QC R068 | If the incidentEndDate has been reported, the incidentStartDate must be reported. |
 
 **Field: incidentEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [1]<br>
-**Description**: End date of the incident, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is required.<br>
-If the incident is still ongoing at the end of the year, report 9999-12-31.<br>
-**QC V006**: The value must not be missing or empty.<br>
-**QC V060**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC V148**: Incident end date outside reporting period.<br>
-**QC R025**: The value must be greater than or equal than incidentStartDate.<br>
-**QC XC045**: The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
-**QC XC037**: The end date of the remedial is greater than the end date of the incident.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [1] |
+| Description | End date of the incident, in the format YYYY-MM-DD. |
+| Guidance | Reporting is required. |
+| Guidance | If the incident is still ongoing at the end of the year, report 9999-12-31. |
+
+| Code | Description |
+|------|-------------|
+| QC V006 | The value must not be missing or empty. |
+| QC V060 | The value is not a valid date (YYYY-MM-DD). |
+| QC V148 | Incident end date outside reporting period. |
+| QC R025 | The value must be greater than or equal than incidentStartDate. |
+| QC XC045 | The incidentEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone. |
+| QC XC037 | The end date of the remedial is greater than the end date of the incident. |
 
 **Field: incidentCategory**
 
-**Data type**: IncidentCategory code list value<br>
-**Cardinality**: [1..n]<br>
-**Description**: Category of the incident.<br>
-**Guidance**: Reporting is required.<br>
-Use the code in the IncidentCategory code list. Multiple options can be reported, using a semicolon-separated list.<br>
-**QC V007**: The value must not be missing or empty.<br>
-**QC V131**: The value is not a valid member of the referenced list.<br>
-**QC V142**: If multiple incidentCategory values are reported, all values must be distinct.<br>
-**QC V143**: If incidentCategory = 'unknown' is incompatible with any other option.
+| Property | Value |
+|----------|--------|
+| Data type | IncidentCategory code list value |
+| Cardinality | [1..n] |
+| Description | Category of the incident. |
+| Guidance | Reporting is required. |
+| Guidance | Use the code in the IncidentCategory code list. Multiple options can be reported, using a semicolon-separated list. |
+
+| Code | Description |
+|------|-------------|
+| QC V007 | The value must not be missing or empty. |
+| QC V131 | The value is not a valid member of the referenced list. |
+| QC V142 | If multiple incidentCategory values are reported, all values must be distinct. |
+| QC V143 | If incidentCategory = 'unknown' is incompatible with any other option. |
 
 **Field: incidentAffectedPopulation**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Estimated number of people affected by the incident in the water supply zone. Affected population refers to the people potentially exposed to the risk, regardless of disease or not.<br>
-**Guidance**: Reporting is required.<br>
-**QC V101**: The value is not a valid non-negative number.<br>
-**QC V032**: The value must not be missing or empty.<br>
-**QC V067**: The value is not a valid whole number.<br>
-**QC V145**: The incident affected less than 1000 people.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Estimated number of people affected by the incident in the water supply zone. Affected population refers to the people potentially exposed to the risk, regardless of disease or not. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V101 | The value is not a valid non-negative number. |
+| QC V032 | The value must not be missing or empty. |
+| QC V067 | The value is not a valid whole number. |
+| QC V145 | The incident affected less than 1000 people. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC R043**: If the incidentCategory = 'unknown' or if one of the incidentCategory values is 'other', additional explanation should be provided in the remarks field.<br>
-**QC V084**: Text is too long (max 1500 characters).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC R043 | If the incidentCategory = 'unknown' or if one of the incidentCategory values is 'other', additional explanation should be provided in the remarks field. |
+| QC V084 | Text is too long (max 1500 characters). |
 
 
 **Table: IncidentCauseAndRemedialAction**
 ********************************************
 
-**Description**: In the IncidentCauseAndRemedialAction table, information shall be reported about the cause and remedial actions linked to an incident previously reported in Incident table. Note that each incident can be associated with more than one remedial action.<br>
-**Guidance**: Reporting is conditional.<br>
-The table must be reported if incidents exist for the reference year.<br>
-**QC TU006**: The combination of the incidentIdentifier value, incidentCause value and the incidentRemedialAction value must be unique across the IncidentCauseAndRemedialAction table records.<br>
-**QC R041**: For each incidentIdentifier value, the number of acceptable different incidentCause values is one.<br>
-**QC RF019**: If an IncidentRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.<br>
-**QC XC035**: The remedial action period must overlap, at least partially, with the associated incident period.
+| Property | Value |
+|----------|--------|
+| Description | In the IncidentCauseAndRemedialAction table, information shall be reported about the cause and remedial actions linked to an incident previously reported in Incident table. Note that each incident can be associated with more than one remedial action. |
+| Guidance | Reporting is conditional. |
+| Guidance | The table must be reported if incidents exist for the reference year. |
+
+| Code | Description |
+|------|-------------|
+| QC TU006 | The combination of the incidentIdentifier value, incidentCause value and the incidentRemedialAction value must be unique across the IncidentCauseAndRemedialAction table records. |
+| QC R041 | For each incidentIdentifier value, the number of acceptable different incidentCause values is one. |
+| QC RF019 | If an IncidentRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year. |
+| QC XC035 | The remedial action period must overlap, at least partially, with the associated incident period. |
 
 **Field: incidentIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier of the incident, as reported in the Incident table.<br>
-**Guidance**: Reporting is required.<br>
-**QC V008**: The value must not be missing or empty.<br>
-**QC V113**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier of the incident, as reported in the Incident table. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V008 | The value must not be missing or empty. |
+| QC V113 | The value is not a valid member of the referenced list. |
 
 **Field: incidentCause**
 
-**Data type**: IncidentExceedanceCause code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Cause of the incident.<br>
-**Guidance**: Reporting is required.<br>
-**QC V009**: The value must not be missing or empty.<br>
-**QC V117**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | IncidentExceedanceCause code list value |
+| Cardinality | [1] |
+| Description | Cause of the incident. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V009 | The value must not be missing or empty. |
+| QC V117 | The value is not a valid member of the referenced list. |
 
 **Field: incidentRemedialAction**
 
-**Data type**: RemedialAction code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Remedial action linked to an incident.<br>
-**Guidance**: Reporting is required.<br>
-Each incident is associated to one and only one cause, but multiple remedial actions may be reported.<br>
-**QC V010**: The value must not be missing or empty.<br>
-**QC V118**: The value is not a valid member of the referenced list.<br>
-**QC R007**: If incidentRemedialAction = 'other', reporting is required.<br>
-**QC R031**: If incidentRemedialAction = 'none', then no other record of the IncidentCauseAndRemedialAction table can have the same incidentIdentifier value.
+| Property | Value |
+|----------|--------|
+| Data type | RemedialAction code list value |
+| Cardinality | [1] |
+| Description | Remedial action linked to an incident. |
+| Guidance | Reporting is required. |
+| Guidance | Each incident is associated to one and only one cause, but multiple remedial actions may be reported. |
+
+| Code | Description |
+|------|-------------|
+| QC V010 | The value must not be missing or empty. |
+| QC V118 | The value is not a valid member of the referenced list. |
+| QC R007 | If incidentRemedialAction = 'other', reporting is required. |
+| QC R031 | If incidentRemedialAction = 'none', then no other record of the IncidentCauseAndRemedialAction table can have the same incidentIdentifier value. |
 
 **Field: incidentRemedialActionStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: Start date of the remedial action, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V052**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R036**: If incidentRemedialAction is not 'none', then the incidentRemedialActionStartDate is required.<br>
-**QC XC051**: incidentRemedialActionStartDate and incidentRemedialActionEndDate should fall within incidentStartDate and incidentEndDate.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | Start date of the remedial action, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V052 | The value is not a valid date (YYYY-MM-DD). |
+| QC R036 | If incidentRemedialAction is not 'none', then the incidentRemedialActionStartDate is required. |
+| QC XC051 | incidentRemedialActionStartDate and incidentRemedialActionEndDate should fall within incidentStartDate and incidentEndDate. |
 
 **Field: incidentRemedialActionEndDate**
 
