@@ -1699,6 +1699,7 @@ These are the fields of the spatial data:
 | QC RF003 | The thematic identifier that is replacing this object has been superseded, deprecated or is invalid. |
 | QC RF013 | The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set. |
 | QC RF015 | If you have not reported yet in the previous reporting cycle, you cannot report here. |
+
 **Field: geometry_polygon**
 
 | Property | Value |
