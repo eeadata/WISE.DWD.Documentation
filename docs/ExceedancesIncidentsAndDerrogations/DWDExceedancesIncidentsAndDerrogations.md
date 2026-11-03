@@ -1744,212 +1744,337 @@ These are the fields of the spatial data:
 
 **Field: inspireIdVersionId**
 
-**Cardinality**: [0..1]<br>
-**QC V004**: The inspireIdVersionId value must be a non-empty string with less than 25 characters.<br>
-**QC R013**: The inspireIdVersionId value must be reported, if the wiseEvolutionType value describes a change in the area and/or depth of the water body.<br>
-**QC R014**: The inspireIdVersionId value must be reported, if the wiseEvolutionType value is 'change'.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+
+| Code | Description |
+|------|-------------|
+| QC V004 | The inspireIdVersionId value must be a non-empty string with less than 25 characters. |
+| QC R013 | The inspireIdVersionId value must be reported, if the wiseEvolutionType value describes a change in the area and/or depth of the water body. |
+| QC R014 | The inspireIdVersionId value must be reported, if the wiseEvolutionType value is 'change'. |
 
 **Field: thematicIdIdentifier**
 
-**Cardinality**: [1]<br>
-**QC V005**: The thematicIdIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hyphen and the underscore can be used as non-consecutive separators).<br>
-**QC V024**: The value must not be missing or empty.<br>
-**QC RC05A**: The thematicIdIdentifier value must be reported, if the thematicIdIdentifierScheme value is reported.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V005 | The thematicIdIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hyphen and the underscore can be used as non-consecutive separators). |
+| QC V024 | The value must not be missing or empty. |
+| QC RC05A | The thematicIdIdentifier value must be reported, if the thematicIdIdentifierScheme value is reported. |
 
 **Field: thematicIdentifierScheme**
 
-**Data type**: identifierScheme code list value<br>
-**Cardinality**: [1]<br>
-**Description**: WISE scheme under which the identifiers are stored.<br>
-**Guidance**: Identifier defining the scheme used to assign the thematicIdentifier. The WISE Identifier Schemes are used for this field.<br>
-If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReportingUnitCode’ must be reported.<br>
-**Guidance**: Reporting is required.<br>
-**QC V016**: The value must not be missing or empty.<br>
-**QC V032**: The thematicIdIdentifierScheme value is not valid.<br>
-**QC RC06A**: The thematicIdIdentifierScheme value must be reported, if the thematicIdIdentifier value is reported.
+| Property | Value |
+|----------|--------|
+| Data type | identifierScheme code list value |
+| Cardinality | [1] |
+| Description | WISE scheme under which the identifiers are stored. |
+| Guidance | Identifier defining the scheme used to assign the thematicIdentifier. The WISE Identifier Schemes are used for this field. |
+| Guidance | If a Water Supply Zone is being reported then the value ‘euDrinkingWaterReportingUnitCode’ must be reported. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V016 | The value must not be missing or empty. |
+| QC V032 | The thematicIdIdentifierScheme value is not valid. |
+| QC RC06A | The thematicIdIdentifierScheme value must be reported, if the thematicIdIdentifier value is reported. |
 
 **Field: beginLifespanVersion**
 
-**Cardinality**: [0..1]<br>
-**Description**: Date when the record was created. Set to reporting date, if unknown.<br>
-**QC V006**: The beginLifespanVersion value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
-**QC R002**: The beginLifespanVersion value must be reported, if the inspireVersionId value is reported.<br>
-**QC R003**: The beginLifespanVersion date must not be after the endLifespanVersion.<br>
-**QC R016**: The beginLifespanVersion value must be reported, unless the wiseEvolutionType is 'creation' or 'noChange'.<br>
-**QC RC09A**: The beginLifespanVersion value must be reported, if the endLifespanVersion value is reported.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+| Description | Date when the record was created. Set to reporting date, if unknown. |
+
+| Code | Description |
+|------|-------------|
+| QC V006 | The beginLifespanVersion value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD). |
+| QC R002 | The beginLifespanVersion value must be reported, if the inspireVersionId value is reported. |
+| QC R003 | The beginLifespanVersion date must not be after the endLifespanVersion. |
+| QC R016 | The beginLifespanVersion value must be reported, unless the wiseEvolutionType is 'creation' or 'noChange'. |
+| QC RC09A | The beginLifespanVersion value must be reported, if the endLifespanVersion value is reported. |
 
 **Field: endLifespanVersion**
 
-**Cardinality**: [0..1]<br>
-**Description**: The value must be NULL in the first reporting cycle.<br>
-**QC R001**: the endLifespanVersion has to be empty, if wiseEvolutionType is 'Creation'.<br>
-**QC R015**: The endLifespanVersion value must be reported, if the wiseEvolutionType is 'deletion'.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+| Description | The value must be NULL in the first reporting cycle. |
+
+| Code | Description |
+|------|-------------|
+| QC R001 | the endLifespanVersion has to be empty, if wiseEvolutionType is 'Creation'. |
+| QC R015 | The endLifespanVersion value must be reported, if the wiseEvolutionType is 'deletion'. |
 
 **Field: predecessorsIdentifier**
 
-**Cardinality**: [0..n]<br>
-**Description**: The value must be NULL in the first reporting cycle.<br>
-**QC V036**: The predecessorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
-**QC R011**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation'.<br>
-**QC R022**: The predecessorsIdentifier value must be reported, if the predecessorsIdentifierScheme value is reported.<br>
-**QC R024**: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
-**QC RF012**: The object has a predecessor that does not exist in the register.<br>
-**QC RF014**: The object has a predecessor with a different zone type.<br>
-**QC XC007**: Objects with the same predecessor must have the same designationPeriodBegin value.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..n] |
+| Description | The value must be NULL in the first reporting cycle. |
+
+| Code | Description |
+|------|-------------|
+| QC V036 | The predecessorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators). |
+| QC R011 | The object must have zero predecessors, if the wiseEvolutionType value is 'creation'. |
+| QC R022 | The predecessorsIdentifier value must be reported, if the predecessorsIdentifierScheme value is reported. |
+| QC R024 | The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself). |
+| QC RF012 | The object has a predecessor that does not exist in the register. |
+| QC RF014 | The object has a predecessor with a different zone type. |
+| QC XC007 | Objects with the same predecessor must have the same designationPeriodBegin value. |
 
 **Field: predecessorsIdentifierScheme**
 
-**Cardinality**: [0..1]<br>
-**Description**: The value must be NULL in the first reporting cycle.<br>
-**QC V037**: Invalid predecessorsIdentifierScheme value for this spatial object type.<br>
-**QC R011**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation'.<br>
-**QC R023**: The predecessorsIdentifierScheme value must be reported, if the predecessorsIdentifier value is reported.<br>
-**QC R024**: The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+| Description | The value must be NULL in the first reporting cycle. |
+
+| Code | Description |
+|------|-------------|
+| QC V037 | Invalid predecessorsIdentifierScheme value for this spatial object type. |
+| QC R011 | The object must have zero predecessors, if the wiseEvolutionType value is 'creation'. |
+| QC R023 | The predecessorsIdentifierScheme value must be reported, if the predecessorsIdentifier value is reported. |
+| QC R024 | The predecessorsIdentifier and predecessorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself). |
 
 **Field: successorsIdentifier**
 
-**Cardinality**: [0..n]<br>
-**QC V041**: The successorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators).<br>
-**QC R025**: The successorsIdentifier value must be reported, if the successorsIdentifierScheme value is reported.<br>
-**QC R026**: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..n] |
+
+| Code | Description |
+|------|-------------|
+| QC V041 | The successorsIdentifier value must be a string starting with the 2-letter country code. Upper case letters (A to Z) and digits (0 to 9) are allowed in the remaining part (the hifen and the underscore can be used as non-consecutive separators). |
+| QC R025 | The successorsIdentifier value must be reported, if the successorsIdentifierScheme value is reported. |
+| QC R026 | The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself). |
 
 **Field: successorsIdentifierScheme**
 
-**Cardinality**: [0..1]<br>
-**QC V038**: Invalid successorsIdentifierScheme value for this spatial object type.<br>
-**QC R026**: The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself).<br>
-**QC R027**: The successorsIdentifierScheme value must be reported, if the successorsIdentifier value is reported.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+
+| Code | Description |
+|------|-------------|
+| QC V038 | Invalid successorsIdentifierScheme value for this spatial object type. |
+| QC R026 | The successorsIdentifier and successorsIdentifierScheme combination must not be equal to the thematicIdentifier and thematicIdentifierScheme combination (an identifier must not replace itself). |
+| QC R027 | The successorsIdentifierScheme value must be reported, if the successorsIdentifier value is reported. |
 
 **Field: wiseEvolutionType**
 
-**Cardinality**: [1]<br>
-**Description**: The value must be 'creation' in the first reporting cycle.<br>
-**QC V017**: The value must not be missing or empty.<br>
-**QC V027**: The value is not a valid member of the referenced list.<br>
-**QC R017**: The object must have zero predecessors, if the wiseEvolutionType value is 'creation', 'change' or 'noChange'.<br>
-**QC R018**: The object must have one and only one predecessor, if the wiseEvolutionType value is 'changeCode' or 'splitting'.<br>
-**QC R019**: The object must have two or more predecessors, if the wiseEvolutionType value is 'aggregation' or 'changeBothAggregationAndSplitting'.<br>
-**QC R021**: wiseEvolutionType = 'deletion' is the only valid option if the element has a successor.<br>
-**QC RF002**: If an object is reported as 'deletion', it must have the same predecessors as before.<br>
-**QC RF005**: The thematic identifier must be a valid identifier in the register, if the wiseEvolutionType value is 'deletion', 'noChange' or 'change'.<br>
-**QC RF006**: The thematic identifier must not exist in the register, unless the wiseEvolutionType value is 'deletion', 'noChange' or 'change'.<br>
-**QC XC001**: A spatial object with wiseEvolutionType value equal to 'changeCode' must not have the same predecessor of another spatial object.<br>
-**QC XC002**: At least one predecessor of an object with wiseEvolutionType value equal to 'splitting' or 'changeBothAggregationAndSplitting' must be reported as predecessor of another spatial object.<br>
-**QC XC003**: If an identifier is the predecessor of 2 or more objects, then those objects must have wiseEvolution in ('splitting', 'changeBothAggregationAndSplitting').<br>
-**QC XC004**: The object has wiseEvolutionType = 'deletion' and is a predecessor to other objects reported in the data set. The identifiers of the successors must be reported consistently.<br>
-**QC XC006**: The spatial object must have wiseEvolutionType value equal to 'deletion' if it is also reported as predecessor to another spatial object.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+| Description | The value must be 'creation' in the first reporting cycle. |
+
+| Code | Description |
+|------|-------------|
+| QC V017 | The value must not be missing or empty. |
+| QC V027 | The value is not a valid member of the referenced list. |
+| QC R017 | The object must have zero predecessors, if the wiseEvolutionType value is 'creation', 'change' or 'noChange'. |
+| QC R018 | The object must have one and only one predecessor, if the wiseEvolutionType value is 'changeCode' or 'splitting'. |
+| QC R019 | The object must have two or more predecessors, if the wiseEvolutionType value is 'aggregation' or 'changeBothAggregationAndSplitting'. |
+| QC R021 | wiseEvolutionType = 'deletion' is the only valid option if the element has a successor. |
+| QC RF002 | If an object is reported as 'deletion', it must have the same predecessors as before. |
+| QC RF005 | The thematic identifier must be a valid identifier in the register, if the wiseEvolutionType value is 'deletion', 'noChange' or 'change'. |
+| QC RF006 | The thematic identifier must not exist in the register, unless the wiseEvolutionType value is 'deletion', 'noChange' or 'change'. |
+| QC XC001 | A spatial object with wiseEvolutionType value equal to 'changeCode' must not have the same predecessor of another spatial object. |
+| QC XC002 | At least one predecessor of an object with wiseEvolutionType value equal to 'splitting' or 'changeBothAggregationAndSplitting' must be reported as predecessor of another spatial object. |
+| QC XC003 | If an identifier is the predecessor of 2 or more objects, then those objects must have wiseEvolution in ('splitting', 'changeBothAggregationAndSplitting'). |
+| QC XC004 | The object has wiseEvolutionType = 'deletion' and is a predecessor to other objects reported in the data set. The identifiers of the successors must be reported consistently. |
+| QC XC006 | The spatial object must have wiseEvolutionType value equal to 'deletion' if it is also reported as predecessor to another spatial object. |
 
 **Field: nameTextInternational**
 
-**Cardinality**: [1]<br>
-**QC V023**: The value must not be missing or empty.<br>
-**QC V007**: The nameTextInternational value must be a string with less than 255 characters. Upper case letters (A to Z) and digits (0 to 9) are allowed (spaces and hyphens can be used as separators).
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V023 | The value must not be missing or empty. |
+| QC V007 | The nameTextInternational value must be a string with less than 255 characters. Upper case letters (A to Z) and digits (0 to 9) are allowed (spaces and hyphens can be used as separators). |
 
 **Field: nameText**
 
-**Cardinality**: [1]<br>
-**QC V008**: The nameText value must be a string with less than 255 characters.<br>
-**QC V001**: The used encoding is not correct. Strange characters in nameText field.<br>
-**QC V022**: The value must not be missing or empty.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V008 | The nameText value must be a string with less than 255 characters. |
+| QC V001 | The used encoding is not correct. Strange characters in nameText field. |
+| QC V022 | The value must not be missing or empty. |
 
 **Field: nameLanguage**
 
-**Cardinality**: [1]<br>
-**QC V018**: The value must not be missing or empty.<br>
-**QC V028**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V018 | The value must not be missing or empty. |
+| QC V028 | The value is not a valid member of the referenced list. |
 
 **Field: designationPeriodBegin**
 
-**Cardinality**: [1]<br>
-**QC V009**: The designationPeriodBegin value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
-**QC V021**: The value must not be missing or empty.<br>
-**QC R004**: The designationPeriodBegin date must not be after the designationPeriodEnd.<br>
-**QC RF007**: If wiseEvolutionType in ('deletion','change','noChange'), the designationPeriodBegin must be equal to the designationPeriodBegin of the object in the register.<br>
-**QC RF008**: If wiseEvolutionType in ('splitting','aggregation','changeBothAggregationAndSplitting','changeExtendedArea','changeExtendedDepth','changeExtendedAreaAndDepth','changeReducedArea','changeReducedDepth','changeReducedAreaAndDepth'), the designationPeriodBegin value must be higher than the designationPeriodBegin value of the predecessor.<br>
-**QC RF010**: If wiseEvolutionType is in ('change','noChange') then, the designationPeriodBegin cannot be lower than the one stored in the registry for the same element.<br>
-**QC XC005**: The designationPeriodBegin for the successor can not be the same as the designationPeriodBegin of the object being replaced.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V009 | The designationPeriodBegin value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD). |
+| QC V021 | The value must not be missing or empty. |
+| QC R004 | The designationPeriodBegin date must not be after the designationPeriodEnd. |
+| QC RF007 | If wiseEvolutionType in ('deletion','change','noChange'), the designationPeriodBegin must be equal to the designationPeriodBegin of the object in the register. |
+| QC RF008 | If wiseEvolutionType in ('splitting','aggregation','changeBothAggregationAndSplitting','changeExtendedArea','changeExtendedDepth','changeExtendedAreaAndDepth','changeReducedArea','changeReducedDepth','changeReducedAreaAndDepth'), the designationPeriodBegin value must be higher than the designationPeriodBegin value of the predecessor. |
+| QC RF010 | If wiseEvolutionType is in ('change','noChange') then, the designationPeriodBegin cannot be lower than the one stored in the registry for the same element. |
+| QC XC005 | The designationPeriodBegin for the successor can not be the same as the designationPeriodBegin of the object being replaced. |
 
 **Field: designationPeriodEnd**
 
-**Cardinality**: [0..1]<br>
-**Description**: The value must be NULL if wiseEvolutionType = 'creation'.<br>
-**QC V010**: The designationPeriodEnd value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD).<br>
-**QC R020**: The designationPeriodEnd date must be reported, if the wiseEvolutionType value is 'deletion'.<br>
-**QC R045**: Multiple exceedances overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+| Description | The value must be NULL if wiseEvolutionType = 'creation'. |
+
+| Code | Description |
+|------|-------------|
+| QC V010 | The designationPeriodEnd value must be a valid date in the ISO 8601 extended format value (e.g. YYYY, YYYY-MM, YYYY-MM-DD). |
+| QC R020 | The designationPeriodEnd date must be reported, if the wiseEvolutionType value is 'deletion'. |
+| QC R045 | Multiple exceedances overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone. |
 
 **Field: zoneType**
 
-**Data type**: zoneType code list value.<br>
-**Cardinality**: [1]<br>
-**Description**: Zone classification. ‘waterSupplyZone’ must be reported.<br>
-**Guidance**: Reporting is required.<br>
-**QC V020**: The value must not be missing or empty.<br>
-**QC V029: The value is not a valid member of the referenced list.**
+| Property | Value |
+|----------|--------|
+| Data type | zoneType code list value. |
+| Cardinality | [1] |
+| Description | Zone classification. ‘waterSupplyZone’ must be reported. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V020 | The value must not be missing or empty. |
+| QC V029 | **The value is not a valid member of the referenced list.** |
 
 **Field: specialisedZoneType**
 
-**Data type**: specialisedZoneType code list value.<br>
-**Cardinality**: [0..1]<br>
-**Description**: The value must be NULL if zoneType = 'waterSupplyZone'.<br>
-**Guidance**: The value should be empty.<br>
-**QC V026**: specialisedZoneType should be empty.
+| Property | Value |
+|----------|--------|
+| Data type | specialisedZoneType code list value. |
+| Cardinality | [0..1] |
+| Description | The value must be NULL if zoneType = 'waterSupplyZone'. |
+| Guidance | The value should be empty. |
+
+| Code | Description |
+|------|-------------|
+| QC V026 | specialisedZoneType should be empty. |
 
 **Field: legalBasisName**
 
-**Cardinality**: [0..1]<br>
-**QC V011**: The legalBasisName value must be a string with less than 255 characters.<br>
-**QC R007**: if legalBasisLevel = 'european' then legalBasisName must have the value 'Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)'.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+
+| Code | Description |
+|------|-------------|
+| QC V011 | The legalBasisName value must be a string with less than 255 characters. |
+| QC R007 | if legalBasisLevel = 'european' then legalBasisName must have the value 'Directive (EU) 2020/2184 of the European Parliament and of the Council of 16 December 2020 on the quality of water intended for human consumption (recast)'. |
 
 **Field: legalBasisLink**
 
-**Cardinality**: [0..1]<br>
-**QC V012**: The legalBasisLink value must be an URL with less than 255 characters.<br>
-**QC R009**: if legalBasisLevel = 'european' then legalBasisLink must have the value 'https://eur-lex.europa.eu/eli/dir/2020/2184/oj'.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+
+| Code | Description |
+|------|-------------|
+| QC V012 | The legalBasisLink value must be an URL with less than 255 characters. |
+| QC R009 | if legalBasisLevel = 'european' then legalBasisLink must have the value 'https://eur-lex.europa.eu/eli/dir/2020/2184/oj'. |
 
 **Field: legalBasisLevel**
 
-**Cardinality**: [0..1]<br>
-**QC V033**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+
+| Code | Description |
+|------|-------------|
+| QC V033 | The value is not a valid member of the referenced list. |
 
 **Field: relatedZoneIdentifier**
 
-**Cardinality**: [0..1]<br>
-**Description**: Reference to a related management, regulation or restriction zone.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC R006**: The relatedZoneIdentifier value must be reported, if the relatedZoneIdentifierScheme value is reported.<br>
-**QC RF001**: The relatedZoneIdentifier must exist in the list of NUTS3.
+| Property | Value |
+|----------|--------|
+| Cardinality | [0..1] |
+| Description | Reference to a related management, regulation or restriction zone. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC R006 | The relatedZoneIdentifier value must be reported, if the relatedZoneIdentifierScheme value is reported. |
+| QC RF001 | The relatedZoneIdentifier must exist in the list of NUTS3. |
 
 **Field: relatedZoneIdentifierScheme**
 
-**Data type**: identifierScheme code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Identifier defining the scheme used to assign the relatedZoneIdentifier. The WISE Identifier Schemes are used for this field. Identifier of higher-level spatial object. In the current reporting, the NUTS units to which the WSZ belongs can be reported. Where the related Water Supply Zone is equivalent to a NUTS level 3 region then ‘nuts2024’ is reported.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V030**: The relatedZoneIdentifierScheme value is not valid.<br>
-**QC R008**: The relatedZoneIdentifierScheme value must be reported, if the relatedZoneIdentifier value is reported.
+| Property | Value |
+|----------|--------|
+| Data type | identifierScheme code list value |
+| Cardinality | [0..1] |
+| Description | Identifier defining the scheme used to assign the relatedZoneIdentifier. The WISE Identifier Schemes are used for this field. Identifier of higher-level spatial object. In the current reporting, the NUTS units to which the WSZ belongs can be reported. Where the related Water Supply Zone is equivalent to a NUTS level 3 region then ‘nuts2024’ is reported. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V030 | The relatedZoneIdentifierScheme value is not valid. |
+| QC R008 | The relatedZoneIdentifierScheme value must be reported, if the relatedZoneIdentifier value is reported. |
 
 **Field: sizeValue**
 
-**Data type**: Numeric value.<br>
-**Cardinality**: [0..1]<br>
-**Description**: Report only if the geometry value is NULL.<br>
-**Guidance**: Provide an estimate of the total area in square kilometres. Reporting is conditional.<br>
-**QC V013**: The sizeValue value must be a positive number.<br>
-**QC V025**: The value is not a valid whole or decimal number.<br>
-**QC R010**: If the geometry is NULL, the sizeValue is mandatory.
+| Property | Value |
+|----------|--------|
+| Data type | Numeric value. |
+| Cardinality | [0..1] |
+| Description | Report only if the geometry value is NULL. |
+| Guidance | Provide an estimate of the total area in square kilometres. Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V013 | The sizeValue value must be a positive number. |
+| QC V025 | The value is not a valid whole or decimal number. |
+| QC R010 | If the geometry is NULL, the sizeValue is mandatory. |
 
 **Field: sizeUom**
 
-**Data type**: sizeUom code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Report only if the sizeValue is provided.<br>
-**Guidance**: Reporting is conditional.<br>
-**R005**: If sizeUom is reported then sizeValue must also be reported. If sizeValue is reported then sizeUOM must also be reported.<br>
-**QC V031**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | sizeUom code list value |
+| Cardinality | [0..1] |
+| Description | Report only if the sizeValue is provided. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC R005 | If sizeUom is reported then sizeValue must also be reported. If sizeValue is reported then sizeUOM must also be reported. |
+| QC V031 | The value is not a valid member of the referenced list. |
 
 **Field: link**
 
-**Data type**: URL<br>
-**Cardinality**: [0..1]<br>
-**Guidance**: Reporting is optional.<br>
-**QC V014**: The link value must be an URL with less than 255 characters.
+| Property | Value |
+|----------|--------|
+| Data type | URL |
+| Cardinality | [0..1] |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| QC V014 | The link value must be an URL with less than 255 characters. |
