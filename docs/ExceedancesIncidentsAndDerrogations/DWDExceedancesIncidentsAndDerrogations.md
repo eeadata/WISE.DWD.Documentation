@@ -1446,116 +1446,161 @@ Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportn
 
 **Field: procedureLOQValue**
 
-**Data type**: Non-negative decimal<br>
-**Cardinality**: [0..1]<br>
-**Description**: Limit of quantification value, in the unit of measure reported in the resultUom field. The LoQ is defined as the smallest concentration that can be distinguished from the analytical blank at a chosen level of statistical confidence (usually 95%).<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V056**: The value is not a valid whole or decimal number.<br>
-**QC V105**: The value is not a valid non-negative number.<br>
-**QC R049**: The procedureLOQValue is reported although a justification for missing result values is provided.<br>
-**QC XC020**: The procedureLOQValue is mandatory for the reported determinand, but it is missing without a proper justification.<br>
-**QC XC021**: The procedureLOQValue is mandatory because the BelowLOQ flag is true, but it is missing without a proper justification.<br>
-**QC XC022**: The procedureLOQValue is reported for a determinand where it is inapplicable.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative decimal |
+| Cardinality | [0..1] |
+| Description | Limit of quantification value, in the unit of measure reported in the resultUom field. The LoQ is defined as the smallest concentration that can be distinguished from the analytical blank at a chosen level of statistical confidence (usually 95%). |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V056 | The value is not a valid whole or decimal number. |
+| QC V105 | The value is not a valid non-negative number. |
+| QC R049 | The procedureLOQValue is reported although a justification for missing result values is provided. |
+| QC XC020 | The procedureLOQValue is mandatory for the reported determinand, but it is missing without a proper justification. |
+| QC XC021 | The procedureLOQValue is mandatory because the BelowLOQ flag is true, but it is missing without a proper justification. |
+| QC XC022 | The procedureLOQValue is reported for a determinand where it is inapplicable. |
 
 **Field: resultObservedValue**
 
-**Data type**: Non-negative decimal<br>
-**Cardinality**: [0..1]<br>
-**Description**: The measured value (e.g., concentration of a given substance), in the unit of measure reported in the resultUom field.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V069**: The value is not a valid whole or decimal number.<br>
-**QC V106**: The value is not a valid non-negative number.<br>
-**QC R050**: The resultObservedValue is missing without a proper justification.<br>
-**QC R051**: The resultObservedValue is missing without a proper justification.<br>
-**QC R057**: Although the resultQualityObservedValueBelowLOQ = 'no', the reported resultObservedValue is lower than procedureLOQValue.<br>
-**QC R058**: Although the resultQualityObservedValueBelowLOQ = 'yes', the reported resultObservedValue is above or equal than procedureLOQValue.<br>
-**QC XC018**: Monitoring results linked to an exceedanceIdentifier must have a resultObservedValue above (&gt;) the parametric value.<br>
-There are two exceptions to QC XC018:<br>
-1) This rule does not apply to records for the parameters nitrate and nitrite that are related to exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1.<br>
-2) This rule does not apply if an exceedance that is active in the reference year overlaps with the three-year period preceding the start date of a derogation for the same parameter and Water Supply Zone (WSZ). In such cases, both the exceedanceIdentifier and the derogationIdentifier must be reported together, even if the resultObservedValue is equal to or below (&lt;=) the parametric value.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative decimal |
+| Cardinality | [0..1] |
+| Description | The measured value (e.g., concentration of a given substance), in the unit of measure reported in the resultUom field. |
+| Guidance | Reporting is conditional. |
+| Guidance | There are two exceptions to QC XC018: |
+| Guidance | 1) This rule does not apply to records for the parameters nitrate and nitrite that are related to exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1. |
+| Guidance | 2) This rule does not apply if an exceedance that is active in the reference year overlaps with the three-year period preceding the start date of a derogation for the same parameter and Water Supply Zone (WSZ). In such cases, both the exceedanceIdentifier and the derogationIdentifier must be reported together, even if the resultObservedValue is equal to or below (<=) the parametric value. |
+
+| Code | Description |
+|------|-------------|
+| QC V069 | The value is not a valid whole or decimal number. |
+| QC V106 | The value is not a valid non-negative number. |
+| QC R050 | The resultObservedValue is missing without a proper justification. |
+| QC R051 | The resultObservedValue is missing without a proper justification. |
+| QC R057 | Although the resultQualityObservedValueBelowLOQ = 'no', the reported resultObservedValue is lower than procedureLOQValue. |
+| QC R058 | Although the resultQualityObservedValueBelowLOQ = 'yes', the reported resultObservedValue is above or equal than procedureLOQValue. |
+| QC XC018 | Monitoring results linked to an exceedanceIdentifier must have a resultObservedValue above (>) the parametric value. |
 
 **Field: resultQualityObservedValueBelowLOQ**
 
-**Data type**: SpecialValue code list value ('yes', 'no')<br>
-**Cardinality**: [0..1]<br>
-**Description**: Was the measured value below the LOQ?<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V075**: The value is not a valid member of the codelist.<br>
-**QC R019**: Report resultQualityObservedValueBelowLOQ = 'no', if the resultObservedValue is above or equal to the limit of quantification (LoQ).<br>
-**QC R020**: Report resultQualityObservedValueBelowLOQ = 'yes', if the resultObservedValue is below the limit of quantification (LoQ).<br>
-**QC R052**: The resultQualityObservedValueBelowLOQ is missing without a proper justification in the resultObservationStatus field.<br>
-**QC R053**: The resultQualityObservedValueBelowLOQ is reported although a justification for missing result values is provided.<br>
-**QC R059**: Set resultQualityObservedValueBelowLOQ = 'no' if the LoQ value is not required and is not reported.<br>
-**QC XC023**: The resultQualityObservedValueBelowLOQ is True for a determinand where it is inapplicable.
+| Property | Value |
+|----------|--------|
+| Data type | SpecialValue code list value ('yes', 'no') |
+| Cardinality | [0..1] |
+| Description | Was the measured value below the LOQ? |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V075 | The value is not a valid member of the codelist. |
+| QC R019 | Report resultQualityObservedValueBelowLOQ = 'no', if the resultObservedValue is above or equal to the limit of quantification (LoQ). |
+| QC R020 | Report resultQualityObservedValueBelowLOQ = 'yes', if the resultObservedValue is below the limit of quantification (LoQ). |
+| QC R052 | The resultQualityObservedValueBelowLOQ is missing without a proper justification in the resultObservationStatus field. |
+| QC R053 | The resultQualityObservedValueBelowLOQ is reported although a justification for missing result values is provided. |
+| QC R059 | Set resultQualityObservedValueBelowLOQ = 'no' if the LoQ value is not required and is not reported. |
+| QC XC023 | The resultQualityObservedValueBelowLOQ is True for a determinand where it is inapplicable. |
 
 **Field: resultObservationStatus**
 
-**Data type**: ObservationStatus code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Status of the reported value.<br>
-**Guidance**: Reporting is optional.<br>
-**QC V122**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | ObservationStatus code list value |
+| Cardinality | [0..1] |
+| Description | Status of the reported value. |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| QC V122 | The value is not a valid member of the referenced list. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-If resultObservedValue&lt;=parametricValue (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;EXCEEDANCEID’ is required in this remarks field.<br>
-**QC V088**: Text is too long (max 1500 characters).<br>
-**QC V163**: The 'Remarks' field format must match expected Sample and related exceedance ID pattern. The 'Remarks' field must follow a regex of SampleNUMBER;EXCEEDANCEID (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+| Guidance | If resultObservedValue<=parametricValue (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;EXCEEDANCEID’ is required in this remarks field. |
+
+| Code | Description |
+|------|-------------|
+| QC V088 | Text is too long (max 1500 characters). |
+| QC V163 | The 'Remarks' field format must match expected Sample and related exceedance ID pattern. The 'Remarks' field must follow a regex of SampleNUMBER;EXCEEDANCEID (required for records with nitrate and nitrite values related to an exceedance of condition [nitrate]/50 + [nitrite]/3 ≤ 1). |
 
 **Field: exceedanceIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unique European identifier of the exceedance, as reported in the Exceedance table.<br>
-**Guidance**: Reporting is conditional.<br>
-If the reported value refers to an exceedance, the exceedanceIdentifier value is required. Please note the exceptions in QC XC018: in these exceptional cases, an exceedanceIdentifier must be reported even if the resultObservedValue is equal to or below (&lt;=) the parametric value.<br>
-**QC V126**: The value is not a valid member of the referenced list.<br>
-**QC XC002**: If the exceedanceIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Exceedance table.<br>
-**QC XC009**: If the exceedanceIdentifier value is reported, the parameterCode must be equal to the parameterCode from the Exceedance table.<br>
-**QC XC027**: The exceedanceIdentifier must be reported if, for the same reportingUnitIdentifier and parameterCode, it exists in the Exceedance table and if phenomenonTimeSamplingDate is between exceedanceStartDate and exceedanceEndDate.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..1] |
+| Description | Unique European identifier of the exceedance, as reported in the Exceedance table. |
+| Guidance | Reporting is conditional. |
+| Guidance | If the reported value refers to an exceedance, the exceedanceIdentifier value is required. Please note the exceptions in QC XC018: in these exceptional cases, an exceedanceIdentifier must be reported even if the resultObservedValue is equal to or below (<=) the parametric value. |
+
+| Code | Description |
+|------|-------------|
+| QC V126 | The value is not a valid member of the referenced list. |
+| QC XC002 | If the exceedanceIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Exceedance table. |
+| QC XC009 | If the exceedanceIdentifier value is reported, the parameterCode must be equal to the parameterCode from the Exceedance table. |
+| QC XC027 | The exceedanceIdentifier must be reported if, for the same reportingUnitIdentifier and parameterCode, it exists in the Exceedance table and if phenomenonTimeSamplingDate is between exceedanceStartDate and exceedanceEndDate. |
 
 **Field: derogationIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unique European identifier of the derogation, as reported in the Derogation table.<br>
-**Guidance**: Reporting is conditional.<br>
-If the reported value refers to a derogation, the derogationIdentifier value is required.<br>
-**QC V127**: The value is not a valid member of the referenced list.<br>
-**QC XC003**: If the derogationIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Derogation table.<br>
-**QC XC008**: If the derogationIdentifier value is reported, the parameterCode must be equal to a parameterCode from the Derogation table.<br>
-**QC XC028**: The derogationIdentifier must be reported if a Derogation exists for the same reportingUnitIdentifier, parameterCode, and where phenomenonTimeSamplingDate is between derogationStartDate and derogationEndDate.<br>
-**QC XC029**: If the derogationIdentifier value is reported, the phenomenonTimeSamplingDate must be during the derogation period or within the 3 years prior to the derogationStartDate value.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..1] |
+| Description | Unique European identifier of the derogation, as reported in the Derogation table. |
+| Guidance | Reporting is conditional. |
+| Guidance | If the reported value refers to a derogation, the derogationIdentifier value is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V127 | The value is not a valid member of the referenced list. |
+| QC XC003 | If the derogationIdentifier value is reported, the reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from the Derogation table. |
+| QC XC008 | If the derogationIdentifier value is reported, the parameterCode must be equal to a parameterCode from the Derogation table. |
+| QC XC028 | The derogationIdentifier must be reported if a Derogation exists for the same reportingUnitIdentifier, parameterCode, and where phenomenonTimeSamplingDate is between derogationStartDate and derogationEndDate. |
+| QC XC029 | If the derogationIdentifier value is reported, the phenomenonTimeSamplingDate must be during the derogation period or within the 3 years prior to the derogationStartDate value. |
 
 ### Information on Water Supply
 
 **Table: WaterSupply**
 ******************************
 
-**Description**: The WaterSupply table contains information about the water supply during the reporting year.<br>
-**Guidance**: Reporting is required.<br>
-The water supply data must be reported for all water supply zones affected by incidents, exceedances, or derogations.<br>
-The water supply data must be reported for all water supply zones providing an average daily volume of drinking water of 10 m3 or more and serving 50 persons or more.<br>
-**QC T002**: Mandatory table has no records.<br>
-**QC TU011**: Uniqueness and multiplicity constraints - The fields reportingUnitIdentifier and referenceYear are uniques within table.<br>
-**QC XC050**: Water Supply must be linked to at least one Exceedance, Incident or Derogation.
+| Property | Value |
+|----------|--------|
+| Description | The WaterSupply table contains information about the water supply during the reporting year. |
+| Guidance | Reporting is required. |
+| Guidance | The water supply data must be reported for all water supply zones affected by incidents, exceedances, or derogations. |
+| Guidance | The water supply data must be reported for all water supply zones providing an average daily volume of drinking water of 10 m3 or more and serving 50 persons or more. |
+
+| Code | Description |
+|------|-------------|
+| QC T002 | Mandatory table has no records. |
+| QC TU011 | Uniqueness and multiplicity constraints - The fields reportingUnitIdentifier and referenceYear are uniques within table. |
+| QC XC050 | Water Supply must be linked to at least one Exceedance, Incident or Derogation. |
 
 **Field: reportingUnitIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier for the water supply zone.<br>
-**Guidance**: Reporting is required.<br>
-Provide the unique identifier of the water supply zone.<br>
-**QC V041**: The value must not be missing or empty.<br>
-**QC V139**: The value is not a valid member of the referenced list.<br>
-**QC XC013**: Some WSZ from watersupply table do not have an incident (message for information only, as it is not mandatory).<br>
-**QC XC014**: Some WSZ from watersupply table do not have an exceedance (message for information only, as it is not mandatory).<br>
-**QC XC015**: Some WSZ from watersupply table do not have a derogation (message for information only, as it is not mandatory).
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the water supply zone. |
+| Guidance | Reporting is required. |
+| Guidance | Provide the unique identifier of the water supply zone. |
+
+| Code | Description |
+|------|-------------|
+| QC V041 | The value must not be missing or empty. |
+| QC V139 | The value is not a valid member of the referenced list. |
+| QC XC013 | Some WSZ from watersupply table do not have an incident (message for information only, as it is not mandatory). |
+| QC XC014 | Some WSZ from watersupply table do not have an exceedance (message for information only, as it is not mandatory). |
+| QC XC015 | Some WSZ from watersupply table do not have a derogation (message for information only, as it is not mandatory). |
 
 **Field: referenceYear**
 
