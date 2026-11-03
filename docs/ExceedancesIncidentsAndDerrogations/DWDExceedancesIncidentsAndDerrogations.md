@@ -1604,43 +1604,63 @@ Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportn
 
 **Field: referenceYear**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Year of reference for the reported data, in the format YYYY.<br>
-**Guidance**: Reporting is required.<br>
-**QC V017**: The value must not be missing or empty.<br>
-**QC V048**: The value is not a valid whole number.<br>
-**QC V150**: The reference year is not correct for the planned report.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Year of reference for the reported data, in the format YYYY. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V017 | The value must not be missing or empty. |
+| QC V048 | The value is not a valid whole number. |
+| QC V150 | The reference year is not correct for the planned report. |
 
 **Field: populationServed**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Total population served by the water supply, in number of persons.<br>
-**Guidance**: Reporting is required.<br>
-**QC V029**: The value must not be missing or empty.<br>
-**QC V065**: The value is not a valid whole number.<br>
-**QC V107**: The value is not a valid non-negative number.<br>
-**QC V147**: populationServed less than 50 people served.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Total population served by the water supply, in number of persons. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V029 | The value must not be missing or empty. |
+| QC V065 | The value is not a valid whole number. |
+| QC V107 | The value is not a valid non-negative number. |
+| QC V147 | populationServed less than 50 people served. |
 
 **Field: volumeOfWaterSupplied**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Average daily volume of water supplied, in cubic metre per day (m3/day).<br>
-**Guidance**: Reporting is required.<br>
-**QC V030**: The value must not be missing or empty.<br>
-**QC V066**: The value is not a valid whole number.<br>
-**QC V108**: The value is not a valid non-negative number.<br>
-**QC V146**: volumeOfWaterSupply less than 10 m3 served.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Average daily volume of water supplied, in cubic metre per day (m3/day). |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V030 | The value must not be missing or empty. |
+| QC V066 | The value is not a valid whole number. |
+| QC V108 | The value is not a valid non-negative number. |
+| QC V146 | volumeOfWaterSupply less than 10 m3 served. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is optional.<br>
-**QC V089**: Text is too long (max 1500 characters).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is optional. |
+
+| Code | Description |
+|------|-------------|
+| QC V089 | Text is too long (max 1500 characters). |
 
 ## Spatial reference data for the recast DWD reporting
 
@@ -1670,41 +1690,57 @@ These are the fields of the spatial data:
 
 **Table: WaterSupplyZone**
 
-**QC T001**: A valid 'eu' thematic identifier exists in the register but was not reported in the spatial file.<br>
-**QC TU001**: Mandatory table has no records.<br>
-**QC TU002**: The inspireIdLocalId and inspireIdNamespace combination must be unique for each object.<br>
-**QC TU003**: The thematicIdIdentifier and thematicIdIdentifierScheme combination must be unique for each object.<br>
-**QC RF003**: The thematic identifier that is replacing this object has been superseded, deprecated or is invalid.<br>
-**QC RF013**: The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set.<br>
-**QC RF015**: If you have not reported yet in the previous reporting cycle, you cannot report here.
-
+| Code | Description |
+|------|-------------|
+| QC T001 | A valid 'eu' thematic identifier exists in the register but was not reported in the spatial file. |
+| QC TU001 | Mandatory table has no records. |
+| QC TU002 | The inspireIdLocalId and inspireIdNamespace combination must be unique for each object. |
+| QC TU003 | The thematicIdIdentifier and thematicIdIdentifierScheme combination must be unique for each object. |
+| QC RF003 | The thematic identifier that is replacing this object has been superseded, deprecated or is invalid. |
+| QC RF013 | The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set. |
+| QC RF015 | If you have not reported yet in the previous reporting cycle, you cannot report here. |
 **Field: geometry_polygon**
 
-**Data type**: geometry_polygon<br>
-**Cardinality**: [0..1]<br>
-**Description**: Polygon geometry or NULL value is expected.<br>
-**Guidance**: If the Water Supply Zone is defined as equivalent to a NUTS level 3 region then the geometry is not compulsory.<br>
-Reporting is conditional.<br>
-**QC S001**: The value does not follow the expected syntax for a valid multipolygon {%reason%}.<br>
-**QC S002**: Unsupported SRID.<br>
-**QC S003**: Geometry is not valid. Reason: {%reason%}.<br>
-**QC S005**: The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA).<br>
-**QC S006**: The geometry must not have anomalous geometric points, such as self-intersections.<br>
-**QC S007**: The geometry of the WaterSupplyZone must not overlap each other (100 meters tolerance). Overlaps: {%thematicididentifier%}.<br>
-**QC S008**: The geometry of the water supply zone is not contained in the geometry of the related NUT3.<br>
-**QC S009**: If the geometry of WSZ is null or empty, the relatedZoneIdentifier must be compulsory.
+| Property | Value |
+|----------|--------|
+| Data type | geometry_polygon |
+| Cardinality | [0..1] |
+| Description | Polygon geometry or NULL value is expected. |
+| Guidance | If the Water Supply Zone is defined as equivalent to a NUTS level 3 region then the geometry is not compulsory. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC S001 | The value does not follow the expected syntax for a valid multipolygon {%reason%}. |
+| QC S002 | Unsupported SRID. |
+| QC S003 | Geometry is not valid. Reason: {%reason%}. |
+| QC S005 | The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA). |
+| QC S006 | The geometry must not have anomalous geometric points, such as self-intersections. |
+| QC S007 | The geometry of the WaterSupplyZone must not overlap each other (100 meters tolerance). Overlaps: {%thematicididentifier%}. |
+| QC S008 | The geometry of the water supply zone is not contained in the geometry of the related NUT3. |
+| QC S009 | If the geometry of WSZ is null or empty, the relatedZoneIdentifier must be compulsory. |
 
 **Field: inspireIdLocalId**
 
-**Cardinality**: [1]<br>
-**QC V002**: The inspireIdLocalId value must be a string with less than 255 characters.<br>
-**QC V015**: The value must not be missing or empty.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V002 | The inspireIdLocalId value must be a string with less than 255 characters. |
+| QC V015 | The value must not be missing or empty. |
 
 **Field: inspireIdNamespace**
 
-**Cardinality**: [1]<br>
-**QC V003**: The inspireIdNamespace value must be a string with less than 255 characters.<br>
-**QC V019**: The value must not be missing or empty.
+| Property | Value |
+|----------|--------|
+| Cardinality | [1] |
+
+| Code | Description |
+|------|-------------|
+| QC V003 | The inspireIdNamespace value must be a string with less than 255 characters. |
+| QC V019 | The value must not be missing or empty. |
 
 **Field: inspireIdVersionId**
 
