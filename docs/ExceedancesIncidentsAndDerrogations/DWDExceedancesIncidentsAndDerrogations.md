@@ -942,307 +942,441 @@ Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of 
 
 **Field: incidentRemedialActionEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: End date of the remedial action, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-The end date of the remedial action corresponds to the date until which the remedial action is planned. If the end date is known, then report the real date; if unknown, report 9999-12-31.<br>
-**QC V051**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R026**: The value must be greater than or equal than incidentRemedialActionStartDate.<br>
-**QC R037**: If incidentRemedialAction is not 'none', then the incidentRemedialActionEndDate is required.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | End date of the remedial action, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+| Guidance | The end date of the remedial action corresponds to the date until which the remedial action is planned. If the end date is known, then report the real date; if unknown, report 9999-12-31. |
+
+| Code | Description |
+|------|-------------|
+| QC V051 | The value is not a valid date (YYYY-MM-DD). |
+| QC R026 | The value must be greater than or equal than incidentRemedialActionStartDate. |
+| QC R037 | If incidentRemedialAction is not 'none', then the incidentRemedialActionEndDate is required. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V085**: Text is too long (max 1500 characters).<br>
-**QC R075**: If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field.
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V085 | Text is too long (max 1500 characters). |
+| QC R075 | If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field. |
 
 ### Information on DWD Exceedances
 
 **Table: Exceedance**
 *************************
 
-**Description**: Article 18.1 (c) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing monitoring results, in cases of exceedances of the parametric values set out in Parts A and B of Annex I, collected in accordance with Articles 9 and 13 and information about the remedial actions taken in accordance with Article 14.<br>
-All exceedances have to be reported, not just those related to a derogation. In the Exceedance table, information shall be reported that allows for unique identification and description of any exceedance. One exceedance corresponds to one reporting unit (water supply zone), one parameter, one cause and one time period. For exceedances at different locations that overlap in time, for the same parameter, cause and water supply zone, create separate records in the exceedance table, using different exceedanceIdentifier codes for different locations (see Figure 3).<br>
-**QC TU005**: Uniqueness and multiplicity constraints - The field exceedanceIdentifier is unique within table.<br>
-**QC R045**: Multiple exceedances of the same cause overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone.<br>
-**QC RF015**: Reporting of an exceedance already present from the previous reporting, must be linked to the same water supply zone, derogationIdentifier and incidentIdentifier.<br>
-**QC RF017**: If an Exceedance was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year.<br>
-**QC XC010**: All exceedances reported in the Exceedance table must have at least one associated record in the ExceedanceCauseAndRemedialAction table.<br>
-**QC R076**: There is no monitoring result reported for the exceedanceIdentifier.
+| Property | Value |
+|----------|--------|
+| Description | Article 18.1 (c) of the recast DWD requires Member States to set up, and update annually thereafter, a data set containing monitoring results, in cases of exceedances of the parametric values set out in Parts A and B of Annex I, collected in accordance with Articles 9 and 13 and information about the remedial actions taken in accordance with Article 14. |
+| Description | All exceedances have to be reported, not just those related to a derogation. In the Exceedance table, information shall be reported that allows for unique identification and description of any exceedance. One exceedance corresponds to one reporting unit (water supply zone), one parameter, one cause and one time period. For exceedances at different locations that overlap in time, for the same parameter, cause and water supply zone, create separate records in the exceedance table, using different exceedanceIdentifier codes for different locations (see Figure 3). |
+
+| Code | Description |
+|------|-------------|
+| QC TU005 | Uniqueness and multiplicity constraints - The field exceedanceIdentifier is unique within table. |
+| QC R045 | Multiple exceedances of the same cause overlapping in time are reported for the same parameter and water supply zone. Please, note that this is only allowed when the reported exceedances occur at different locations within the same water supply zone. |
+| QC RF015 | Reporting of an exceedance already present from the previous reporting, must be linked to the same water supply zone, derogationIdentifier and incidentIdentifier. |
+| QC RF017 | If an Exceedance was reported for the previous reference year with EndDate equal to 9999-12-31, it must be reported again for the current reference year. |
+| QC XC010 | All exceedances reported in the Exceedance table must have at least one associated record in the ExceedanceCauseAndRemedialAction table. |
+| QC R076 | There is no monitoring result reported for the exceedanceIdentifier. |
 
 ![Figure 3](img/Figure3.png)<br>
 Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportnet3?
 
 **Field: exceedanceIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier for the exceedance.<br>
-**Guidance**: Reporting is required. Provide a unique identifier code for the exceedance. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341).<br>
-**QC V025**: The value must not be missing or empty.<br>
-**QC V102**: The wiseIdentifier does not have the acceptable format.<br>
-**QC RF010**: ExceedanceIdentifier must be unique historically.<br>
-**QC RF013**: This exceedance ended in the previous reporting.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the exceedance. |
+| Guidance | Reporting is required. Provide a unique identifier code for the exceedance. The identifier must follow the syntax defined for WISE identifiers (see the guidance for the responsiblePartyIdentifier element and associated examples: FR123, FR1_XYZ1234_1, FR1-XYZ1234-1, FR1XYZ12341). |
+
+| Code | Description |
+|------|-------------|
+| QC V025 | The value must not be missing or empty. |
+| QC V102 | The wiseIdentifier does not have the acceptable format. |
+| QC RF010 | ExceedanceIdentifier must be unique historically. |
+| QC RF013 | This exceedance ended in the previous reporting. |
 
 **Field: reportingUnitIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier of the water supply zone.<br>
-**Guidance**: Reporting is required.<br>
-Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field.<br>
-**QC V022**: The value must not be missing or empty.<br>
-**QC V114**: The value is not a valid member of the referenced list.<br>
-**QC RF004**: The exceedanceEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone.<br>
-**QC XC046**: The reported reportingUnitIdentifier, must exist in WaterSupply table.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier of the water supply zone. |
+| Guidance | Reporting is required. |
+| Guidance | Provide the unique identifier of the water supply zone. The water supply zone must exist in the spatial reference data set WaterSupplyZone. In the WaterSupplyZone data set, the European identifier is reported in the thematicIdIdentifier field. |
+
+| Code | Description |
+|------|-------------|
+| QC V022 | The value must not be missing or empty. |
+| QC V114 | The value is not a valid member of the referenced list. |
+| QC RF004 | The exceedanceEndDate must be equal to or earlier than designationPeriodEnd of the related and deleted water supply zone. |
+| QC XC046 | The reported reportingUnitIdentifier, must exist in WaterSupply table. |
 
 **Field: trivialExceedance**
 
-**Data type**: SpecialValue code list value ('yes', 'no')<br>
-**Cardinality**: [1]<br>
-**Description**: Was the exceedance considered trivial by the competent authority?<br>
-**Guidance**: Reporting is required.<br>
-**QC V043**: The value must not be missing or empty.<br>
-**QC V074**: The value is not a valid boolean value.<br>
-**QC V161**: The value must match one of the predefined list entries.
+| Property | Value |
+|----------|--------|
+| Data type | SpecialValue code list value ('yes', 'no') |
+| Cardinality | [1] |
+| Description | Was the exceedance considered trivial by the competent authority? |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V043 | The value must not be missing or empty. |
+| QC V074 | The value is not a valid boolean value. |
+| QC V161 | The value must match one of the predefined list entries. |
 
 **Field: trivialExceedanceJustification**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: If trivialExceedance = 'yes', provide a justification why the exceedance was considered trivial.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V091**: Text is too long (max 1500 characters).<br>
-**QC R017**: The value must not be missing or empty, if the exceedance is trivial.
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | If trivialExceedance = 'yes', provide a justification why the exceedance was considered trivial. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V091 | Text is too long (max 1500 characters). |
+| QC R017 | The value must not be missing or empty, if the exceedance is trivial. |
 
 **Field: parameterCode**
 
-**Data type**: Parameter code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Parameter whose parametric value has been exceeded.<br>
-**Guidance**: Reporting is required.<br>
-Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. For reporting an exceedance of the condition **[nitrate]/50 + [nitrite]/3 ≤ 1**, create two separate records in the Exceedance table, using two different exceedanceIdentifier codes (one for nitrate and one for nitrite). Use the ‚remarks‘ field of the MonitoringResult table to indicate the correct pairing of the two records, as explained below in the MonitoringResult table (Box 1).<br>
-**QC V018**: The value must not be missing or empty.<br>
-**QC V110**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | Parameter code list value |
+| Cardinality | [1] |
+| Description | Parameter whose parametric value has been exceeded. |
+| Guidance | Reporting is required. |
+| Guidance | Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. For reporting an exceedance of the condition **[nitrate]/50 + [nitrite]/3 ≤ 1**, create two separate records in the Exceedance table, using two different exceedanceIdentifier codes (one for nitrate and one for nitrite). Use the remarks field of the MonitoringResult table to indicate the correct pairing of the two records, as explained below in the MonitoringResult table (Box 1). |
+
+| Code | Description |
+|------|-------------|
+| QC V018 | The value must not be missing or empty. |
+| QC V110 | The value is not a valid member of the referenced list. |
 
 **Field: exceedanceStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [1]<br>
-**Description**: Start date of the exceedance, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is required.<br>
-**QC V011**: The value must not be missing or empty.<br>
-**QC V076**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC V154**: All start dates must be either within or earlier than the reference period.<br>
-**QC XC038**: The exceedanceStartDate, must be greater or equal to the incidentStartDate.<br>
-**QC XC040**: The exceedanceStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone.<br>
-**QC XC033**: The exceedance period must overlap, at least partially, with the associated derogation period.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [1] |
+| Description | Start date of the exceedance, in the format YYYY-MM-DD. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V011 | The value must not be missing or empty. |
+| QC V076 | The value is not a valid date (YYYY-MM-DD). |
+| QC V154 | All start dates must be either within or earlier than the reference period. |
+| QC XC038 | The exceedanceStartDate, must be greater or equal to the incidentStartDate. |
+| QC XC040 | The exceedanceStartDate must be greater than or equal to the designationPeriodBegin of the associated water supply zone. |
+| QC XC033 | The exceedance period must overlap, at least partially, with the associated derogation period. |
 
 **Field: exceedanceEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [1]<br>
-**Description**: End date of the exceedance, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is required.<br>
-If the exceedance is still ongoing at the end of the year, report 9999-12-31.<br>
-**QC V012**: The value must not be missing or empty.<br>
-**QC V077**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R023**: The value must be greater than or equal than exceedanceStartDate.<br>
-**QC V149**: Exceedance end date outside reporting period.<br>
-**QC XC036**: The end date of the remedial is greater than the end date of the exceedance.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [1] |
+| Description | End date of the exceedance, in the format YYYY-MM-DD. |
+| Guidance | Reporting is required. |
+| Guidance | If the exceedance is still ongoing at the end of the year, report 9999-12-31. |
+
+| Code | Description |
+|------|-------------|
+| QC V012 | The value must not be missing or empty. |
+| QC V077 | The value is not a valid date (YYYY-MM-DD). |
+| QC R023 | The value must be greater than or equal than exceedanceStartDate. |
+| QC V149 | Exceedance end date outside reporting period. |
+| QC XC036 | The end date of the remedial is greater than the end date of the exceedance. |
 
 **Field: exceedanceAffectedPopulation**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Estimated number of people affected by the exceedance in the water supply zone.<br>
-**Guidance**: Reporting is required.<br>
-**QC V028**: The value must not be missing or empty.<br>
-**QC V064**: The value is not a valid whole number.<br>
-**QC V103**: The value is not a valid non-negative number.<br>
-**QC XC024**: The exceedanceAffectedPopulation value must be smaller or equal to the populationServed value of the water supply zone.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Estimated number of people affected by the exceedance in the water supply zone. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V028 | The value must not be missing or empty. |
+| QC V064 | The value is not a valid whole number. |
+| QC V103 | The value is not a valid non-negative number. |
+| QC XC024 | The exceedanceAffectedPopulation value must be smaller or equal to the populationServed value of the water supply zone. |
 
 **Field: pointOfComplianceType**
 
-**Data type**: PointOfComplianceType code list value<br>
-**Cardinality**: [1..n]<br>
-**Description**: Point of compliance type i.e., the type of the point where the parametric values set out in the Annex I, part A and B of the recast DWD must be complied with and where an exceedance was encountered.<br>
-**Guidance**: Reporting is required.<br>
-More than one type of point of compliance may be reported. Multiple options can be reported, using a semicolon-separated list.<br>
-**QC V026**: The value must not be missing or empty.<br>
-**QC V138**: The value is not a valid member of the referenced list.<br>
-**QC V144**: If multiple pointOfComplianceType values are reported, they must all be distinct.
+| Property | Value |
+|----------|--------|
+| Data type | PointOfComplianceType code list value |
+| Cardinality | [1..n] |
+| Description | Point of compliance type i.e., the type of the point where the parametric values set out in the Annex I, part A and B of the recast DWD must be complied with and where an exceedance was encountered. |
+| Guidance | Reporting is required. |
+| Guidance | More than one type of point of compliance may be reported. Multiple options can be reported, using a semicolon-separated list. |
+
+| Code | Description |
+|------|-------------|
+| QC V026 | The value must not be missing or empty. |
+| QC V138 | The value is not a valid member of the referenced list. |
+| QC V144 | If multiple pointOfComplianceType values are reported, they must all be distinct. |
 
 **Field: numberOfSamplesPerYear**
 
-**Data type**: Non-negative integer<br>
-**Cardinality**: [1]<br>
-**Description**: Number of samples per year taken for monitoring the parameter in exceedance.<br>
-**Guidance**: Reporting is required.<br>
-Report the total number of samples taken in the corresponding one-year reporting period for the monitoring of the parameter in the water supply zone.<br>
-If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in the remarks field.<br>
-**QC V033**: The value must not be missing or empty.<br>
-**QC V068**: The value is not a valid whole number.<br>
-**QC V104**: The value is not a valid non-negative number.
+| Property | Value |
+|----------|--------|
+| Data type | Non-negative integer |
+| Cardinality | [1] |
+| Description | Number of samples per year taken for monitoring the parameter in exceedance. |
+| Guidance | Reporting is required. |
+| Guidance | Report the total number of samples taken in the corresponding one-year reporting period for the monitoring of the parameter in the water supply zone. |
+| Guidance | If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in the remarks field. |
+
+| Code | Description |
+|------|-------------|
+| QC V033 | The value must not be missing or empty. |
+| QC V068 | The value is not a valid whole number. |
+| QC V104 | The value is not a valid non-negative number. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in this remarks field.<br>
-**QC V086**: Text is too long (max 1500 characters).
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+| Guidance | If the numberOfSamplesPerYear is not compliant with the minimum number of samples to be taken defined in Annex II part B of the recast DWD, additional explanation should be provided in this remarks field. |
+
+| Code | Description |
+|------|-------------|
+| QC V086 | Text is too long (max 1500 characters). |
 
 **Field: incidentIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unique European identifier of the incident, as reported in the Incident table.<br>
-**Guidance**: Reporting is conditional.<br>
-Report if and only if there is an Incident causing the Exceedance. If there is more than one incident related to an exceedance, report the main incident.<br>
-**QC V123**: The value is not a valid member of the referenced list.<br>
-**QC XC004**: The reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from Incident.<br>
-**QC XC025**: The exceedance period must partly overlap with the incident period.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..1] |
+| Description | Unique European identifier of the incident, as reported in the Incident table. |
+| Guidance | Reporting is conditional. |
+| Guidance | Report if and only if there is an Incident causing the Exceedance. If there is more than one incident related to an exceedance, report the main incident. |
+
+| Code | Description |
+|------|-------------|
+| QC V123 | The value is not a valid member of the referenced list. |
+| QC XC004 | The reportingUnitIdentifier must be consistent with the reportingUnitIdentifier from Incident. |
+| QC XC025 | The exceedance period must partly overlap with the incident period. |
 
 **Field: derogationIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unique European identifier of the derogation, as reported in the Derogation table.<br>
-**Guidance**: Reporting is conditional.<br>
-Report if and only if there is a Derogation associated with the Exceedance (i.e., for the same water supply zone, parameter, and time frame).<br>
-**QC V124**: The value is not a valid member of the referenced list.<br>
-**QC XC012**: The exceedance parameter must be equal to a derogation parameter.<br>
-**QC XC016**: The exceedance reportingUnitIdentifier must be equal to the derogation reportingUnitIdentifier.<br>
-**QC XC026**: The exceedance period must be consistent with the derogation period (overlap, at least partly/be within).
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [0..1] |
+| Description | Unique European identifier of the derogation, as reported in the Derogation table. |
+| Guidance | Reporting is conditional. |
+| Guidance | Report if and only if there is a Derogation associated with the Exceedance (i.e., for the same water supply zone, parameter, and time frame). |
+
+| Code | Description |
+|------|-------------|
+| QC V124 | The value is not a valid member of the referenced list. |
+| QC XC012 | The exceedance parameter must be equal to a derogation parameter. |
+| QC XC016 | The exceedance reportingUnitIdentifier must be equal to the derogation reportingUnitIdentifier. |
+| QC XC026 | The exceedance period must be consistent with the derogation period (overlap, at least partly/be within). |
 
 **Table: ExceedanceCauseRemedialAction**
 ********************************************
 
-**Description**: In ExceedanceCauseRemedialAction table, information about the cause and existing remedial actions for each exceedance in the Exceedance table. Note that each exceedance can be associated with more than one remedial action.<br>
-**Guidance**: Reporting is conditional.<br>
-The table must be reported if exceedances exist for the reference year.<br>
-**QC TU007**: The combination of the exceedanceIdentifier value, exceedanceCause value and the exceedanceRemedialAction value must be unique across the ExceedanceCauseRemedialAction table records.<br>
-**QC RF018**: If an ExceedanceRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year.<br>
-**QC XC034**: The remedial action period must overlap, at least partially, with the associated exceedance period.
+| Property | Value |
+|----------|--------|
+| Description | In ExceedanceCauseRemedialAction table, information about the cause and existing remedial actions for each exceedance in the Exceedance table. Note that each exceedance can be associated with more than one remedial action. |
+| Guidance | Reporting is conditional. |
+| Guidance | The table must be reported if exceedances exist for the reference year. |
+
+| Code | Description |
+|------|-------------|
+| QC TU007 | The combination of the exceedanceIdentifier value, exceedanceCause value and the exceedanceRemedialAction value must be unique across the ExceedanceCauseRemedialAction table records. |
+| QC RF018 | If an ExceedanceRemedialAction was reported for the previous reference year with EndDate falling in a following year or equal to 9999-12-31, it must be reported again for the current reference year. |
+| QC XC034 | The remedial action period must overlap, at least partially, with the associated exceedance period. |
 
 **Field: exceedanceIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier of the exceedance, as reported in the Exceedance table.<br>
-**Guidance**: Reporting is required.<br>
-**QC V013**: The value must not be missing or empty.<br>
-**QC V115**: The exceedanceIdentifier must exists in table exceedance if the exceedance is still open in this reporting cycle.<br>
-**QC R063**: For each exceedanceIdentifier value, the number of acceptable different exceedanceCause values is one.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier of the exceedance, as reported in the Exceedance table. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V013 | The value must not be missing or empty. |
+| QC V115 | The exceedanceIdentifier must exists in table exceedance if the exceedance is still open in this reporting cycle. |
+| QC R063 | For each exceedanceIdentifier value, the number of acceptable different exceedanceCause values is one. |
 
 **Field: exceedanceCause**
 
-**Data type**: IncidentExceedanceCause code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Cause of the exceedance.<br>
-**Guidance**: Reporting is required. Provide the original main cause. If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field. If there are several independent causes, the Exceedance table should be completed again (using a new exceedanceIdentifier).<br>
-**QC V014**: The value must not be missing or empty.<br>
-**QC V119**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | IncidentExceedanceCause code list value |
+| Cardinality | [1] |
+| Description | Cause of the exceedance. |
+| Guidance | Reporting is required. Provide the original main cause. If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field. If there are several independent causes, the Exceedance table should be completed again (using a new exceedanceIdentifier). |
+
+| Code | Description |
+|------|-------------|
+| QC V014 | The value must not be missing or empty. |
+| QC V119 | The value is not a valid member of the referenced list. |
 
 **Field: exceedanceRemedialAction**
 
-**Data type**: RemedialAction code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Remedial action linked to an exceedance.<br>
-**Guidance**: Reporting is required.<br>
-Each exceedance is associated to one and only one cause, but multiple remedial actions may be reported.<br>
-**QC V015**: The value must not be missing or empty.<br>
-**QC V130**: The value is not a valid member of the referenced list.<br>
-**QC R030**: If exceedanceRemedialAction = 'none', then no other record of the IncidentCauseAndRemedialAction table can have the same exceedanceIdentifier value.
+| Property | Value |
+|----------|--------|
+| Data type | RemedialAction code list value |
+| Cardinality | [1] |
+| Description | Remedial action linked to an exceedance. |
+| Guidance | Reporting is required. |
+| Guidance | Each exceedance is associated to one and only one cause, but multiple remedial actions may be reported. |
+
+| Code | Description |
+|------|-------------|
+| QC V015 | The value must not be missing or empty. |
+| QC V130 | The value is not a valid member of the referenced list. |
+| QC R030 | If exceedanceRemedialAction = 'none', then no other record of the IncidentCauseAndRemedialAction table can have the same exceedanceIdentifier value. |
 
 **Field: exceedanceRemedialActionStartDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: Start date of the remedial action, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V053**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R038**: If exceedanceRemedialAction is not 'none', then the exceedanceRemedialActionStartDate is required.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | Start date of the remedial action, in the format YYYY-MM-DD. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V053 | The value is not a valid date (YYYY-MM-DD). |
+| QC R038 | If exceedanceRemedialAction is not 'none', then the exceedanceRemedialActionStartDate is required. |
 
 **Field: exceedanceRemedialActionEndDate**
 
-**Data type**: Date<br>
-**Cardinality**: [0..1]<br>
-**Description**: End date of the remedial action, in the format YYYY-MM-DD.<br>
-The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V054**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC R024**: The value must be greater than or equal than exceedanceRemedialActionStartDate.<br>
-**QC R039**: If exceedanceRemedialAction is not 'none', then the exceedanceRemedialActionEndDate is required.
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [0..1] |
+| Description | End date of the remedial action, in the format YYYY-MM-DD. |
+| Description | The end date of the remedial action corresponds to the date until which the remedial action is planned. If the endDate is known, then report the real date; if unknown, report 9999-12-31. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V054 | The value is not a valid date (YYYY-MM-DD). |
+| QC R024 | The value must be greater than or equal than exceedanceRemedialActionStartDate. |
+| QC R039 | If exceedanceRemedialAction is not 'none', then the exceedanceRemedialActionEndDate is required. |
 
 **Field: remarks**
 
-**Data type**: Text (1500 characters)<br>
-**Cardinality**: [0..1]<br>
-**Description**: Additional information about the record, in English or in the national language.<br>
-**Guidance**: Reporting is conditional.<br>
-**QC V087**: Text is too long (max 1500 characters).<br>
-**QC R042**: If exceedanceRemedialAction = 'other', reporting is required.<br>
-**QC R074**: If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field.
+| Property | Value |
+|----------|--------|
+| Data type | Text (1500 characters) |
+| Cardinality | [0..1] |
+| Description | Additional information about the record, in English or in the national language. |
+| Guidance | Reporting is conditional. |
+
+| Code | Description |
+|------|-------------|
+| QC V087 | Text is too long (max 1500 characters). |
+| QC R042 | If exceedanceRemedialAction = 'other', reporting is required. |
+| QC R074 | If the main cause is unclear, select ‘unknown’ and provide explanations in the ‘remarks’ field. |
 
 ### Information on DWD Monitoring Results
 
 **Table: MonitoringResult**
 ******************************
 
-**Description**: The MonitoringResult table contains information about the monitoring data for each parameter.<br>
-**Guidance**: Reporting is conditional.<br>
-The MonitoringResult table is required to report the monitoring data for each parameter in exceedance and under non-trivial derogation. In case of a non-trivial derogation previous monitoring results needs to be reported.<br>
-Parameters not in exceedance or not under a derogation must not be reported. For trivial derogations, reporting is optional.<br>
-The table must be completed with:
-- All monitoring results relevant to an exceedance (only exceeding values).
-- Previous monitoring results used for granting a non-trivial derogation. 'Previous monitoring results' should be interpreted as the monitoring results, <u>in exceedance or not</u>, for the three previous years before the date the derogation was granted.
+| Property | Value |
+|----------|--------|
+| Description | The MonitoringResult table contains information about the monitoring data for each parameter. |
+| Guidance | Reporting is conditional. |
+| Guidance | The MonitoringResult table is required to report the monitoring data for each parameter in exceedance and under non-trivial derogation. In case of a non-trivial derogation previous monitoring results needs to be reported. |
+| Guidance | Parameters not in exceedance or not under a derogation must not be reported. For trivial derogations, reporting is optional. |
+| Guidance | The table must be completed with: |
+| Guidance | All monitoring results relevant to an exceedance (only exceeding values). |
+| Guidance | Previous monitoring results used for granting a non-trivial derogation. 'Previous monitoring results' should be interpreted as the monitoring results, in exceedance or not, for the three previous years before the date the derogation was granted. |
 
-**QC R056**: Justification has been provided for some missing values.<br>
-**QC R072**: If 'EEA_15-01-0 - Escherichia coli' is reported, please enter the method of analysis used in the “remarks" field, either 'EN ISO 9308-1' or 'EN ISO 9308-2'.<br>
-**QC XC042**: Validation of paired Nitrate and Nitrite observed values per sample, WSZ, and date. It checks that for the same sample, WSZ and date, nitrate and nitrite observed values, if reported, are paired.<br>
-**QC R073**: Remarks must be provided when Nitrate or Nitrite observed values are below or equal to their respective parametric values. For reported observed values for nitrate or nitrite, it checks that, if the resultObservedValue&lt;= parametricValue, the 'remarks' field is filled in.<br>
-**QC XC043**: Mismatch in reciprocal references between Nitrate and Nitrite observed values for same date, sample and WSZ. It checks that if a nitrate observed value X is paired (in the relevant 'remarks' field) with a nitrite observed value Y, this nitrite observed value Y is paired (in the relevant 'remarks' field) with the nitrate observed value X.<br>
-**QC R078**: At least an exceedanceIdentifier or a derogationIdentifier must be reported.<br>
-**QC XC044**: The related Exceedance_ID used in the 'Remarks' field must exist as an exceedance identifier in the MonitoringResult table within the same sample, and reporting unit. It checks that any reported related Exceedance_ID, used in the 'Remarks' field to pair a nitrate observed value with a nitrite observed value, exists in the MonitoringResult table as exceedanceIdentifier.<br>
-**QC TU012**: Checks if phenomenonTimeSamplingDate, parameterCode, exceedanceIdentifier, reportingUnitIdentifier and derogationIdentifier are uniques within table.<br>
-**QC R079**: The resultObservedValue for nitrate or nitrite is equal to or below (&lt;=) the parametric value. If this record refers to an exceedance of the condition ([nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;exceedanceIdentifier’ is required in the remarks field.
+| Code | Description |
+|------|-------------|
+| QC R056 | Justification has been provided for some missing values. |
+| QC R072 | If 'EEA_15-01-0 - Escherichia coli' is reported, please enter the method of analysis used in the “remarks" field, either 'EN ISO 9308-1' or 'EN ISO 9308-2'. |
+| QC XC042 | Validation of paired Nitrate and Nitrite observed values per sample, WSZ, and date. It checks that for the same sample, WSZ and date, nitrate and nitrite observed values, if reported, are paired. |
+| QC R073 | Remarks must be provided when Nitrate or Nitrite observed values are below or equal to their respective parametric values. For reported observed values for nitrate or nitrite, it checks that, if the resultObservedValue <= parametricValue, the 'remarks' field is filled in. |
+| QC XC043 | Mismatch in reciprocal references between Nitrate and Nitrite observed values for same date, sample and WSZ. It checks that if a nitrate observed value X is paired (in the relevant 'remarks' field) with a nitrite observed value Y, this nitrite observed value Y is paired (in the relevant 'remarks' field) with the nitrate observed value X. |
+| QC R078 | At least an exceedanceIdentifier or a derogationIdentifier must be reported. |
+| QC XC044 | The related Exceedance_ID used in the 'Remarks' field must exist as an exceedance identifier in the MonitoringResult table within the same sample, and reporting unit. It checks that any reported related Exceedance_ID, used in the 'Remarks' field to pair a nitrate observed value with a nitrite observed value, exists in the MonitoringResult table as exceedanceIdentifier. |
+| QC TU012 | Checks if phenomenonTimeSamplingDate, parameterCode, exceedanceIdentifier, reportingUnitIdentifier and derogationIdentifier are uniques within table. |
+| QC R079 | The resultObservedValue for nitrate or nitrite is equal to or below (<=) the parametric value. If this record refers to an exceedance of the condition ([nitrate]/50 + [nitrite]/3 ≤ 1), reporting of a regex ‘SampleNUMBER;exceedanceIdentifier’ is required in the remarks field. |
 
 **Field: reportingUnitIdentifier**
 
-**Data type**: wiseIdentifier<br>
-**Cardinality**: [1]<br>
-**Description**: Unique European identifier for the Water Supply Zone (WSZ).<br>
-**Guidance**: Reporting is required.<br>
-Provide the unique identifier of the water supply zone (WSZ).<br>
-**QC V023**: The value must not be missing or empty.<br>
-**QC V116**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | wiseIdentifier |
+| Cardinality | [1] |
+| Description | Unique European identifier for the Water Supply Zone (WSZ). |
+| Guidance | Reporting is required. |
+| Guidance | Provide the unique identifier of the water supply zone (WSZ). |
+
+| Code | Description |
+|------|-------------|
+| QC V023 | The value must not be missing or empty. |
+| QC V116 | The value is not a valid member of the referenced list. |
 
 **Field: phenomenonTimeSamplingDate**
 
-**Data type**: Date<br>
-**Cardinality**: [1]<br>
-**Description**: Date of the sampling, in the format YYYY-MM-DD.<br>
-**Guidance**: Reporting is required.<br>
-**QC V024**: The value must not be missing or empty.<br>
-**QC V078**: The value is not a valid date (YYYY-MM-DD).<br>
-**QC XC011**: If the exceedanceIdentifier value is reported, the phenomenonTimeSamplingDate must be between exceedanceStartDate value and exceedanceEndDate value.<br>
-**QC R048**: The reported phenomenonTimeSamplingDate value is outside the expected range (1900-2025).
+| Property | Value |
+|----------|--------|
+| Data type | Date |
+| Cardinality | [1] |
+| Description | Date of the sampling, in the format YYYY-MM-DD. |
+| Guidance | Reporting is required. |
+
+| Code | Description |
+|------|-------------|
+| QC V024 | The value must not be missing or empty. |
+| QC V078 | The value is not a valid date (YYYY-MM-DD). |
+| QC XC011 | If the exceedanceIdentifier value is reported, the phenomenonTimeSamplingDate must be between exceedanceStartDate value and exceedanceEndDate value. |
+| QC R048 | The reported phenomenonTimeSamplingDate value is outside the expected range (1900-2025). |
 
 **Field: parameterCode**
 
-**Data type**: Parameter code list value<br>
-**Cardinality**: [1]<br>
-**Description**: Parameter which is sampled.<br>
-**Guidance**: Reporting is required. Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. How to report monitoring results for exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1 is described in Box 1 below.<br>
-**QC V019**: The value must not be missing or empty.<br>
-**QC V120**: The value is not a valid member of the referenced list.
+| Property | Value |
+|----------|--------|
+| Data type | Parameter code list value |
+| Cardinality | [1] |
+| Description | Parameter which is sampled. |
+| Guidance | Reporting is required. Use the code provided in the Parameter code list. If a specific parameter is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. How to report monitoring results for exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1 is described in Box 1 below. |
+
+| Code | Description |
+|------|-------------|
+| QC V019 | The value must not be missing or empty. |
+| QC V120 | The value is not a valid member of the referenced list. |
 
 > 💡 **Box 1: How to report exceedances of the condition [nitrate]/50 + [nitrite]/3 ≤ 1 (established in the notes related to nitrate and nitrite in Annex I, Part B, to the recast Drinking Water Directive)**<br>
 ><br>
@@ -1295,15 +1429,20 @@ Provide the unique identifier of the water supply zone (WSZ).<br>
 
 **Field: resultUom**
 
-**Data type**: UnitOfMeasure code list value<br>
-**Cardinality**: [0..1]<br>
-**Description**: Unit of measure for the values of the sampled parameter.<br>
-**Guidance**: Reporting is conditional.<br>
-Use the values in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu.<br>
-**QC V121**: The value is not a valid member of the referenced list.<br>
-**QC R054**: The resultUom is missing without a proper justification in the resultObservationStatus field.<br>
-**QC R055**: The resultUom is reported although a justification for missing result values is provided.<br>
-**QC XC019**: If there's a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]).
+| Property | Value |
+|----------|--------|
+| Data type | UnitOfMeasure code list value |
+| Cardinality | [0..1] |
+| Description | Unit of measure for the values of the sampled parameter. |
+| Guidance | Reporting is conditional. |
+| Guidance | Use the values in the UnitOfMeasure code list. If a specific unit of measure is not present in the code list, please contact dwd.helpdesk@eionet.europa.eu. |
+
+| Code | Description |
+|------|-------------|
+| QC V121 | The value is not a valid member of the referenced list. |
+| QC R054 | The resultUom is missing without a proper justification in the resultObservationStatus field. |
+| QC R055 | The resultUom is reported although a justification for missing result values is provided. |
+| QC XC019 | If there's a unit of measure in the record, it needs to be the same that is specified in the codelist table ([unitOfMeasure]). |
 
 **Field: procedureLOQValue**
 
