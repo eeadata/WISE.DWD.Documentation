@@ -109,7 +109,7 @@ Figure 2: Reporting process Schema
 Chapter 2 provides instructions to assist the Member States on reporting the information about exceedances, incidents, and derogations, as required under article 18.1 (c), (d) and (e) of the recast DWD 2020/2184/EC.<br>
 The content of the descriptive data reporting template is briefly described in Table 1 below.
 
-Table 1: Tables in the descriptive data reporting template.
+
 | Scope | Table name | Content |
 |---|---|---|
 | DWD Competent Authorities | ResponsibleParty | Contact information of the reporting responsible party |
@@ -122,7 +122,7 @@ Table 1: Tables in the descriptive data reporting template.
 | DWD Incidents and Exceedances | ExceedanceCauseRemedialAction | Information on causes for the reported exceedances and remedial actions |
 | DWD Water Supply and Monitoring Results | MonitoringResult | Monitoring results in case of derogations and exceedances |
 | DWD Water Supply and Monitoring Results | WaterSupply | Information on the annual water supply and population served per water supply zone.|
-
+Table 1: Tables in the descriptive data reporting template.
 
 ### Information on the authority responsible for reporting
 
@@ -1690,6 +1690,7 @@ Figure 3: Exceedance Decision Tree - How to introduce DWD exceedances in Reportn
 
 ## Spatial reference data for the recast DWD reporting
 
+### Introduction
 Being Reporting Units, the spatial data for Water Supply Zones (WSZ) fall under the scope of the [INSPIRE AM](https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http%3A%2F%2Finspire.ec.europa.eu%2Ftheme%2Fam) Theme (Area Management, Restriction, Regulation Zones & Reporting Units), which was established with specific legislative requirements to deliver spatial data related to any environmental media. The INSPIRE AM Theme consists of various concepts explained in detail in the guidance below and is represented in a single table.<br>
 The water supply zones to report are those, at least, affected by an exceedance, incident or derogation. Once a water supply zone has been reported, it must continue to be reported in subsequent years using the support of the prefilling tool (from 2024 onwards). The prefilling tool automatically loads the data reported in the previous year into the spatial tables. If no changes are needed, reporters need to update the wiseEvolutionType from ‘creation’ to ‘noChange’. If a water supply zone needs to be removed, reporters need to update wiseEvolutionType to 'deletion'. If there is a new water supply zone or changes in any of the previously reported ones, all spatial data - not just partial updates – must be reported again. Partial deliveries are not accepted.<br>
 The generic principles and data structures defined in the following document WISE GIS Guidance on the spatial reporting are valid also for the DWD dataflows https://cdr.eionet.europa.eu/help/WFD/WFD_780_2022/GISGuidance/
