@@ -10,7 +10,7 @@
 
 ## Introduction
 
-### Purpose and structure of the document
+**Purpose and structure of the document**
 
 The present document provides guidance to Member States in reporting the information required under article 18.1 (c), (d) and (e) of the [recast Drinking Water Directive](https://eur-lex.europa.eu/eli/dir/2020/2184/oj) 2020/2184/EC on the quality of water intended for human consumption. If you need further assistance, please contact dwd.helpdesk@eionet.europa.eu.
 The document consists of three chapters.
@@ -18,7 +18,7 @@ The document consists of three chapters.
 - Chapter 2 describes the data content and structure that must be followed to report the recast Drinking water Directive (DWD) annual data sets on exceedances, incidents, and derogations. Member States must follow the reporting templates when submitting the data in the [Reportnet 3 platform](https://reportnet.europa.eu/).
 - Chapter 3 describes the data content and structure that must be followed to report the DWD reference spatial data sets. It refers to the WISE GIS Guidance which describes the structure of water supply zones spatial data set.
 
-### Legal context and general approach of the recast DWD reporting
+**Legal context and general approach of the recast DWD reporting**
 
 By January 2023, pursuant to Article 18.1 (c), (d) and (e) of the recast DWD, Member States have to set up data sets containing monitoring results on exceedances, information on incidents, and derogations. Member States must update these data sets annually thereafter. Pursuant to Article 18.2 of the recast DWD, Member States must ensure that the European Commission, the European Environment Agency (EEA) and the European Centre for Disease Prevention and Control have access to the data sets.
 To harmonise the Member States' data sets and the data transfer to the European Commission, whilst considering the technical reporting possibilities within the Member States, DG Environment has organised several workshops on the recast DWD reporting. Based on the workshops held in 2021 and 2022, a reporting template and a reporting mechanism were defined. The reporting template will enable Member States to report the DWD annual data sets on exceedances, incidents, and derogations via the EEA [Reportnet 3 platform](https://reportnet.europa.eu/).<br>
@@ -29,7 +29,7 @@ The following general principles will be applied to the recast DWD reporting:
 - The reporting shall cover, as a minimum, all individual supplies of water that provide 10 m3 per day or more as an average and serve 50 persons or more.
 - The reporting shall be carried out annually.
 
-### General rules for the reporting
+**General rules for the reporting**
 
 The following general rules apply to the reporting under Article 18.1 (c), (d) and (e) of the recast DWD:
 - Reporting by Member States to the European Commission shall be made in electronic format to the EEA Reportnet 3 platform.
@@ -39,7 +39,7 @@ The following general rules apply to the reporting under Article 18.1 (c), (d) a
 - Spatial reference data can be structured using a Geopackage template, to facilitate the data transfer.1
 - Member States shall be responsible for the annually updated data set reporting to the European Commission and for the accuracy of the reported data.
 
-### Components of the reporting
+**Components of the reporting**
 
 In line with the requirements under article 18.1 (c), (d) and (e) of the recast DWD 2020/2184/EC, the reporting contains descriptive data sets on competent authorities, exceedances, incidents, derogations, and monitoring results. The water supply zone is the reporting unit for the data on exceedances, incidents, derogations, and monitoring results. The water supply zones are defined by the Member States. A water supply zone is a geographically defined area within which water intended for human consumption comes from one or more sources and within which the water quality can be considered a being approximately uniform. Water supply zones should be reported using NUTS3 codes but can also be reported using a spatial data set.
 
@@ -51,10 +51,36 @@ The descriptive data sets are described in Chapter 2 and include:
 
 The spatial data set is described in Chapter 3, which contains the WISE GIS Guidance DWD annex.
 
-![Figure 1](img/Figure1.png)
+```{mermaid}
+block-beta
+  columns 5
+
+  RP["ResponsibleParty"] space QAM["QualityAndMonitoring"] space:2
+  space:5
+  WS["WaterSupply"] space DER["Derogation"] space DRA["Derogation\nRemedialAction"]
+  space:5
+  WSZ["WaterSupplyZone"] space EXC["Exceedance"] space ECRA["ExceedanceCause\nRemedialAction"]
+  space:5
+  MR["MonitoringResult"] space INC["Incident"] space ICRA["IncidentCause\nAndRemedialAction"]
+
+  WS -- "1 : 1" --- WSZ
+  WSZ -- "1 : 0..n" --- MR
+  WSZ -- "1 : 0..n" --- DER
+  WSZ -- "1 : 0..n" --- EXC
+  WSZ -- "1 : 0..n" --- INC
+  QAM -- "1..n : 0..n" --- DER
+  DER -- "1 : 0..n" --- DRA
+  EXC -- "1 : 0..n" --- ECRA
+  INC -- "1 : 1..n" --- ICRA
+
+  classDef ent fill:#ffffff,stroke:#000000,stroke-width:1px,color:#000000
+  classDef main fill:#d9d9d9,stroke:#000000,stroke-width:1px,color:#000000
+  class RP,QAM,WS,DER,DRA,EXC,ECRA,MR,INC,ICRA ent
+  class WSZ main
+```
 Figure 1: Reporting tables and main relationships between tables.
 
-### How the European Comission and the EEA will use the information
+**How the European Commission and the EEA will use the information**
 
 The information provided annually by the Member States under Article 18.1 (c), (d) and (e) of the recast DWD will be used for the following purposes:
 - To assess whether the implementation of the requirements of the recast DWD is sufficient in each Member State (i.e., compliance assessment).
@@ -67,7 +93,7 @@ The data assessed by the European Commission can be presented at water supply zo
 
 In addition, the EEA may use the information to supplement the data collected through other reporting streams when producing European, pan-European and regional integrated environmental data and indicator sets, assessments and thematic analyses.
 
-### Information Note on Progressive Reporting for Member States
+**Information Note on Progressive Reporting for Member States**
 
 Please take the following into account when preparing and submitting reports.
 DWD reporting follows an annual reporting cycle and must be submitted in chronological order. This means that reporting must begin with the earliest reporting year (e.g. 2023), followed by subsequent years (2024, 2025, etc.). It is not possible to start reporting directly with a later year such as 2025.
@@ -76,7 +102,7 @@ As a result, the following situation may occur: If releases for 2023, 2024, and 
 ![Figure 2](img/Figure2.png)<br>
 Figure 2: Reporting process Schema
 
-## Decripive data for the recast DWD reporting
+## Decriptive data for the recast DWD reporting
 
 ### Introduction
 
@@ -95,7 +121,7 @@ Table 1: Tables in the descriptive data reporting template.
 | DWD Incidents and Exceedances | Exceedance | General information on exceedances |
 | DWD Incidents and Exceedances | ExceedanceCauseRemedialAction | Information on causes for the reported exceedances and remedial actions |
 | DWD Water Supply and Monitoring Results | MonitoringResult | Monitoring results in case of derogations and exceedances |
-| DWD Water Supply and Monitoring Results | WaterSupply | Information on the annual water supply and |
+| DWD Water Supply and Monitoring Results | WaterSupply | Information on the annual water supply and population served per water supply zone.|
 
 
 ### Information on the authority responsible for reporting
@@ -292,7 +318,7 @@ Each year, all derogations must be reported, not just those granted during the r
 | QC V094 | The value is not a valid non-negative number. |
 | QC R018 | The value must not be missing or empty, if the derogation is non-trivial. |
 
-**Field_ foodProductionAffected**
+**Field: derogationAffectedPopulation**
 
 | Property | Value |
 |----------|--------|
@@ -499,7 +525,7 @@ Each year, all derogations must be reported, not just those granted during the r
 | Code | Description |
 |------|-------------|
 | QC V034 | The value must not be missing or empty. |
-| QC V133 | The derogationIdentifier must exists in table Derogation if the derogation is still open in this reporting cycle. |
+| QC V133 | The derogationIdentifier must exist in table Derogation if the derogation is still open in this reporting cycle. |
 
 **Field: derogationRemedialAction**
 
@@ -1715,7 +1741,7 @@ These are the fields of the spatial data:
 | QC S001 | The value does not follow the expected syntax for a valid multipolygon {%reason%}. |
 | QC S002 | Unsupported SRID. |
 | QC S003 | Geometry is not valid. Reason: {%reason%}. |
-| QC S005 | The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA). |
+| QC S005 | The coordinate reference system (CRS) is not valid. (It must be one of the following: ETRS89-GRS80 (urn:ogc:def:crs:EPSG::4258), ETRS89-LAEA(urn:ogc:def:crs:EPSG::3035), WGS 84 (urn:ogc:def:crs:EPSG:4326)). |
 | QC S006 | The geometry must not have anomalous geometric points, such as self-intersections. |
 | QC S007 | The geometry of the WaterSupplyZone must not overlap each other (100 meters tolerance). Overlaps: {%thematicididentifier%}. |
 | QC S008 | The geometry of the water supply zone is not contained in the geometry of the related NUT3. |
