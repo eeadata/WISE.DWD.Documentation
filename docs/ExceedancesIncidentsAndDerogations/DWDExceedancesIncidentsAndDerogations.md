@@ -692,7 +692,7 @@ Table 2: Overview of parameters with differing UnitOfMeasure between Annex I of 
 | EEA_15-02-1 - Intestinal enterococci | 0 | number/100 ml | 0 | [CFU]/dL |
 | EEA_15-03-2 - Clostridium perfringens | 0 | number/100 ml | 0 | [CFU]/dL |
 | EEA_15-04-3 - Coliform bacteria | 0 | number/100 ml | 0 | [CFU]/dL |
-| EEA_15-05-4 - Legionella | <1000 | [CFU]/l | 100 | [CFU]/dL |
+| EEA_15-05-4 - Legionella | <1000 | [CFU]/l | <100 | [CFU]/dL |
 
 **Field: samplingFrequency**
 
