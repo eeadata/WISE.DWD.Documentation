@@ -7,9 +7,9 @@ Exceedances, incidents and derogations
    :hidden:
    :maxdepth: 1
 
-   DWDExceedancesIncidentsAndDerrogations
+   DWDExceedancesIncidentsAndDerogations
    DWDExceedancesIncidentsAndDerogations2023_2024
 
-* :doc:`DWDExceedancesIncidentsAndDerrogations`
+* :doc:`DWDExceedancesIncidentsAndDerogations`
 * :doc:`DWDExceedancesIncidentsAndDerogations2023_2024`
 

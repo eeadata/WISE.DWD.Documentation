@@ -5,7 +5,7 @@ WISE Documentation - Drinking Water Directive
    :maxdepth: 2
    :hidden:
 
-   ExceedancesIncidentsAndDerrogations/index
+   ExceedancesIncidentsAndDerogations/index
    RiskAssessmentWithinCatchmentAreas/index
    DrinkingWaterProtectionAreas/index
 
