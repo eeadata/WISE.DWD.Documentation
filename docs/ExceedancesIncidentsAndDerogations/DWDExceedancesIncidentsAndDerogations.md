@@ -1712,7 +1712,8 @@ This mechanism supports the overall integrity of the reported information and al
 
 More detailed information on the lifecycle of spatial objects can be checked in Page 64 of the WISE Spatial Reporting Guidance.
 
-These are the fields of the spatial data:
+
+### Information on DWD Water Supply Zone
 
 **Table: WaterSupplyZone**
 
@@ -1725,6 +1726,8 @@ These are the fields of the spatial data:
 | QC RF003 | The thematic identifier that is replacing this object has been superseded, deprecated or is invalid. |
 | QC RF013 | The thematic identifiers that replace this object must exist in the register, or be the thematic identifier of another object reported in the spatial data set. |
 | QC RF015 | If you have not reported yet in the previous reporting cycle, you cannot report here. |
+
+These are the fields of the spatial data:
 
 **Field: geometry_polygon**
 
