@@ -122,6 +122,7 @@ The content of the descriptive data reporting template is briefly described in T
 | DWD Incidents and Exceedances | ExceedanceCauseRemedialAction | Information on causes for the reported exceedances and remedial actions |
 | DWD Water Supply and Monitoring Results | MonitoringResult | Monitoring results in case of derogations and exceedances |
 | DWD Water Supply and Monitoring Results | WaterSupply | Information on the annual water supply and population served per water supply zone.|
+
 Table 1: Tables in the descriptive data reporting template.
 
 ### Information on the authority responsible for reporting
